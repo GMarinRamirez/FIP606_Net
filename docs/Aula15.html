@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>FIP606 Para Dummies</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./img/favicon_site.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="site_libs/datatables-binding-0.33/datatables.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="site_libs/jszip-1.13.6/jszip.min.js"></script>
+<link href="site_libs/dt-ext-buttons-1.13.6/css/buttons.dataTables.min.css" rel="stylesheet">
+<script src="site_libs/dt-ext-buttons-1.13.6/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.13.6/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.13.6/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.13.6/js/buttons.print.min.js"></script>
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./img/icon.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">FIP606 Para Dummies</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bases-del-r" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Bases del R</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-bases-del-r">    
+        <li>
+    <a class="dropdown-item" href="./Aula1.html">
+ <span class="dropdown-text">Introducción al R y Rstudio</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula00.html">
+ <span class="dropdown-text">Creemos un proyecto en Rstudio</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula0.html">
+ <span class="dropdown-text">Que podemos hacer en Rstudio?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula2.html">
+ <span class="dropdown-text">Paquetes en Rstudio</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula3.html">
+ <span class="dropdown-text">Data frame en Rstudio</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-gráficos-en-r" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Gráficos en R</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-gráficos-en-r">    
+        <li>
+    <a class="dropdown-item" href="./Aula4.html">
+ <span class="dropdown-text">Visualização de dados parte 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula6.html">
+ <span class="dropdown-text">Visualização de dados parte 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula5.html">
+ <span class="dropdown-text">Ejemplo de Visuzalización</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-análisis-estadisticos-en-r" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Análisis Estadisticos en R</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-análisis-estadisticos-en-r">    
+        <li>
+    <a class="dropdown-item" href="./Aula71.html">
+ <span class="dropdown-text">Por que Transformación de Datos?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula7.html">
+ <span class="dropdown-text">Transformación de Datos (log/sqrt)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula18.html">
+ <span class="dropdown-text">Transformación de Datos (Box-Cox)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula9.html">
+ <span class="dropdown-text">Tipos de Análisis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula8.html">
+ <span class="dropdown-text">Test de Hipótesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula10.html">
+ <span class="dropdown-text">ANOVA Un factor</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula11.html">
+ <span class="dropdown-text">ANOVA Factorial</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula12.html">
+ <span class="dropdown-text">ANOVA con Bloques (DBC)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula13.html">
+ <span class="dropdown-text">Regresión linear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula17.html">
+ <span class="dropdown-text">Regresión no-linear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula14.html">
+ <span class="dropdown-text">Análisis de correlación</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula15.html">
+ <span class="dropdown-text">Tabla de contigencia</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula19.html">
+ <span class="dropdown-text">Área Bajo la Curva de Progreso de la Enfermedad (AUDPC)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mapas-en-r" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Mapas en R</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-mapas-en-r">    
+        <li>
+    <a class="dropdown-item" href="./Aula16.html">
+ <span class="dropdown-text">Elaboración de Mapas</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-extras-en-r" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Extras en R</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-extras-en-r">    
+        <li>
+    <a class="dropdown-item" href="./Paquetes_.html">
+ <span class="dropdown-text">Paquetes utiles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./PAT104022.qmd">
+ <span class="dropdown-text">Proyecto de Análisis de datos FIP606</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/GMarinRamirez"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.instagram.com/tavomarinra/"> <i class="bi bi-instagram" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./indexP.html"> <i class="bi bi-img/Flag_P.svg" role="img">
+</i> 
+<span class="menu-text">Bem-vindos ao meu site</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./indexE.html"> <i class="bi bi-img/Flag_E.svg" role="img">
+</i> 
+<span class="menu-text">Welcome to my website</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#análisis-de-variables-categóricas-y-tablas-de-contingencia" id="toc-análisis-de-variables-categóricas-y-tablas-de-contingencia" class="nav-link active" data-scroll-target="#análisis-de-variables-categóricas-y-tablas-de-contingencia">Análisis de Variables Categóricas y Tablas de Contingencia</a>
+  <ul class="collapse">
+  <li><a href="#para-qué-sirve-una-tabla-de-contingencia-en-análisis-estadísticos" id="toc-para-qué-sirve-una-tabla-de-contingencia-en-análisis-estadísticos" class="nav-link" data-scroll-target="#para-qué-sirve-una-tabla-de-contingencia-en-análisis-estadísticos">¿Para qué sirve una tabla de contingencia en análisis estadísticos?</a></li>
+  <li><a href="#ejemplo-práctico" id="toc-ejemplo-práctico" class="nav-link" data-scroll-target="#ejemplo-práctico">Ejemplo Práctico</a></li>
+  <li><a href="#cargar-paquetes" id="toc-cargar-paquetes" class="nav-link" data-scroll-target="#cargar-paquetes">Cargar Paquetes</a></li>
+  <li><a href="#análisis-de-variables-categóricas-y-tablas-de-contingencia-1" id="toc-análisis-de-variables-categóricas-y-tablas-de-contingencia-1" class="nav-link" data-scroll-target="#análisis-de-variables-categóricas-y-tablas-de-contingencia-1">Análisis de Variables Categóricas y Tablas de Contingencia</a>
+  <ul class="collapse">
+  <li><a href="#cargar-datos" id="toc-cargar-datos" class="nav-link" data-scroll-target="#cargar-datos">Cargar Datos</a></li>
+  <li><a href="#crear-una-tabla-de-contingencia" id="toc-crear-una-tabla-de-contingencia" class="nav-link" data-scroll-target="#crear-una-tabla-de-contingencia">Crear una Tabla de Contingencia</a></li>
+  <li><a href="#interpretación-de-la-tabla-de-contingencia" id="toc-interpretación-de-la-tabla-de-contingencia" class="nav-link" data-scroll-target="#interpretación-de-la-tabla-de-contingencia">Interpretación de la Tabla de Contingencia</a></li>
+  <li><a href="#calcular-porcentajes" id="toc-calcular-porcentajes" class="nav-link" data-scroll-target="#calcular-porcentajes">Calcular Porcentajes</a></li>
+  <li><a href="#visualización-de-datos" id="toc-visualización-de-datos" class="nav-link" data-scroll-target="#visualización-de-datos">Visualización de Datos</a></li>
+  </ul></li>
+  <li><a href="#teste-de-independencia" id="toc-teste-de-independencia" class="nav-link" data-scroll-target="#teste-de-independencia">Teste de Independencia</a>
+  <ul class="collapse">
+  <li><a href="#teste-de-chi-cuadrado" id="toc-teste-de-chi-cuadrado" class="nav-link" data-scroll-target="#teste-de-chi-cuadrado">Teste de Chi-cuadrado</a></li>
+  <li><a href="#test-de-fisher" id="toc-test-de-fisher" class="nav-link" data-scroll-target="#test-de-fisher">Test de Fisher</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><div class="quarto-title-block"><div class="quarto-title-tools-only"><h1></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+
+
+
+
+<section id="análisis-de-variables-categóricas-y-tablas-de-contingencia" class="level1">
+<h1>Análisis de Variables Categóricas y Tablas de Contingencia</h1>
+<section id="para-qué-sirve-una-tabla-de-contingencia-en-análisis-estadísticos" class="level3">
+<h3 class="anchored" data-anchor-id="para-qué-sirve-una-tabla-de-contingencia-en-análisis-estadísticos">¿Para qué sirve una tabla de contingencia en análisis estadísticos?</h3>
+<p>Una <strong>tabla de contingencia</strong>, también conocida como tabla de frecuencia cruzada, es una herramienta fundamental en el análisis estadístico que se utiliza para:</p>
+<ol type="1">
+<li><strong>Resumir Datos Categóricos</strong>:
+<ul>
+<li>Permite organizar y presentar los datos categóricos de manera estructurada, mostrando la frecuencia de las combinaciones de dos o más variables categóricas.</li>
+<li>Facilita la visualización de la distribución conjunta de estas variables.</li>
+</ul></li>
+<li><strong>Identificar Relaciones entre Variables</strong>:
+<ul>
+<li>Ayuda a detectar posibles asociaciones o dependencias entre variables categóricas.</li>
+<li>Es útil para entender si las variables están relacionadas o si son independientes entre sí.</li>
+</ul></li>
+<li><strong>Realizar Análisis Exploratorios</strong>:
+<ul>
+<li>Proporciona una primera aproximación a los datos que puede ayudar a formular hipótesis para análisis más profundos.</li>
+<li>Permite identificar patrones y tendencias iniciales en los datos.</li>
+</ul></li>
+<li><strong>Aplicar Pruebas Estadísticas</strong>:
+<ul>
+<li>Se utiliza como base para realizar pruebas de independencia y asociación, como el test de Chi-cuadrado y el test exacto de Fisher.</li>
+<li>Estas pruebas ayudan a determinar si la asociación observada entre las variables es estadísticamente significativa.</li>
+</ul></li>
+<li><strong>Visualización de Datos</strong>:
+<ul>
+<li>Facilita la creación de gráficos de barras, gráficos de mosaico y otros tipos de visualizaciones que ayudan a interpretar los datos categóricos.</li>
+<li>Permite una comprensión visual rápida y efectiva de las relaciones entre las variables.</li>
+</ul></li>
+</ol>
+</section>
+<section id="ejemplo-práctico" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-práctico">Ejemplo Práctico</h3>
+<p>Considera un estudio sobre la presencia de especies de fusarium en diferentes tipos de residuos de cultivos. Supongamos que tenemos datos sobre el tipo de residuo utilizado (variable <code>residue</code>) y el tipo de especie de fusarium (variable <code>species</code>). Una tabla de contingencia nos permitiría ver cuántas veces se ha encontrado cada tipo de especie de fusarium en cada tipo de residuo de cultivo, lo cual es esencial para analizar si hay alguna preferencia o patrón de crecimiento entre diferentes residuos de cultivos.</p>
+</section>
+<section id="cargar-paquetes" class="level3">
+<h3 class="anchored" data-anchor-id="cargar-paquetes">Cargar Paquetes</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(epifitter)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(performance)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="análisis-de-variables-categóricas-y-tablas-de-contingencia-1" class="level2">
+<h2 class="anchored" data-anchor-id="análisis-de-variables-categóricas-y-tablas-de-contingencia-1">Análisis de Variables Categóricas y Tablas de Contingencia</h2>
+<section id="cargar-datos" class="level3">
+<h3 class="anchored" data-anchor-id="cargar-datos">Cargar Datos</h3>
+<p>Primero, cargamos los datos desde un archivo Excel:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"dados-diversos.xlsx"</span>, <span class="at">sheet =</span> <span class="st">"survey"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>survey<span class="sc">|&gt;</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>      DT<span class="sc">::</span><span class="fu">datatable</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">options =</span> <span class="fu">list</span>(<span class="at">dom =</span> <span class="st">'Bfrtip'</span>, </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'excel'</span>, <span class="st">"csv"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-096633549fa646a6b6c0" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-096633549fa646a6b6c0">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202","203","204","205","206","207","208","209","210","211","212","213","214","215","216","217","218","219","220","221","222","223","224","225","226","227","228","229","230","231","232","233","234","235","236","237","238","239","240","241","242","243","244","245","246","247","248","249","250","251","252","253","254","255","256","257","258","259","260","261","262","263","264","265","266","267","268","269","270","271","272","273","274","275","276","277","278","279","280","281","282","283","284","285","286","287","288","289","290","291","292","293","294","295","296","297","298","299","300","301","302","303","304","305","306","307","308","309","310","311","312","313","314","315","316","317","318","319","320","321","322","323","324","325","326","327","328","329","330","331","332","333","334","335","336","337","338","339","340","341","342","343","344","345","346","347","348","349","350","351","352","353","354","355","356","357","358","359","360","361","362","363","364","365","366","367","368","369","370","371","372","373","374","375","376","377","378","379","380","381","382","383","384","385","386","387","388","389","390","391","392","393","394","395","396","397","398","399","400","401","402","403","404","405","406","407","408","409","410","411","412","413","414","415","416","417","418","419","420","421","422","423","424","425","426","427","428","429","430","431","432","433","434","435","436","437","438","439","440","441","442","443","444","445","446","447","448","449","450","451","452","453","454","455","456","457","458","459","460","461","462","463","464","465","466","467","468","469","470","471","472","473","474","475","476","477","478","479","480","481","482","483","484","485","486","487","488","489","490","491","492","493","494","495","496","497","498","499","500","501","502","503","504","505","506","507","508","509","510","511","512","513","514","515","516","517","518","519","520","521","522","523","524","525","526","527","528","529","530","531","532","533","534","535","536","537","538","539","540","541","542","543","544","545","546","547","548","549","550","551","552","553","554","555","556","557","558","559","560","561","562","563","564","565","566","567","568","569","570","571","572","573","574","575","576","577","578","579","580","581","582","583","584","585","586","587","588","589","590","591","592","593","594","595","596","597","598","599","600","601","602","603","604","605","606","607","608","609","610","611","612","613","614","615","616","617","618","619","620","621","622","623","624","625","626","627","628","629","630","631","632","633","634","635","636","637","638","639","640","641","642","643","644","645","646","647","648","649","650","651","652","653","654","655","656","657","658","659","660","661","662","663","664","665","666"],[2011,2011,2011,2011,2011,2011,2011,2010,2010,2011,2011,2011,2011,2009,2009,2011,2011,2011,2011,2011,2009,2009,2009,2011,2010,2010,2010,2010,2010,2010,2009,2009,2009,2009,2009,2011,2011,2011,2011,2011,2011,2011,2009,2009,2009,2009,2009,2009,2009,2010,2010,2010,2010,2010,2011,2011,2011,2011,2011,2011,2011,2011,2009,2009,2009,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2009,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2011,2011,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2011,2011,2011,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2010,2010,2010,2011,2011,2011,2011,2011,2011,2011,2011,2011,2009,2009,2009,2009,2011,2011,2011,2011,2011,2009,2009,2009,2011,2011,2009,2009,2010,2010,2010,2010,2010,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2010,2010,2010,2010,2010,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2010,2010,2010,2010,2010,2009,2010,2010,2010,2010,2010,2009,2009,2009,2009,2009,2010,2010,2010,2010,2010,2010,2010,2010,2010,2011,2011,2010,2010,2010,2010,2010,2010,2010,2010,2010,2009,2009,2009,2009,2009,2010,2010,2010,2010,2010,2011,2011,2011,2009,2009,2009,2011,2011,2011,2009,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2011,2009,2009,2009,2010,2010,2010,2010,2009,2009,2009,2009,2009,2010,2010,2010,2010,2010,2009,2011,2010,2010,2010,2011,2011,2011,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2011,2009,2009,2009,2009,2010,2010,2010,2010,2010,2010,2009,2009,2010,2010,2010,2010,2010,2009,2009,2009,2010,2010,2010,2010,2010,2009,2009,2009,2009,2009,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2009,2009,2009,2009,2009,2009,2009,2009,2010,2010,2010,2010,2010,2010,2010,2010,2009,2009,2009,2009,2009,2009,2009,2009,2009,2010,2010,2010,2009,2009,2009,2009,2009,2009,2009,2009,2010,2010,2010,2010,2010,2010,2010,2010,2011,2011,2011,2009,2009,2009,2009,2009,2009,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2010,2009,2009,2009,2009,2010,2010,2010,2010,2010,2009,2009,2010,2010,2010,2010,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011],["RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","RS","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR","PR"],["soybean","soybean","soybean","soybean","soybean","soybean","corn","soybean","corn","soybean","soybean","soybean","soybean","corn","corn","corn","soybean","soybean","soybean","soybean","corn","corn","corn","corn","corn","corn","corn","corn","corn","corn","corn","corn","corn","soybean","soybean","corn","corn","corn","corn","corn","corn","soybean","soybean","soybean","soybean","corn","corn","corn","soybean","corn","corn","corn","corn","corn","soybean","soybean","soybean","corn","soybean","soybean","soybean","soybean","corn","corn","corn","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","corn","corn","corn","soybean","soybean","soybean","soybean","soybean","soybean","corn","corn","corn","corn","corn","corn","corn","corn","corn","corn","corn","corn","corn","corn","soybean","soybean","soybean","soybean","soybean","corn","corn","corn","corn","corn","corn","corn","soybean","soybean","soybean","soybean","corn","corn","corn","corn","corn","corn","corn","corn","corn","corn","corn","corn","corn","soybean","soybean","soybean","soybean","corn","corn","corn","corn","soybean","corn","corn","corn","corn","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","corn","corn","corn","corn","corn","corn","corn","corn","corn","corn","soybean","soybean","soybean","soybean","soybean","soybean","corn","corn","corn","corn","corn","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","corn","soybean","soybean","soybean","soybean","soybean","corn","corn","corn","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","corn","corn","corn","corn","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","corn","corn","corn","corn","corn","corn","soybean","soybean","soybean","soybean","soybean","corn","corn","corn","corn","soybean","soybean","soybean","corn","corn","corn","corn","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","corn","corn","corn","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","corn","corn","corn","corn","corn","corn","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","corn","corn","corn","corn","corn","corn","corn","corn","corn","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","corn","corn","corn","corn","corn","corn","corn","corn","corn","soybean","corn","corn","corn","corn","corn","corn","corn","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","corn","corn","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","corn","corn","corn","corn","corn","corn","corn","corn","soybean","soybean","soybean","soybean","soybean","corn","corn","corn","corn","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","soybean","corn","corn","corn",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[1,1,1,1,1,1,1,2,2,2,2,2,2,2.5,2.5,2.5,2.5,2.5,2.5,2.5,3,3,3,3.5,4,4,4,4,4,4,5,5,5,5,5,5.5,5.5,5.5,5.5,5.5,5.5,5.5,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6.5,7,7,7,7,8,8,8,8,8,8,8,8,8,8,8,8,8.5,8.5,8.5,8.5,8.5,9,9,9,9,9.5,9.5,9.5,9.5,10,11,11,11,11,11.5,11.5,11.5,11.5,11.5,12,12,12,12,12,12.5,12.5,13,13,13,13,13,13,13,13,13,13,13,13.5,13.5,13.5,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14.5,14.5,14.5,14.5,14.5,15,16,16,16,16,16,16,16,16,17,17.89,17.89,17.89,18.5,18.5,19.74,19.74,20,20,20,20,20,21.11,21.11,21.11,21.5,21.5,21.5,21.5,21.5,21.5,21.5,21.5,22.5,22.5,22.5,22.5,22.5,23.5,23.5,23.5,23.5,24,24,24,24,24.34,24.5,24.5,24.5,24.5,24.5,24.5,24.5,24.5,24.5,25,25,25,25,25,25,25.13,25.13,25.13,25.5,25.5,25.5,25.5,25.5,25.5,25.5,25.5,25.5,25.5,25.5,25.5,25.5,26,26,26,26,26,26,26,26,26,26.5,26.5,26.5,26.5,27.22,28.5,28.5,28.5,28.5,28.5,28.5,28.5,28.5,29.5,29.5,29.5,29.5,29.5,29.5,30,30.5,30.5,30.5,30.5,30.5,30.5,31,31,31,31,31,31,31,31,31,31.5,31.5,31.5,34,34,34,34,35,35,35,35,35,35,35,35,35,35,36.5,36.5,37,37,37,37,37,37,37.5,37.5,37.5,37.5,37.5,39,39,39,39,39,39,39,39,39,40.5,41.5,41.5,41.5,41.5,41.5,41.5,41.5,41.5,41.5,41.5,42,42,42,42,42,42,42,43,43,43,43.5,43.5,43.5,43.5,43.5,44,44,44,44,44,44,44,44,44,44.5,44.5,44.5,44.5,44.5,45.5,45.5,45.5,46.5,46.5,46.5,46.5,50,50,50,50,50,50.5,52,52,52.5,52.53,52.53,52.53,52.53,52.76,52.76,52.76,52.78,52.78,52.78,52.78,52.78,53.5,53.85,53.85,53.85,53.85,54.58,54.58,55,55,55.28,55.28,55.28,56,56,56,56,56.5,56.5,56.5,56.5,56.5,56.5,56.5,57.5,57.5,57.5,57.5,57.5,59.5,59.5,59.5,60.27,60.27,61.81,61.81,61.81,61.81,63.5,63.5,63.5,63.5,63.5,63.68,63.68,63.68,63.68,65,65,65,65.5,65.5,65.5,65.5,65.5,67,67,67,67,67,68.23999999999999,68.23999999999999,68.23999999999999,68.23999999999999,68.23999999999999,70.5,70.5,70.5,70.5,70.70999999999999,70.70999999999999,70.70999999999999,70.70999999999999,70.70999999999999,71,71,72.5,72.5,72.5,72.5,89.95,89.95,89.95,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],["low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","low","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high","high",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],["Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fgra","Fgra","Fgra","Fgra","Fspp","Fgra","Fgra","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fgra","Fgra","Fgra","Fspp","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fspp","Fgra","Fgra","Fspp","Fspp","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fgra","Fgra","Fgra","Fspp","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fgra","Fgra","Fspp","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fspp","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fgra","Fspp","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fgra","Fgra","Fgra","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fgra","Fgra","Fgra","Fspp","Fgra","Fgra","Fspp","Fgra","Fgra","Fgra","Fgra","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fgra","Fgra","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fgra","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp","Fspp"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>state<\/th>\n      <th>residue<\/th>\n      <th>inc<\/th>\n      <th>inc_class<\/th>\n      <th>species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bfrtip","buttons":["excel","csv"],"columnDefs":[{"className":"dt-right","targets":[1,4]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"year","targets":1},{"name":"state","targets":2},{"name":"residue","targets":3},{"name":"inc","targets":4},{"name":"inc_class","targets":5},{"name":"species","targets":6}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="crear-una-tabla-de-contingencia" class="level3">
+<h3 class="anchored" data-anchor-id="crear-una-tabla-de-contingencia">Crear una Tabla de Contingencia</h3>
+<p>Utilizamos la función <code>table()</code> para crear una tabla de contingencia:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">table</span>(survey<span class="sc">$</span>residue, survey<span class="sc">$</span>species)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>q <span class="sc">|&gt;</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>   DT<span class="sc">::</span><span class="fu">datatable</span>(</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>   <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">list</span>(<span class="at">dom =</span> <span class="st">'Bfrtip'</span>, </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'excel'</span>, <span class="st">"csv"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-c7de421c0a7dacf5c808" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-c7de421c0a7dacf5c808">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["corn","soybean","corn","soybean"],["corn","soybean","corn","soybean"],["Fgra","Fgra","Fspp","Fspp"],[147,255,22,26]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Var1<\/th>\n      <th>Var2<\/th>\n      <th>Freq<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bfrtip","buttons":["excel","csv"],"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"Var1","targets":1},{"name":"Var2","targets":2},{"name":"Freq","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="interpretación-de-la-tabla-de-contingencia" class="level3">
+<h3 class="anchored" data-anchor-id="interpretación-de-la-tabla-de-contingencia">Interpretación de la Tabla de Contingencia</h3>
+<p>Al observar la tabla de contingencia, podemos: - Verificar las frecuencias de cada combinación de <code>residue</code> y <code>species</code>. - Evaluar si ciertos especies de fusarium predominan en ciertos cultivos. - Identificar si hay alguna combinación de <code>residue</code> y <code>species</code> que es particularmente común o rara.</p>
+</section>
+<section id="calcular-porcentajes" class="level3">
+<h3 class="anchored" data-anchor-id="calcular-porcentajes">Calcular Porcentajes</h3>
+<p>Utilizamos la función <code>adorn_percentages()</code> del paquete <code>janitor</code> para obtener porcentajes:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>survey1<span class="ot">&lt;-</span>survey <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>            <span class="fu">tabyl</span>(year, species) <span class="sc">|&gt;</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            <span class="fu">adorn_percentages</span>()</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">|&gt;</span> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>   DT<span class="sc">::</span><span class="fu">datatable</span>(</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>   <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">list</span>(<span class="at">dom =</span> <span class="st">'Bfrtip'</span>, </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'excel'</span>, <span class="st">"csv"</span>)))<span class="sc">|&gt;</span> </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">formatRound</span>(<span class="fu">c</span>(<span class="st">'Fgra'</span>,<span class="st">'Fspp'</span>), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-ab2a2b5af529b2ee0a45" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ab2a2b5af529b2ee0a45">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["1","2","3"],[2009,2010,2011],[0.8490566037735849,0.8657407407407407,0.7567567567567568],[0.1509433962264151,0.1342592592592593,0.2432432432432433]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>Fgra<\/th>\n      <th>Fspp<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bfrtip","buttons":["excel","csv"],"columnDefs":[{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"year","targets":1},{"name":"Fgra","targets":2},{"name":"Fspp","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render"],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="visualización-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="visualización-de-datos">Visualización de Datos</h3>
+<p>Podemos visualizar la tabla de contingencia con un gráfico de barras:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>survey <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(residue <span class="sc">!=</span> <span class="st">"NA"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(residue, species) <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(residue, n, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribución de Residuos por Especies"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Residuos"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Frecuencia"</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Especies"</span>)<span class="sc">+</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_few</span>()<span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_few</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Aula15_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="teste-de-independencia" class="level2">
+<h2 class="anchored" data-anchor-id="teste-de-independencia">Teste de Independencia</h2>
+<section id="teste-de-chi-cuadrado" class="level3">
+<h3 class="anchored" data-anchor-id="teste-de-chi-cuadrado">Teste de Chi-cuadrado</h3>
+<p>El test de chi-cuadrado se utiliza para evaluar la independencia entre dos variables categóricas:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(q)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's Chi-squared test with Yates' continuity correction
+
+data:  q
+X-squared = 1.1997, df = 1, p-value = 0.2734</code></pre>
+</div>
+</div>
+<p>Este test nos dirá si la asociación observada entre el tipo de cultivo y el tipo de especie de fusarium es significativa, ayudándonos a entender si existe una relación no aleatoria entre estas variables.</p>
+</section>
+<section id="test-de-fisher" class="level3">
+<h3 class="anchored" data-anchor-id="test-de-fisher">Test de Fisher</h3>
+<p>Para tablas de contingencia 2x2 o con pocas observaciones, utilizamos el test de Fisher:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">table</span>(survey<span class="sc">$</span>residue, survey<span class="sc">$</span>inc_class)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fisher.test</span>(q)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Fisher's Exact Test for Count Data
+
+data:  q
+p-value = 0.09855
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.4492084 1.0721250
+sample estimates:
+odds ratio 
+  0.696718 </code></pre>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb10" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Análisis de Variables Categóricas y Tablas de Contingencia</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">### ¿Para qué sirve una tabla de contingencia en análisis estadísticos?</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>Una **tabla de contingencia**, también conocida como tabla de frecuencia cruzada, es una herramienta fundamental en el análisis estadístico que se utiliza para:</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Resumir Datos Categóricos**:</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Permite organizar y presentar los datos categóricos de manera estructurada, mostrando la frecuencia de las combinaciones de dos o más variables categóricas.</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Facilita la visualización de la distribución conjunta de estas variables.</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Identificar Relaciones entre Variables**:</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Ayuda a detectar posibles asociaciones o dependencias entre variables categóricas.</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Es útil para entender si las variables están relacionadas o si son independientes entre sí.</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Realizar Análisis Exploratorios**:</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Proporciona una primera aproximación a los datos que puede ayudar a formular hipótesis para análisis más profundos.</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Permite identificar patrones y tendencias iniciales en los datos.</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Aplicar Pruebas Estadísticas**:</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Se utiliza como base para realizar pruebas de independencia y asociación, como el test de Chi-cuadrado y el test exacto de Fisher.</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Estas pruebas ayudan a determinar si la asociación observada entre las variables es estadísticamente significativa.</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Visualización de Datos**:</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Facilita la creación de gráficos de barras, gráficos de mosaico y otros tipos de visualizaciones que ayudan a interpretar los datos categóricos.</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Permite una comprensión visual rápida y efectiva de las relaciones entre las variables.</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="fu">### Ejemplo Práctico</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>Considera un estudio sobre la presencia de especies de fusarium en diferentes tipos de residuos de cultivos. Supongamos que tenemos datos sobre el tipo de residuo utilizado (variable <span class="in">`residue`</span>) y el tipo de especie de fusarium (variable <span class="in">`species`</span>). Una tabla de contingencia nos permitiría ver cuántas veces se ha encontrado cada tipo de especie de fusarium en cada tipo de residuo de cultivo, lo cual es esencial para analizar si hay alguna preferencia o patrón de crecimiento entre diferentes residuos de cultivos.</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="fu">### Cargar Paquetes</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(epifitter)</span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(performance)</span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Análisis de Variables Categóricas y Tablas de Contingencia</span></span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a><span class="fu">### Cargar Datos</span></span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a>Primero, cargamos los datos desde un archivo Excel:</span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"dados-diversos.xlsx"</span>, <span class="at">sheet =</span> <span class="st">"survey"</span>)</span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a>survey<span class="sc">|&gt;</span> </span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a>      DT<span class="sc">::</span><span class="fu">datatable</span>(</span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a>        <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a>        <span class="at">options =</span> <span class="fu">list</span>(<span class="at">dom =</span> <span class="st">'Bfrtip'</span>, </span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a>                       <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'excel'</span>, <span class="st">"csv"</span>)))</span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a><span class="fu">### Crear una Tabla de Contingencia</span></span>
+<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a>Utilizamos la función <span class="in">`table()`</span> para crear una tabla de contingencia:</span>
+<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">table</span>(survey<span class="sc">$</span>residue, survey<span class="sc">$</span>species)</span>
+<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a>q <span class="sc">|&gt;</span> </span>
+<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a>   DT<span class="sc">::</span><span class="fu">datatable</span>(</span>
+<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a>   <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
+<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">list</span>(<span class="at">dom =</span> <span class="st">'Bfrtip'</span>, </span>
+<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a>        <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'excel'</span>, <span class="st">"csv"</span>)))</span>
+<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a><span class="fu">### Interpretación de la Tabla de Contingencia</span></span>
+<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a>Al observar la tabla de contingencia, podemos:</span>
+<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Verificar las frecuencias de cada combinación de <span class="in">`residue`</span> y <span class="in">`species`</span>.</span>
+<span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Evaluar si ciertos especies de fusarium  predominan en ciertos cultivos.</span>
+<span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Identificar si hay alguna combinación de <span class="in">`residue`</span> y <span class="in">`species`</span> que es particularmente común o rara.</span>
+<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a><span class="fu">### Calcular Porcentajes</span></span>
+<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a>Utilizamos la función <span class="in">`adorn_percentages()`</span> del paquete <span class="in">`janitor`</span> para obtener porcentajes:</span>
+<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a>survey1<span class="ot">&lt;-</span>survey <span class="sc">|&gt;</span> </span>
+<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a>            <span class="fu">tabyl</span>(year, species) <span class="sc">|&gt;</span> </span>
+<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a>            <span class="fu">adorn_percentages</span>()</span>
+<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">|&gt;</span> </span>
+<span id="cb10-110"><a href="#cb10-110" aria-hidden="true" tabindex="-1"></a>   DT<span class="sc">::</span><span class="fu">datatable</span>(</span>
+<span id="cb10-111"><a href="#cb10-111" aria-hidden="true" tabindex="-1"></a>   <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
+<span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">list</span>(<span class="at">dom =</span> <span class="st">'Bfrtip'</span>, </span>
+<span id="cb10-113"><a href="#cb10-113" aria-hidden="true" tabindex="-1"></a>        <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'excel'</span>, <span class="st">"csv"</span>)))<span class="sc">|&gt;</span> </span>
+<span id="cb10-114"><a href="#cb10-114" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">formatRound</span>(<span class="fu">c</span>(<span class="st">'Fgra'</span>,<span class="st">'Fspp'</span>), <span class="dv">2</span>)</span>
+<span id="cb10-115"><a href="#cb10-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-116"><a href="#cb10-116" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-117"><a href="#cb10-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-118"><a href="#cb10-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-119"><a href="#cb10-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-120"><a href="#cb10-120" aria-hidden="true" tabindex="-1"></a><span class="fu">### Visualización de Datos</span></span>
+<span id="cb10-121"><a href="#cb10-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-122"><a href="#cb10-122" aria-hidden="true" tabindex="-1"></a>Podemos visualizar la tabla de contingencia con un gráfico de barras:</span>
+<span id="cb10-123"><a href="#cb10-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-126"><a href="#cb10-126" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a>survey <span class="sc">|&gt;</span></span>
+<span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(residue <span class="sc">!=</span> <span class="st">"NA"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(residue, species) <span class="sc">|&gt;</span></span>
+<span id="cb10-130"><a href="#cb10-130" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(residue, n, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb10-131"><a href="#cb10-131" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb10-132"><a href="#cb10-132" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribución de Residuos por Especies"</span>,</span>
+<span id="cb10-133"><a href="#cb10-133" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Residuos"</span>,</span>
+<span id="cb10-134"><a href="#cb10-134" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Frecuencia"</span>,</span>
+<span id="cb10-135"><a href="#cb10-135" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Especies"</span>)<span class="sc">+</span></span>
+<span id="cb10-136"><a href="#cb10-136" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_few</span>()<span class="sc">+</span></span>
+<span id="cb10-137"><a href="#cb10-137" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_few</span>()</span>
+<span id="cb10-138"><a href="#cb10-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-139"><a href="#cb10-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-140"><a href="#cb10-140" aria-hidden="true" tabindex="-1"></a><span class="fu">## Teste de Independencia</span></span>
+<span id="cb10-141"><a href="#cb10-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-142"><a href="#cb10-142" aria-hidden="true" tabindex="-1"></a><span class="fu">### Teste de Chi-cuadrado</span></span>
+<span id="cb10-143"><a href="#cb10-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-144"><a href="#cb10-144" aria-hidden="true" tabindex="-1"></a>El test de chi-cuadrado se utiliza para evaluar la independencia entre dos variables categóricas:</span>
+<span id="cb10-145"><a href="#cb10-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-148"><a href="#cb10-148" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-149"><a href="#cb10-149" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(q)</span>
+<span id="cb10-150"><a href="#cb10-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-151"><a href="#cb10-151" aria-hidden="true" tabindex="-1"></a>Este test nos dirá si la asociación observada entre el tipo de cultivo y el tipo de especie de fusarium es significativa, ayudándonos a entender si existe una relación no aleatoria entre estas variables.</span>
+<span id="cb10-152"><a href="#cb10-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-153"><a href="#cb10-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-154"><a href="#cb10-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-155"><a href="#cb10-155" aria-hidden="true" tabindex="-1"></a><span class="fu">### Test de Fisher</span></span>
+<span id="cb10-156"><a href="#cb10-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-157"><a href="#cb10-157" aria-hidden="true" tabindex="-1"></a>Para tablas de contingencia 2x2 o con pocas observaciones, utilizamos el test de Fisher:</span>
+<span id="cb10-158"><a href="#cb10-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-161"><a href="#cb10-161" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-162"><a href="#cb10-162" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">table</span>(survey<span class="sc">$</span>residue, survey<span class="sc">$</span>inc_class)</span>
+<span id="cb10-163"><a href="#cb10-163" aria-hidden="true" tabindex="-1"></a><span class="fu">fisher.test</span>(q)</span>
+<span id="cb10-164"><a href="#cb10-164" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Copyright 2024, Gustavo Marin ®</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
