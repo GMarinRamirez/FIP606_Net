@@ -1,0 +1,38 @@
+---
+title: "R para Dummies en Fitopatología"
+---
+
+## proyecto Quarto en RStudio
+
+![Análisis de datos usando Quarto en R](img/quarto_schematic.png)
+
+### Pasos para iniciar un proyecto Quarto en RStudio:
+
+1.  **Abrir RStudio**: Asegúrate de tener RStudio abierto y funcionando correctamente en tu computadora.
+
+2.  **Crear un nuevo proyecto**:
+
+    -   Ve al menú superior de RStudio y selecciona `File` -\> `New Project` -\> `New Directory`.
+    -   Haz clic en `Create Project` para crear la estructura inicial del proyecto en el directorio especificado.
+
+![](img/Project_.png)
+
+
+3.  **Configurar el documento Quarto**:
+    -   Una vez que se haya creado el proyecto, en el panel de archivos de RStudio, debes de crear un archivo o documento `Untitled.qmd`.
+    -   Haz doble clic en `Untitled.qmd` para abrirlo y comenzar a editarlo.
+    
+    
+    
+![](img/Documents_.png)
+    
+    
+4.  **Editar el documento**:
+    -   En el archivo `Untitled.qmd`, puedes comenzar a escribir contenido utilizando Markdown y agregar bloques (chunck) de código R para realizar análisis, generar gráficos y más.
+    -   Utiliza las funciones y características de Quarto, como los chunks de código interactivos, para crear informes dinámicos y explorar datos de manera efectiva.
+    
+5.  **Compilar y visualizar el informe**:
+    -   Para ver cómo se ve tu informe generado, puedes hacer clic en el botón `Knit` (tejer) en RStudio, que compilará el documento `.qmd` y generará un archivo HTML (u otro formato especificado).
+    -   Esto te permitirá ver el informe finalizado con gráficos, tablas y resultados de análisis integrados.
+
+Siguiendo estos pasos, estarás configurando tu proyecto en RStudio utilizando Quarto con la extensión `.qmd`, lo que te permitirá utilizar todas las funcionalidades de Quarto para la creación de informes dinámicos de manera efectiva y amigable con Markdown.

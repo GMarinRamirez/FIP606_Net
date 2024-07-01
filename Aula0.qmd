@@ -1,0 +1,169 @@
+---
+title: "R para Dummies en Fitopatología"
+---
+
+# Inciemos con RStudio
+
+**Editar el documento**:
+
+       
+- En el archivo `Untitled.qmd`, puedes comenzar a escribir contenido utilizando Markdown y agregar bloques (chunck) de código R para realizar análisis, generar gráficos y más.
+
+- Dentro de cada chunk o bloque de trabajo podemos escrbir cualquier comando y ejecutar con el simblo de `play` o `command + enter`  
+-inmediatamente el resultado obtenido o la gráfica aparecerá abajo.
+
+
+###### **Tener en cuenta:**
+
+-   `command + shift + m` operador pipe (`|>` o `%>%`)
+-   `command + option + i` nuevo chunk de código interactivos
+
+![](img/R_.png)
+
+## Empezando con R [en este enlace](https://r4ds.hadley.nz/workflow-basics.html)
+
+### R como Calculadora
+
+R puede ser usado como una calculadora básica:
+
+```{r}
+# Suma
+2 + 3
+
+# Resta
+5 - 2
+
+# Multiplicación
+4 * 3
+
+# División
+10 / 2
+```
+
+### Creando Variables
+
+Las variables son contenedores para almacenar datos. Puedes crear variables usando el símbolo `<-`.
+
+```{r}
+# Asignando valores a variables
+x <- 5
+y <- 10
+
+# Operaciones con variables
+z <- x + y
+z
+```
+
+### Tipos de Datos en R
+
+R maneja diferentes tipos de datos, incluyendo numéricos, caracteres y lógicos.
+
+```{r}
+# Número entero
+numero <- 10
+
+# Número decimal
+decimal <- 3.14
+
+# Cadena de caracteres
+texto <- "Hola, mundo"
+
+# Valor lógico
+logico <- TRUE
+```
+
+### Estructuras de Datos en R
+
+Las estructuras de datos más comunes en R son vectores, matrices, data frames y listas.
+
+#### Vectores
+
+Un vector es una secuencia de datos del mismo tipo.
+
+```{r}
+# Creando un vector
+numeros <- c(1, 2, 3, 4, 5)
+numeros
+```
+
+#### Matrices
+
+Una matriz es una colección bidimensional de datos del mismo tipo.
+
+```{r}
+# Creando una matriz
+matriz <- matrix(1:9, nrow = 3, ncol = 3)
+matriz
+```
+
+#### Data Frames
+
+Un data frame es una tabla de datos donde cada columna puede contener diferentes tipos de datos.
+
+```{r}
+# Creando un data frame
+data <- data.frame(
+  nombres = c("Ana", "Luis", "Marta"),
+  edades = c(23, 30, 25)
+)
+data
+```
+
+#### Listas
+
+Una lista puede contener diferentes tipos de datos y estructuras de datos.
+
+```{r}
+# Creando una lista
+lista <- list(
+  numeros = numeros,
+  matriz = matriz,
+  data = data
+)
+lista
+```
+
+## Trabajando con Paquetes
+
+R tiene una vasta colección de paquetes que extienden su funcionalidad. Puedes instalar y cargar paquetes con las funciones `install.packages()` y `library()`.
+
+### Instalación de Paquetes
+
+```{r}
+# Instalando el paquete ggplot2 para visualización de datos
+#install.packages("ggplot2")
+```
+
+### Cargando Paquetes
+
+```{r}
+# Cargando el paquete ggplot2
+library(ggplot2)
+```
+
+-   **ggplot2**: Esta librería es parte del `tidyverse` y se utiliza para crear gráficos de alta calidad y altamente personalizables. Facilita la creación de una amplia variedad de gráficos, desde gráficos de dispersión hasta gráficos de barras, utilizando una gramática de gráficos coherente.
+
+## Visualización de Datos
+
+### Creando un Gráfico Sencillo
+
+Usaremos el paquete `ggplot2` para crear un gráfico sencillo.
+
+```{r}
+# Cargando el paquete ggplot2
+library(ggplot2)
+
+# Creando un data frame
+data <- data.frame(
+  x = c(1, 2, 3, 4, 5),
+  y = c(2, 4, 6, 8, 10)
+)
+
+# Creando un gráfico de puntos
+ggplot(data, aes(x = x, y = y)) +
+  geom_point()
+```
+
+## Aprendizaje del día
+
+Esta guía cubre los fundamentos básicos de R. Con práctica y exploración, te familiarizarás más con el lenguaje y sus capacidades. ¡Buena suerte en tu viaje de aprendizaje con R!

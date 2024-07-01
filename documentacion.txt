@@ -1,0 +1,1 @@
+Transformamos los datos de severidad usando log(scl + 1) porque los datos originales estaban sesgados y no eran normales.

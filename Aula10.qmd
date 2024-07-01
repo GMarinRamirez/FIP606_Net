@@ -1,0 +1,225 @@
+#  Análisis de Varianza (ANOVA) 
+
+En esta guía, aprenderás cómo realizar análisis de varianza (ANOVA) en RStudio paso a paso, utilizando diferentes diseños experimentales y comprobando las premisas estadísticas necesarias.
+
+# ANOVA - Tres o Más Tratamientos
+
+La ANOVA (Análisis de Varianza) es un método estadístico que permite comparar las medias de tres o más grupos y verificar si hay diferencias significativas entre ellas. Utiliza el test F para probar la hipótesis nula de que las medias poblacionales son iguales contra la hipótesis alternativa de que al menos una media es diferente.
+
+## ANOVA con 1 Factor
+
+### Situación
+
+Un experimento con un factor en un diseño completamente aleatorizado para comparar el crecimiento micelial de diferentes especies de un hongo fitopatógeno. La respuesta a estudiar es la TCM (tasa de crecimiento micelial). Pregunta a responder: ¿Hay efecto de la especie en el crecimiento micelial?
+
+### Preparo Pre-Análisis
+
+**Cargamento de Paquetes e Importación de los Datos**
+
+```{r}
+#| warning: false
+#| message: false
+library(readxl)
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(ggthemes)
+library(DT)
+
+```
+
+
+```{r}
+# Cargar los datos desde un archivo Excel
+micelial <- read_excel("dados-diversos.xlsx", "micelial")
+
+micelial |> 
+    DT::datatable(
+    extensions = 'Buttons', 
+    options = list(dom = 'Bfrtip', 
+     buttons = c('excel', "csv")))
+```
+
+### Visualización de los Datos
+
+```{r}
+micelial %>%
+  ggplot(aes(especie, tcm, fill = especie)) +
+  geom_boxplot()+
+  theme_few()+
+  scale_fill_few()
+```
+
+### Modelo usando `aov()`
+
+```{r}
+# Crear el modelo ANOVA
+aov1 <- aov(tcm ~ especie, data = micelial)
+
+# Resumen del modelo
+summary(aov1)
+```
+
+**Interpretación**: En este conjunto de datos, no hay diferencia significativa en la media micelial (no hay efecto significativo de la especie sobre el crecimiento micelial).
+
+### Testando las Premisas
+
+Para probar las premisas, cargamos los paquetes `performance` y `DHARMa`.
+
+```{r}
+library(performance)
+library(DHARMa)
+
+# Chequear homocedasticidad y normalidad
+check_heteroscedasticity(aov1)
+check_normality(aov1)
+```
+
+**Interpretación de la Homocedasticidad**: Si la prueba muestra que la homocedasticidad se cumple, significa que las variancias de los residuos son constantes. Si no, se podría considerar transformar los datos o usar una técnica alternativa.
+
+**Interpretación de la Normalidad**: La normalidad de los residuos se puede visualizar con un histograma y un gráfico QQ.
+
+```{r}
+# Visualización de los residuos
+hist(aov1$residuals)
+
+# Gráfico QQ
+qqnorm(aov1$residuals)
+qqline(aov1$residuals)
+
+# Simulación de residuos
+plot(simulateResiduals(aov1))
+
+# Test de Shapiro-Wilk para normalidad
+shapiro.test(aov1$residuals)
+```
+
+**Interpretación del Test de Shapiro-Wilk**: Si el p-valor es mayor que 0.05, no se rechaza la hipótesis nula de que los residuos siguen una distribución normal. Si es menor, se rechaza la hipótesis nula, sugiriendo que los residuos no son normales.
+
+## Datos No Paramétricos
+
+### Situación
+
+Conjunto `InsectSprays`: efecto del insecticida en la mortalidad de insectos (Beall, 1942). Datos en el paquete `datasets` de R.
+
+```{r}
+# Cargar los datos del conjunto InsectSprays
+insects <- tibble::as_tibble(InsectSprays) %>%
+  dplyr::select(spray, count)
+
+
+insects |> 
+    DT::datatable(
+    extensions = 'Buttons', 
+    options = list(dom = 'Bfrtip', 
+     buttons = c('excel', "csv")))
+```
+
+### Análisis Visual de los Datos
+
+```{r}
+insects |> 
+  ggplot(aes(spray, count,fill = spray)) +
+  geom_boxplot()+
+  theme_few()+
+  scale_fill_few()
+```
+
+### Rodando el Modelo de ANOVA
+
+```{r}
+aov2 <- aov(count ~ spray, data = insects)
+summary(aov2)
+check_normality(aov2)
+check_heteroscedasticity(aov2)
+```
+
+**Interpretación**: Los datos no son normales y homogéneos.
+
+### Alternativas para Datos No Paramétricos
+
+#### 1. Transformar los Datos para Normalizar
+
+```{r}
+aov2 <- aov(sqrt(count) ~ spray, data = insects)
+summary(aov2)
+check_normality(aov2)
+check_heteroscedasticity(aov2)
+```
+
+**Interpretación**: Si la transformación logra normalizar los datos y cumplir la homocedasticidad, se puede proceder con la ANOVA transformada. Si no, se deben considerar otras alternativas.
+
+#### 2. Uso de Tests No Paramétricos
+
+```{r}
+# Test de Kruskal-Wallis
+kruskal.test(count ~ spray, data = insects)
+
+# Test de Kruskal-Wallis con el paquete agricolae
+library(agricolae)
+kruskal(insects$count, insects$spray, console = TRUE)
+```
+
+**Interpretación del Test de Kruskal-Wallis**: Este test no requiere la asunción de normalidad. Si el p-valor es menor que 0.05, hay diferencias significativas entre los grupos.
+
+### Paquete `emmeans`
+
+El paquete `emmeans` es usado para realizar pruebas de comparación de medias entre grupos.
+
+```{r}
+library(emmeans)
+
+# Calcular medias marginales estimadas
+aov2_means <- emmeans(aov2, ~ spray, type = "response")
+
+aov2_means 
+```
+
+
+```{r}
+# Tabla de comparación de medias
+pwpm(aov2_means)
+
+```
+
+
+```{r}
+# Forma mas eficiente de realizar medias marginales estimadas y Visualización de las diferencias entre grupos
+library(multcomp)
+library(multcompView)
+
+aov2_means<- cld(emmeans(aov2, ~ spray, type = "response"),alpha = 0.05, Letters = LETTERS,reverse=T)
+
+aov2_means|> 
+      DT::datatable(
+        extensions = 'Buttons', 
+        options = list(dom = 'Bfrtip', 
+                       buttons = c('excel', "csv"))) |> 
+                            formatRound(c('response','SE','lower.CL','upper.CL'), 2)
+
+```
+
+#### 3. GLM
+
+Para modelos lineales generalizados, usamos la función `glm`.
+
+```{r}
+glm1 <- glm(count ~ spray, data = insects, family = poisson(link = "identity"))
+
+# Visualización de los residuos
+plot(simulateResiduals(glm1))
+summary(glm1)
+
+# Calcular medias marginales estimadas para el GLM
+glm1_means <- emmeans(glm1, ~ spray)
+cld(glm1_means)
+```
+
+## Aprendizaje del Día
+
+1. **ANOVA**: La ANOVA se utiliza para comparar las medias de tres o más grupos para determinar si hay diferencias significativas. En esta guía, aprendimos a realizar una ANOVA de un solo factor y a interpretar sus resultados.
+2. **Premisas de ANOVA**: Es crucial comprobar las premisas de homocedasticidad y normalidad antes de confiar en los resultados de una ANOVA. Aprendimos a usar los paquetes `performance` y `DHARMa` para estas pruebas.
+3. **Datos No Paramétricos**: Cuando los datos no cumplen las premisas de la ANOVA, podemos usar transformaciones, pruebas no paramétricas como Kruskal-Wallis, o modelos lineales generalizados (GLM).
+4. **Comparaciones de Medias**: El paquete `emmeans` facilita la comparación de medias ajustadas y es útil tanto para ANOVA como para GLM.
+5. **GLM**: Los modelos lineales generalizados son una herramienta poderosa para manejar datos no paramétricos y ajustar modelos más complejos.
+

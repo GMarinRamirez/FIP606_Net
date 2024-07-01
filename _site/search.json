@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "Aula 1.html",
+    "href": "Aula 1.html",
+    "title": "Aula 1",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "Aula 1.html#quarto",
+    "href": "Aula 1.html#quarto",
+    "title": "Aula 1",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "Aula 1.html#running-code",
+    "href": "Aula 1.html#running-code",
+    "title": "Aula 1",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "FIT606Website",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  }
+]

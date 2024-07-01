@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>FIP606 Para Dummies - R para Dummies en Fitopatología</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./img/favicon_site.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./img/icon.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">FIP606 Para Dummies</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bases-del-r" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Bases del R</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-bases-del-r">    
+        <li>
+    <a class="dropdown-item" href="./Aula1.html">
+ <span class="dropdown-text">Introducción al R y Rstudio</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula00.html">
+ <span class="dropdown-text">Creemos un proyecto en Rstudio</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula0.html">
+ <span class="dropdown-text">Que podemos hacer en Rstudio?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula2.html">
+ <span class="dropdown-text">Paquetes en Rstudio</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula3.html">
+ <span class="dropdown-text">Data frame en Rstudio</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-gráficos-en-r" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Gráficos en R</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-gráficos-en-r">    
+        <li>
+    <a class="dropdown-item" href="./Aula4.html">
+ <span class="dropdown-text">Visualização de dados parte 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula6.html">
+ <span class="dropdown-text">Visualização de dados parte 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula5.html">
+ <span class="dropdown-text">Ejemplo de Visuzalización</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-análisis-estadisticos-en-r" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Análisis Estadisticos en R</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-análisis-estadisticos-en-r">    
+        <li>
+    <a class="dropdown-item" href="./Aula71.html">
+ <span class="dropdown-text">Por que Transformación de Datos?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula7.html">
+ <span class="dropdown-text">Transformación de Datos (log/sqrt)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula18.html">
+ <span class="dropdown-text">Transformación de Datos (Box-Cox)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula9.html">
+ <span class="dropdown-text">Tipos de Análisis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula8.html">
+ <span class="dropdown-text">Test de Hipótesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula10.html">
+ <span class="dropdown-text">ANOVA Un factor</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula11.html">
+ <span class="dropdown-text">ANOVA Factorial</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula12.html">
+ <span class="dropdown-text">ANOVA con Bloques (DBC)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula13.html">
+ <span class="dropdown-text">Regresión linear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula17.html">
+ <span class="dropdown-text">Regresión no-linear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula14.html">
+ <span class="dropdown-text">Análisis de correlación</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula15.html">
+ <span class="dropdown-text">Tabla de contigencia</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula19.html">
+ <span class="dropdown-text">Área Bajo la Curva de Progreso de la Enfermedad (AUDPC)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mapas-en-r" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Mapas en R</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-mapas-en-r">    
+        <li>
+    <a class="dropdown-item" href="./Aula16.html">
+ <span class="dropdown-text">Elaboración de Mapas</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-extras-en-r" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Extras en R</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-extras-en-r">    
+        <li>
+    <a class="dropdown-item" href="./Paquetes_.html">
+ <span class="dropdown-text">Paquetes utiles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Paquetes_.html">
+ <span class="dropdown-text">Proyecto de Análisis de datos FIP606</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/GMarinRamirez"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.instagram.com/tavomarinra/"> <i class="bi bi-instagram" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./indexP.html"> <i class="bi bi-img/Flag_P.svg" role="img">
+</i> 
+<span class="menu-text">Bem-vindos ao meu site</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./indexE.html"> <i class="bi bi-img/Flag_E.svg" role="img">
+</i> 
+<span class="menu-text">Welcome to my website</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#inciemos-con-rstudio" id="toc-inciemos-con-rstudio" class="nav-link active" data-scroll-target="#inciemos-con-rstudio">Inciemos con RStudio</a>
+  <ul class="collapse">
+  <li><a href="#empezando-con-r-en-este-enlace" id="toc-empezando-con-r-en-este-enlace" class="nav-link" data-scroll-target="#empezando-con-r-en-este-enlace">Empezando con R en este enlace</a>
+  <ul class="collapse">
+  <li><a href="#r-como-calculadora" id="toc-r-como-calculadora" class="nav-link" data-scroll-target="#r-como-calculadora">R como Calculadora</a></li>
+  <li><a href="#creando-variables" id="toc-creando-variables" class="nav-link" data-scroll-target="#creando-variables">Creando Variables</a></li>
+  <li><a href="#tipos-de-datos-en-r" id="toc-tipos-de-datos-en-r" class="nav-link" data-scroll-target="#tipos-de-datos-en-r">Tipos de Datos en R</a></li>
+  <li><a href="#estructuras-de-datos-en-r" id="toc-estructuras-de-datos-en-r" class="nav-link" data-scroll-target="#estructuras-de-datos-en-r">Estructuras de Datos en R</a></li>
+  </ul></li>
+  <li><a href="#trabajando-con-paquetes" id="toc-trabajando-con-paquetes" class="nav-link" data-scroll-target="#trabajando-con-paquetes">Trabajando con Paquetes</a>
+  <ul class="collapse">
+  <li><a href="#instalación-de-paquetes" id="toc-instalación-de-paquetes" class="nav-link" data-scroll-target="#instalación-de-paquetes">Instalación de Paquetes</a></li>
+  <li><a href="#cargando-paquetes" id="toc-cargando-paquetes" class="nav-link" data-scroll-target="#cargando-paquetes">Cargando Paquetes</a></li>
+  </ul></li>
+  <li><a href="#visualización-de-datos" id="toc-visualización-de-datos" class="nav-link" data-scroll-target="#visualización-de-datos">Visualización de Datos</a>
+  <ul class="collapse">
+  <li><a href="#creando-un-gráfico-sencillo" id="toc-creando-un-gráfico-sencillo" class="nav-link" data-scroll-target="#creando-un-gráfico-sencillo">Creando un Gráfico Sencillo</a></li>
+  </ul></li>
+  <li><a href="#aprendizaje-del-día" id="toc-aprendizaje-del-día" class="nav-link" data-scroll-target="#aprendizaje-del-día">Aprendizaje del día</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">R para Dummies en Fitopatología</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="inciemos-con-rstudio" class="level1">
+<h1>Inciemos con RStudio</h1>
+<p><strong>Editar el documento</strong>:</p>
+<ul>
+<li><p>En el archivo <code>Untitled.qmd</code>, puedes comenzar a escribir contenido utilizando Markdown y agregar bloques (chunck) de código R para realizar análisis, generar gráficos y más.</p></li>
+<li><p>Dentro de cada chunk o bloque de trabajo podemos escrbir cualquier comando y ejecutar con el simblo de <code>play</code> o <code>command + enter</code><br>
+-inmediatamente el resultado obtenido o la gráfica aparecerá abajo.</p></li>
+</ul>
+<section id="tener-en-cuenta" class="level6">
+<h6 class="anchored" data-anchor-id="tener-en-cuenta"><strong>Tener en cuenta:</strong></h6>
+<ul>
+<li><code>command + shift + m</code> operador pipe (<code>|&gt;</code> o <code>%&gt;%</code>)</li>
+<li><code>command + option + i</code> nuevo chunk de código interactivos</li>
+</ul>
+<p><img src="img/R_.png" class="img-fluid"></p>
+</section>
+<section id="empezando-con-r-en-este-enlace" class="level2">
+<h2 class="anchored" data-anchor-id="empezando-con-r-en-este-enlace">Empezando con R <a href="https://r4ds.hadley.nz/workflow-basics.html">en este enlace</a></h2>
+<section id="r-como-calculadora" class="level3">
+<h3 class="anchored" data-anchor-id="r-como-calculadora">R como Calculadora</h3>
+<p>R puede ser usado como una calculadora básica:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Suma</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resta</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">-</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiplicación</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">*</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12</code></pre>
+</div>
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># División</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">/</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+</section>
+<section id="creando-variables" class="level3">
+<h3 class="anchored" data-anchor-id="creando-variables">Creando Variables</h3>
+<p>Las variables son contenedores para almacenar datos. Puedes crear variables usando el símbolo <code>&lt;-</code>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Asignando valores a variables</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Operaciones con variables</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>z</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15</code></pre>
+</div>
+</div>
+</section>
+<section id="tipos-de-datos-en-r" class="level3">
+<h3 class="anchored" data-anchor-id="tipos-de-datos-en-r">Tipos de Datos en R</h3>
+<p>R maneja diferentes tipos de datos, incluyendo numéricos, caracteres y lógicos.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Número entero</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>numero <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Número decimal</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>decimal <span class="ot">&lt;-</span> <span class="fl">3.14</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Cadena de caracteres</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>texto <span class="ot">&lt;-</span> <span class="st">"Hola, mundo"</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Valor lógico</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>logico <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="estructuras-de-datos-en-r" class="level3">
+<h3 class="anchored" data-anchor-id="estructuras-de-datos-en-r">Estructuras de Datos en R</h3>
+<p>Las estructuras de datos más comunes en R son vectores, matrices, data frames y listas.</p>
+<section id="vectores" class="level4">
+<h4 class="anchored" data-anchor-id="vectores">Vectores</h4>
+<p>Un vector es una secuencia de datos del mismo tipo.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creando un vector</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>numeros <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>numeros</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4 5</code></pre>
+</div>
+</div>
+</section>
+<section id="matrices" class="level4">
+<h4 class="anchored" data-anchor-id="matrices">Matrices</h4>
+<p>Una matriz es una colección bidimensional de datos del mismo tipo.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creando una matriz</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>matriz <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>matriz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]
+[1,]    1    4    7
+[2,]    2    5    8
+[3,]    3    6    9</code></pre>
+</div>
+</div>
+</section>
+<section id="data-frames" class="level4">
+<h4 class="anchored" data-anchor-id="data-frames">Data Frames</h4>
+<p>Un data frame es una tabla de datos donde cada columna puede contener diferentes tipos de datos.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creando un data frame</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">nombres =</span> <span class="fu">c</span>(<span class="st">"Ana"</span>, <span class="st">"Luis"</span>, <span class="st">"Marta"</span>),</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">edades =</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">30</span>, <span class="dv">25</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  nombres edades
+1     Ana     23
+2    Luis     30
+3   Marta     25</code></pre>
+</div>
+</div>
+</section>
+<section id="listas" class="level4">
+<h4 class="anchored" data-anchor-id="listas">Listas</h4>
+<p>Una lista puede contener diferentes tipos de datos y estructuras de datos.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creando una lista</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>lista <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">numeros =</span> numeros,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">matriz =</span> matriz,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> data</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>lista</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>$numeros
+[1] 1 2 3 4 5
+
+$matriz
+     [,1] [,2] [,3]
+[1,]    1    4    7
+[2,]    2    5    8
+[3,]    3    6    9
+
+$data
+  nombres edades
+1     Ana     23
+2    Luis     30
+3   Marta     25</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="trabajando-con-paquetes" class="level2">
+<h2 class="anchored" data-anchor-id="trabajando-con-paquetes">Trabajando con Paquetes</h2>
+<p>R tiene una vasta colección de paquetes que extienden su funcionalidad. Puedes instalar y cargar paquetes con las funciones <code>install.packages()</code> y <code>library()</code>.</p>
+<section id="instalación-de-paquetes" class="level3">
+<h3 class="anchored" data-anchor-id="instalación-de-paquetes">Instalación de Paquetes</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalando el paquete ggplot2 para visualización de datos</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("ggplot2")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="cargando-paquetes" class="level3">
+<h3 class="anchored" data-anchor-id="cargando-paquetes">Cargando Paquetes</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargando el paquete ggplot2</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li><strong>ggplot2</strong>: Esta librería es parte del <code>tidyverse</code> y se utiliza para crear gráficos de alta calidad y altamente personalizables. Facilita la creación de una amplia variedad de gráficos, desde gráficos de dispersión hasta gráficos de barras, utilizando una gramática de gráficos coherente.</li>
+</ul>
+</section>
+</section>
+<section id="visualización-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="visualización-de-datos">Visualización de Datos</h2>
+<section id="creando-un-gráfico-sencillo" class="level3">
+<h3 class="anchored" data-anchor-id="creando-un-gráfico-sencillo">Creando un Gráfico Sencillo</h3>
+<p>Usaremos el paquete <code>ggplot2</code> para crear un gráfico sencillo.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Codigo</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargando el paquete ggplot2</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Creando un data frame</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Creando un gráfico de puntos</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Aula0_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="aprendizaje-del-día" class="level2">
+<h2 class="anchored" data-anchor-id="aprendizaje-del-día">Aprendizaje del día</h2>
+<p>Esta guía cubre los fundamentos básicos de R. Con práctica y exploración, te familiarizarás más con el lenguaje y sus capacidades. ¡Buena suerte en tu viaje de aprendizaje con R!</p>
+
+
+<!-- -->
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb23" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "R para Dummies en Fitopatología"</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu"># Inciemos con RStudio</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>**Editar el documento**:</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="in">       </span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En el archivo <span class="in">`Untitled.qmd`</span>, puedes comenzar a escribir contenido utilizando Markdown y agregar bloques (chunck) de código R para realizar análisis, generar gráficos y más.</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Dentro de cada chunk o bloque de trabajo podemos escrbir cualquier comando y ejecutar con el simblo de <span class="in">`play`</span> o <span class="in">`command + enter`</span>  </span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>-inmediatamente el resultado obtenido o la gráfica aparecerá abajo.</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="fu">###### **Tener en cuenta:**</span></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`command + shift + m`</span> operador pipe (<span class="in">`|&gt;`</span> o <span class="in">`%&gt;%`</span>)</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`command + option + i`</span> nuevo chunk de código interactivos</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/R_.png)</span></span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## Empezando con R [en este enlace](https://r4ds.hadley.nz/workflow-basics.html)</span></span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### R como Calculadora</span></span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>R puede ser usado como una calculadora básica:</span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Suma</span></span>
+<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span></span>
+<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Resta</span></span>
+<span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">-</span> <span class="dv">2</span></span>
+<span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiplicación</span></span>
+<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">*</span> <span class="dv">3</span></span>
+<span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a><span class="co"># División</span></span>
+<span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-44"><a href="#cb23-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-45"><a href="#cb23-45" aria-hidden="true" tabindex="-1"></a><span class="fu">### Creando Variables</span></span>
+<span id="cb23-46"><a href="#cb23-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-47"><a href="#cb23-47" aria-hidden="true" tabindex="-1"></a>Las variables son contenedores para almacenar datos. Puedes crear variables usando el símbolo <span class="in">`&lt;-`</span>.</span>
+<span id="cb23-48"><a href="#cb23-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-51"><a href="#cb23-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-52"><a href="#cb23-52" aria-hidden="true" tabindex="-1"></a><span class="co"># Asignando valores a variables</span></span>
+<span id="cb23-53"><a href="#cb23-53" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb23-54"><a href="#cb23-54" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb23-55"><a href="#cb23-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-56"><a href="#cb23-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Operaciones con variables</span></span>
+<span id="cb23-57"><a href="#cb23-57" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span>
+<span id="cb23-58"><a href="#cb23-58" aria-hidden="true" tabindex="-1"></a>z</span>
+<span id="cb23-59"><a href="#cb23-59" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-60"><a href="#cb23-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-61"><a href="#cb23-61" aria-hidden="true" tabindex="-1"></a><span class="fu">### Tipos de Datos en R</span></span>
+<span id="cb23-62"><a href="#cb23-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-63"><a href="#cb23-63" aria-hidden="true" tabindex="-1"></a>R maneja diferentes tipos de datos, incluyendo numéricos, caracteres y lógicos.</span>
+<span id="cb23-64"><a href="#cb23-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-67"><a href="#cb23-67" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-68"><a href="#cb23-68" aria-hidden="true" tabindex="-1"></a><span class="co"># Número entero</span></span>
+<span id="cb23-69"><a href="#cb23-69" aria-hidden="true" tabindex="-1"></a>numero <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb23-70"><a href="#cb23-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-71"><a href="#cb23-71" aria-hidden="true" tabindex="-1"></a><span class="co"># Número decimal</span></span>
+<span id="cb23-72"><a href="#cb23-72" aria-hidden="true" tabindex="-1"></a>decimal <span class="ot">&lt;-</span> <span class="fl">3.14</span></span>
+<span id="cb23-73"><a href="#cb23-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-74"><a href="#cb23-74" aria-hidden="true" tabindex="-1"></a><span class="co"># Cadena de caracteres</span></span>
+<span id="cb23-75"><a href="#cb23-75" aria-hidden="true" tabindex="-1"></a>texto <span class="ot">&lt;-</span> <span class="st">"Hola, mundo"</span></span>
+<span id="cb23-76"><a href="#cb23-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-77"><a href="#cb23-77" aria-hidden="true" tabindex="-1"></a><span class="co"># Valor lógico</span></span>
+<span id="cb23-78"><a href="#cb23-78" aria-hidden="true" tabindex="-1"></a>logico <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb23-79"><a href="#cb23-79" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-80"><a href="#cb23-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-81"><a href="#cb23-81" aria-hidden="true" tabindex="-1"></a><span class="fu">### Estructuras de Datos en R</span></span>
+<span id="cb23-82"><a href="#cb23-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-83"><a href="#cb23-83" aria-hidden="true" tabindex="-1"></a>Las estructuras de datos más comunes en R son vectores, matrices, data frames y listas.</span>
+<span id="cb23-84"><a href="#cb23-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-85"><a href="#cb23-85" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Vectores</span></span>
+<span id="cb23-86"><a href="#cb23-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-87"><a href="#cb23-87" aria-hidden="true" tabindex="-1"></a>Un vector es una secuencia de datos del mismo tipo.</span>
+<span id="cb23-88"><a href="#cb23-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-91"><a href="#cb23-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-92"><a href="#cb23-92" aria-hidden="true" tabindex="-1"></a><span class="co"># Creando un vector</span></span>
+<span id="cb23-93"><a href="#cb23-93" aria-hidden="true" tabindex="-1"></a>numeros <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb23-94"><a href="#cb23-94" aria-hidden="true" tabindex="-1"></a>numeros</span>
+<span id="cb23-95"><a href="#cb23-95" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-96"><a href="#cb23-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-97"><a href="#cb23-97" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Matrices</span></span>
+<span id="cb23-98"><a href="#cb23-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-99"><a href="#cb23-99" aria-hidden="true" tabindex="-1"></a>Una matriz es una colección bidimensional de datos del mismo tipo.</span>
+<span id="cb23-100"><a href="#cb23-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-103"><a href="#cb23-103" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-104"><a href="#cb23-104" aria-hidden="true" tabindex="-1"></a><span class="co"># Creando una matriz</span></span>
+<span id="cb23-105"><a href="#cb23-105" aria-hidden="true" tabindex="-1"></a>matriz <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb23-106"><a href="#cb23-106" aria-hidden="true" tabindex="-1"></a>matriz</span>
+<span id="cb23-107"><a href="#cb23-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-108"><a href="#cb23-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-109"><a href="#cb23-109" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Data Frames</span></span>
+<span id="cb23-110"><a href="#cb23-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-111"><a href="#cb23-111" aria-hidden="true" tabindex="-1"></a>Un data frame es una tabla de datos donde cada columna puede contener diferentes tipos de datos.</span>
+<span id="cb23-112"><a href="#cb23-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-115"><a href="#cb23-115" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-116"><a href="#cb23-116" aria-hidden="true" tabindex="-1"></a><span class="co"># Creando un data frame</span></span>
+<span id="cb23-117"><a href="#cb23-117" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb23-118"><a href="#cb23-118" aria-hidden="true" tabindex="-1"></a>  <span class="at">nombres =</span> <span class="fu">c</span>(<span class="st">"Ana"</span>, <span class="st">"Luis"</span>, <span class="st">"Marta"</span>),</span>
+<span id="cb23-119"><a href="#cb23-119" aria-hidden="true" tabindex="-1"></a>  <span class="at">edades =</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">30</span>, <span class="dv">25</span>)</span>
+<span id="cb23-120"><a href="#cb23-120" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-121"><a href="#cb23-121" aria-hidden="true" tabindex="-1"></a>data</span>
+<span id="cb23-122"><a href="#cb23-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-123"><a href="#cb23-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-124"><a href="#cb23-124" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Listas</span></span>
+<span id="cb23-125"><a href="#cb23-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-126"><a href="#cb23-126" aria-hidden="true" tabindex="-1"></a>Una lista puede contener diferentes tipos de datos y estructuras de datos.</span>
+<span id="cb23-127"><a href="#cb23-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-130"><a href="#cb23-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-131"><a href="#cb23-131" aria-hidden="true" tabindex="-1"></a><span class="co"># Creando una lista</span></span>
+<span id="cb23-132"><a href="#cb23-132" aria-hidden="true" tabindex="-1"></a>lista <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb23-133"><a href="#cb23-133" aria-hidden="true" tabindex="-1"></a>  <span class="at">numeros =</span> numeros,</span>
+<span id="cb23-134"><a href="#cb23-134" aria-hidden="true" tabindex="-1"></a>  <span class="at">matriz =</span> matriz,</span>
+<span id="cb23-135"><a href="#cb23-135" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> data</span>
+<span id="cb23-136"><a href="#cb23-136" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-137"><a href="#cb23-137" aria-hidden="true" tabindex="-1"></a>lista</span>
+<span id="cb23-138"><a href="#cb23-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-139"><a href="#cb23-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-140"><a href="#cb23-140" aria-hidden="true" tabindex="-1"></a><span class="fu">## Trabajando con Paquetes</span></span>
+<span id="cb23-141"><a href="#cb23-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-142"><a href="#cb23-142" aria-hidden="true" tabindex="-1"></a>R tiene una vasta colección de paquetes que extienden su funcionalidad. Puedes instalar y cargar paquetes con las funciones <span class="in">`install.packages()`</span> y <span class="in">`library()`</span>.</span>
+<span id="cb23-143"><a href="#cb23-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-144"><a href="#cb23-144" aria-hidden="true" tabindex="-1"></a><span class="fu">### Instalación de Paquetes</span></span>
+<span id="cb23-145"><a href="#cb23-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-148"><a href="#cb23-148" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-149"><a href="#cb23-149" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalando el paquete ggplot2 para visualización de datos</span></span>
+<span id="cb23-150"><a href="#cb23-150" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("ggplot2")</span></span>
+<span id="cb23-151"><a href="#cb23-151" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-152"><a href="#cb23-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-153"><a href="#cb23-153" aria-hidden="true" tabindex="-1"></a><span class="fu">### Cargando Paquetes</span></span>
+<span id="cb23-154"><a href="#cb23-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-157"><a href="#cb23-157" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-158"><a href="#cb23-158" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargando el paquete ggplot2</span></span>
+<span id="cb23-159"><a href="#cb23-159" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb23-160"><a href="#cb23-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-161"><a href="#cb23-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-162"><a href="#cb23-162" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**ggplot2**: Esta librería es parte del <span class="in">`tidyverse`</span> y se utiliza para crear gráficos de alta calidad y altamente personalizables. Facilita la creación de una amplia variedad de gráficos, desde gráficos de dispersión hasta gráficos de barras, utilizando una gramática de gráficos coherente.</span>
+<span id="cb23-163"><a href="#cb23-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-164"><a href="#cb23-164" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visualización de Datos</span></span>
+<span id="cb23-165"><a href="#cb23-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-166"><a href="#cb23-166" aria-hidden="true" tabindex="-1"></a><span class="fu">### Creando un Gráfico Sencillo</span></span>
+<span id="cb23-167"><a href="#cb23-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-168"><a href="#cb23-168" aria-hidden="true" tabindex="-1"></a>Usaremos el paquete <span class="in">`ggplot2`</span> para crear un gráfico sencillo.</span>
+<span id="cb23-169"><a href="#cb23-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-172"><a href="#cb23-172" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-173"><a href="#cb23-173" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargando el paquete ggplot2</span></span>
+<span id="cb23-174"><a href="#cb23-174" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb23-175"><a href="#cb23-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-176"><a href="#cb23-176" aria-hidden="true" tabindex="-1"></a><span class="co"># Creando un data frame</span></span>
+<span id="cb23-177"><a href="#cb23-177" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb23-178"><a href="#cb23-178" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb23-179"><a href="#cb23-179" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>)</span>
+<span id="cb23-180"><a href="#cb23-180" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-181"><a href="#cb23-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-182"><a href="#cb23-182" aria-hidden="true" tabindex="-1"></a><span class="co"># Creando un gráfico de puntos</span></span>
+<span id="cb23-183"><a href="#cb23-183" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb23-184"><a href="#cb23-184" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb23-185"><a href="#cb23-185" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-186"><a href="#cb23-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-187"><a href="#cb23-187" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aprendizaje del día</span></span>
+<span id="cb23-188"><a href="#cb23-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-189"><a href="#cb23-189" aria-hidden="true" tabindex="-1"></a>Esta guía cubre los fundamentos básicos de R. Con práctica y exploración, te familiarizarás más con el lenguaje y sus capacidades. ¡Buena suerte en tu viaje de aprendizaje con R!</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Copyright 2024, Gustavo Marin ®</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

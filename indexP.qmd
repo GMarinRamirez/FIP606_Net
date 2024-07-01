@@ -1,0 +1,47 @@
+---
+about: 
+  template: jolla
+  id: about-block
+  image: "img/GMarin.png"
+  image-shape: round
+  links:
+    - icon: instagram
+      text: Instagram
+      href: https://www.instagram.com/tavomarinra/
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/gustavo-marin-49281753/
+    - icon: github
+      text: Github
+      href: https://github.com/GMarinRamirez
+    - icon: envelope
+      text: Email
+      href: "mailto:gustavo.marin@ufv.br"
+---
+
+::: {#about-block}
+:::
+
+**Olá!** Sou [**Gustavo Marín**](https://www.cenicafe.org/es/index.php/quienes_somos/nuestra_gente/quienes_somos_gustavo_adolfo_marin_ramirez), doutorando no [programa de pós-graduação em Fitopatologia da Universidade Federal de Viçosa](https://www.dfp.ufv.br/), Brasil. Sou Engenheiro Agrônomo pela [Universidade Nacional da Colômbia (Palmira)](https://www.palmira.unal.edu.co/) e obtive meu Mestrado em Fitopatologia em 2015 na [Universidade Federal de Viçosa](https://www.ufv.br/campus-vicosa/).
+
+### Bem-vindos ao meu site
+
+Este site foi criado com muito entusiasmo utilizando Quarto Markdown para a disciplina **FIP606 - Análise e visualização de dados em Fitopatologia**, ministrada pelo professor [Emerson Del Ponte](https://emersondelponte.netlify.app/). Aqui você encontrará material das aulas, organizado de maneira temática e pensado especialmente para facilitar o aprendizado.
+
+### O que você encontrará neste site?
+
+-   **Material de aula:** Documentos, apresentações e recursos utilizados durante as aulas.
+-   **Tutoriais em R:** Guias passo a passo para a análise e visualização de dados fitopatológicos utilizando R.
+-   **Projetos e exemplos:** Casos práticos que ajudarão você a compreender melhor o uso de ferramentas de análise no campo da fitopatologia.
+
+### Explorando o fascinante mundo da análise de dados fitopatológicos
+
+Este site é projetado para iniciantes em R e aqueles interessados na análise de dados fitopatológicos. À medida que você navega pelas diferentes seções, encontrará informações e recursos que ajudarão a desenvolver suas habilidades em R e aplicar esses conhecimentos à fitopatologia.
+
+### Contate-me!
+
+Se você tiver alguma dúvida ou precisar de mais informações, não hesite em entrar em contato comigo. Estou aqui para ajudar no seu caminho de aprendizado.
+
+------------------------------------------------------------------------
+
+Explore, aprenda e desfrute do fascinante mundo da análise de dados fitopatológicos. Bem-vindo a bordo!

@@ -1,0 +1,184 @@
+
+### Cargando las Librerías Necesarias
+
+```{r}
+# Evita que se muestren advertencias y mensajes
+#| warning: false
+#| message: false
+
+# Cargar librerías necesarias
+library(tidyverse)  # Para manipulación y visualización de datos
+library(readxl)     # Para leer archivos de Excel
+library(DT)       #Para visualizar tablas dinámicas
+library(patchwork)# Cargar la librería patchwork para juntar gráficos
+```
+
+### Cargando el Conjunto de Datos
+
+```{r}
+# Leer el conjunto de datos 'mofo' desde el archivo 'dados-diversos.xlsx'
+mofo <- read_excel("dados-diversos.xlsx", "mofo")
+
+mofo%>%
+  DT::datatable(
+    extensions = 'Buttons', 
+    options = list(dom = 'Bfrtip', 
+                   Buttons = c('excel', "csv")))
+```
+
+### Visualización Inicial de los Datos
+
+Podemos visualizar los datos de diferentes maneras, como gráficos de dispersión, histogramas y boxplots. Inicialmente, visualizaremos los datos de incidencia (`inc`) por tratamientos y por estudio.
+
+```{r}
+# Gráfico de dispersión de la incidencia por tratamientos y estudios
+mofo |> 
+  ggplot(aes(treat, inc)) +
+  facet_wrap(~study) +  # Facetas por estudio
+  geom_point()          # Puntos de dispersión
+```
+
+### Histograma de Incidencia y Escleródio
+
+```{r}
+# Histograma de incidencia
+inc <- mofo |> 
+  ggplot(aes(inc)) +
+  geom_histogram()
+inc
+```
+
+```{r}
+# Histograma de escleródio
+mofo |> 
+  ggplot(aes(scl)) +
+  geom_histogram()
+```
+
+### Boxplot de Escleródio
+
+```{r}
+# Boxplot de escleródio
+scl <- mofo |> 
+  ggplot(aes(scl)) +
+  geom_boxplot()
+
+scl
+```
+
+### Juntar Gráficos con Patchwork
+
+```{r}
+# Juntar los gráficos de incidencia y escleródio
+inc / scl
+```
+
+### Cálculo de la Media
+
+```{r}
+# Calcular la media de la columna 'scl'
+mean(mofo$scl)
+```
+
+## Transformación de los Datos
+
+Podemos transformar los datos de diferentes maneras, siendo las más comunes el logaritmo y la raíz cuadrada.
+
+### Transformación Logarítmica
+
+La transformación logarítmica es útil cuando los datos tienen una distribución asimétrica positiva o cuando la variación aumenta exponencialmente con el aumento de los valores.
+
+```{r}
+# Transformar los datos usando logaritmo
+mofo2 <- mofo |> 
+  mutate(scl2 = log(scl))  # Crear nueva columna 'scl2' con el logaritmo de 'scl'
+
+mofo2%>%
+  DT::datatable(
+    extensions = 'Buttons', 
+    options = list(dom = 'Bfrtip', 
+                   Buttons = c('excel', "csv"))) |> 
+                    formatRound("scl2", 2)
+                      
+
+```
+
+```{r}
+# Visualizar los datos transformados en logaritmo con un histograma
+mofo2 |> 
+  ggplot(aes(scl2)) +
+  geom_histogram(bins = 10)
+```
+
+### Transformación de Raíz Cuadrada
+
+La transformación de raíz cuadrada es útil para reducir la asimetría en datos con una distribución asimétrica positiva.
+
+```{r}
+# Transformar los datos usando raíz cuadrada
+mofo2 <- mofo |> 
+  mutate(scl2 = sqrt(scl))  # Crear nueva columna 'scl2' con la raíz cuadrada de 'scl'
+
+mofo2%>%
+  DT::datatable(
+    extensions = 'Buttons', 
+    options = list(dom = 'Bfrtip', 
+                   Buttons = c('excel', "csv"))) |> 
+                          formatRound("scl2", 2)
+```
+
+```{r}
+# Visualizar los datos transformados en raíz cuadrada con un histograma
+mofo2 |> 
+  ggplot(aes(scl2)) +
+  geom_histogram(bins = 10)
+```
+
+### Histograma de Productividad
+
+```{r}
+# Histograma de la variable 'yld' (productividad)
+mofo2 |> 
+  ggplot(aes(yld)) +
+  geom_histogram(bins = 10)
+```
+
+## Usando la Función `arrange`
+
+La función `arrange()` se utiliza para ordenar filas. Ordena los datos por orden creciente o decreciente.
+
+### Cargando el Conjunto de Datos 'Survey'
+
+```{r}
+# Leer el conjunto de datos 'survey' desde el archivo 'dados-diversos.xlsx'
+survey <- read_excel("dados-diversos.xlsx", "survey")
+```
+
+### Ordenar y Filtrar Datos
+
+```{r}
+# Filtrar, contar, ordenar, renombrar y clasificar datos del conjunto 'survey'
+survey |> 
+  filter(state == "RS") |>   # Filtrar por estado "RS"
+  count(species, residue) |> # Contar número de filas por especie y residuo
+  arrange(n) |>              # Ordenar por número de observaciones
+  rename(res = residue) |>   # Renombrar columna 'residue' a 'res'
+  mutate(n_class = case_when(
+    n < 30 ~ "baixa",        # Clasificar como "baixa" si n < 30
+    TRUE ~ "Alta"            # Clasificar como "Alta" en caso contrario
+  ))
+
+survey %>%
+  DT::datatable(
+    extensions = 'Buttons', 
+    options = list(dom = 'Bfrtip', 
+                   Buttons = c('excel', "csv")))
+
+```
+
+
+
+
+
+
+

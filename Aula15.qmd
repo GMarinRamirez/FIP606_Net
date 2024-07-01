@@ -1,0 +1,151 @@
+# Análisis de Variables Categóricas y Tablas de Contingencia
+
+
+### ¿Para qué sirve una tabla de contingencia en análisis estadísticos?
+
+Una **tabla de contingencia**, también conocida como tabla de frecuencia cruzada, es una herramienta fundamental en el análisis estadístico que se utiliza para:
+
+1. **Resumir Datos Categóricos**:
+   - Permite organizar y presentar los datos categóricos de manera estructurada, mostrando la frecuencia de las combinaciones de dos o más variables categóricas.
+   - Facilita la visualización de la distribución conjunta de estas variables.
+
+2. **Identificar Relaciones entre Variables**:
+   - Ayuda a detectar posibles asociaciones o dependencias entre variables categóricas.
+   - Es útil para entender si las variables están relacionadas o si son independientes entre sí.
+
+3. **Realizar Análisis Exploratorios**:
+   - Proporciona una primera aproximación a los datos que puede ayudar a formular hipótesis para análisis más profundos.
+   - Permite identificar patrones y tendencias iniciales en los datos.
+
+4. **Aplicar Pruebas Estadísticas**:
+   - Se utiliza como base para realizar pruebas de independencia y asociación, como el test de Chi-cuadrado y el test exacto de Fisher.
+   - Estas pruebas ayudan a determinar si la asociación observada entre las variables es estadísticamente significativa.
+
+5. **Visualización de Datos**:
+   - Facilita la creación de gráficos de barras, gráficos de mosaico y otros tipos de visualizaciones que ayudan a interpretar los datos categóricos.
+   - Permite una comprensión visual rápida y efectiva de las relaciones entre las variables.
+
+### Ejemplo Práctico
+
+Considera un estudio sobre la presencia de especies de fusarium en diferentes tipos de residuos de cultivos. Supongamos que tenemos datos sobre el tipo de residuo utilizado (variable `residue`) y el tipo de especie de fusarium (variable `species`). Una tabla de contingencia nos permitiría ver cuántas veces se ha encontrado cada tipo de especie de fusarium en cada tipo de residuo de cultivo, lo cual es esencial para analizar si hay alguna preferencia o patrón de crecimiento entre diferentes residuos de cultivos.
+
+
+### Cargar Paquetes
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(readxl)
+library(ggplot2)
+library(janitor)
+library(epifitter)
+library(performance)
+library(emmeans)
+library(DT)
+library(ggthemes)
+
+
+```
+
+## Análisis de Variables Categóricas y Tablas de Contingencia
+
+### Cargar Datos
+
+Primero, cargamos los datos desde un archivo Excel:
+
+```{r}
+survey <- read_excel("dados-diversos.xlsx", sheet = "survey")
+
+survey|> 
+      DT::datatable(
+        extensions = 'Buttons', 
+        options = list(dom = 'Bfrtip', 
+                       buttons = c('excel', "csv")))
+
+
+```
+
+### Crear una Tabla de Contingencia
+
+Utilizamos la función `table()` para crear una tabla de contingencia:
+
+```{r}
+q <- table(survey$residue, survey$species)
+
+q |> 
+   DT::datatable(
+   extensions = 'Buttons', 
+    options = list(dom = 'Bfrtip', 
+        buttons = c('excel', "csv")))
+
+
+```
+
+
+### Interpretación de la Tabla de Contingencia
+
+Al observar la tabla de contingencia, podemos:
+- Verificar las frecuencias de cada combinación de `residue` y `species`.
+- Evaluar si ciertos especies de fusarium  predominan en ciertos cultivos.
+- Identificar si hay alguna combinación de `residue` y `species` que es particularmente común o rara.
+
+### Calcular Porcentajes
+
+Utilizamos la función `adorn_percentages()` del paquete `janitor` para obtener porcentajes:
+
+```{r}
+survey1<-survey |> 
+            tabyl(year, species) |> 
+            adorn_percentages()
+
+survey1 |> 
+   DT::datatable(
+   extensions = 'Buttons', 
+    options = list(dom = 'Bfrtip', 
+        buttons = c('excel', "csv")))|> 
+                            formatRound(c('Fgra','Fspp'), 2)
+
+```
+
+
+
+### Visualización de Datos
+
+Podemos visualizar la tabla de contingencia con un gráfico de barras:
+
+```{r}
+survey |>
+  filter(residue != "NA") |>
+  count(residue, species) |>
+  ggplot(aes(residue, n, fill = species)) +
+  geom_col() +
+  labs(title = "Distribución de Residuos por Especies",
+       x = "Residuos",
+       y = "Frecuencia",
+       fill = "Especies")+
+  theme_few()+
+  scale_fill_few()
+```
+
+## Teste de Independencia
+
+### Teste de Chi-cuadrado
+
+El test de chi-cuadrado se utiliza para evaluar la independencia entre dos variables categóricas:
+
+```{r}
+chisq.test(q)
+```
+Este test nos dirá si la asociación observada entre el tipo de cultivo y el tipo de especie de fusarium es significativa, ayudándonos a entender si existe una relación no aleatoria entre estas variables.
+
+
+
+### Test de Fisher
+
+Para tablas de contingencia 2x2 o con pocas observaciones, utilizamos el test de Fisher:
+
+```{r}
+q <- table(survey$residue, survey$inc_class)
+fisher.test(q)
+```
+

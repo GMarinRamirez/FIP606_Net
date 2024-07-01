@@ -1,0 +1,48 @@
+---
+about: 
+  template: jolla
+  id: about-block
+  image: "img/GMarin.png"
+  image-shape: round
+  links:
+    - icon: instagram
+      text: Instagram
+      href: https://www.instagram.com/tavomarinra/
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/gustavo-marin-49281753/
+    - icon: github
+      text: Github
+      href: https://github.com/GMarinRamirez
+    - icon: envelope
+      text: Email
+      href: "mailto:gustavo.marin@ufv.br"
+---
+
+::: {#about-block}
+:::
+
+**Hello!** I am [**Gustavo Marín**](https://www.cenicafe.org/es/index.php/quienes_somos/nuestra_gente/quienes_somos_gustavo_adolfo_marin_ramirez), a Ph.D. candidate in the [Plant Pathology graduate program at the Federal University of Viçosa](https://www.dfp.ufv.br/), Brazil. I am an Agronomist from the [National University of Colombia (Palmira)](https://www.palmira.unal.edu.co/) and obtained my Master's degree in Plant Pathology in 2015 from the [Federal University of Viçosa](https://www.ufv.br/campus-vicosa/).
+
+### Welcome to my website
+
+This site was created with great enthusiasm using Quarto Markdown for the course **FIP606 - Data Analysis and Visualization in Plant Pathology**, taught by Professor [Emerson Del Ponte](https://emersondelponte.netlify.app/). Here you will find class materials, organized thematically and designed to facilitate learning.
+
+### What will you find on this site?
+
+-   **Class materials:** Documents, presentations, and resources used during classes.
+-   **R tutorials:** Step-by-step guides for analyzing and visualizing phytopathological data using R.
+-   **Projects and examples:** Practical cases that will help you better understand the use of analysis tools in the field of plant pathology.
+
+### Exploring the fascinating world of phytopathological data analysis
+
+This site is designed for beginners in R and those interested in phytopathological data analysis. As you navigate through the different sections, you will find information and resources to help you develop your skills in R and apply this knowledge to plant pathology.
+
+### Contact me!
+
+If you have any questions or need more information, feel free to contact me. I am here to help you on your learning journey.
+
+------------------------------------------------------------------------
+
+Explore, learn, and enjoy the fascinating world of phytopathological data analysis. Welcome aboard!
+

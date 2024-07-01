@@ -7,79 +7,101 @@ execute:
   freeze: auto
   
 website:
-  title: "FIP606"
+  title: "FIP606 Para Dummies"
   favicon: img/favicon_site.png
-  image: img/nivia.png
+  image: img/GMarinR.png
   
   navbar:
     pinned: true
     logo: img/icon.png
     left:
-      - text: Básico do R
+      - text: Bases del R
         menu:
           - href: Aula1.qmd
-            text: Introdução ao R
+            text: Introducción al R y Rstudio
+          - href: Aula00.qmd
+            text: Creemos un proyecto en Rstudio
+          - href: Aula0.qmd
+            text: Que podemos hacer en Rstudio?
           - href: Aula2.qmd
-            text: Pacotes e carregamento em R
+            text: Paquetes en Rstudio
           - href: Aula3.qmd
-            text: Data frame
-      - text: Gráficos em R
+            text: Data frame en Rstudio
+      - text: Gráficos en R
         menu: 
         - href: Aula4.qmd
-          text: Visualização de dados em GGPLOT
-        - href: Aula5.qmd
-          text: Boxplot
+          text: Visualização de dados parte 1
         - href: Aula6.qmd
-          text: Scatterplot
-      - text: Análise estatística em R
-        menu:  
+          text: Visualização de dados parte 2
+        - href: Aula5.qmd
+          text: Ejemplo de Visuzalización 
+      - text: Análisis Estadisticos en R
+        menu: 
+        - href: Aula71.qmd
+          text: Por que Transformación de Datos?
         - href: Aula7.qmd
-          text: Transformação de dados
+          text: Transformación de Datos (log/sqrt)
         - href: Aula18.qmd
-          text: Transformação (Box-Cox)
-        - href: Aula8.qmd
-          text: Teste de hipóteses
+          text: Transformación de Datos (Box-Cox)
         - href: Aula9.qmd
-          text: Tipos de análise  
+          text: Tipos de Análisis 
+        - href: Aula8.qmd
+          text: Test de Hipótesis
         - href: Aula10.qmd
-          text: ANOVA - um fator
+          text: ANOVA Un factor
         - href: Aula11.qmd
-          text: ANOVA Fatorial
+          text: ANOVA Factorial
         - href: Aula12.qmd
-          text: ANOVA com bloco (DBC)
+          text: ANOVA con Bloques (DBC)
         - href: Aula13.qmd
-          text: Regressão linear
+          text: Regresión linear
         - href: Aula17.qmd
-          text: Regressão não-linear
+          text: Regresión no-linear
         - href: Aula14.qmd
-          text: Análise de correlação 
+          text: Análisis de correlación
         - href: Aula15.qmd
-          text: Tabela de contigência
-      - text: Mapas em R
+          text: Tabla de contigencia
+        - href: Aula19.qmd
+          text: Área Bajo la Curva de Progreso de la Enfermedad (AUDPC)
+      - text: Mapas en R
         menu: 
         - href: Aula16.qmd
-          text: Elaboração de Mapas
-  
+          text: Elaboración de Mapas
+      - text: Extras en R
+        menu: 
+        - href: Paquetes_.qmd
+          text: Paquetes utiles
+        - href: Paquetes_.qmd
+          text: Proyecto de Análisis de datos FIP606
   
     right: 
      - icon: github
-       href: https://github.com/niviampereira
+       href: https://github.com/GMarinRamirez
      - icon: instagram
-       href: https://www.instagram.com/oxenivia/
+       href: https://www.instagram.com/tavomarinra/
+     - icon: img/Flag_P.svg
+       href: indexP.qmd
+     - icon: img/Flag_E.svg
+       href: indexE.qmd
+       
 
   page-navigation: true
   page-footer: 
-    center: "Copyright 2023, Nívia Maria Pereira"
+    center: "Copyright 2024, Gustavo Marin ®"
     background: light
 
 format:
   html:
-    fontsize: 1.1em
-    theme: 
-      light: flatly
-      dark: darkly
+    code-summary: "Codigo"
+    code-fold: true
+    code-tools: true
+    fontsize: 0.8em
+    theme:
+      light: yeti
+      dark: spacelab
     css: styles.css
     toc: true
     warning: false
 
 editor: visual
+

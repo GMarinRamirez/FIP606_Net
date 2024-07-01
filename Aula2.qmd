@@ -1,0 +1,56 @@
+---
+title: "Paquetes en RStudio"
+---
+
+![](img/r_packages.png)
+
+Un paquete es como una colección de funciones, datos y archivos de ayuda agrupados en una estructura estándar bien definida que puede ser descargada e instalada en R. Se puede decir que los paquetes son códigos útiles e instalables que permiten extender las capacidades de R para realizar las funciones deseadas. Estos paquetes son compartidos y pueden ser descargados de varias fuentes, siendo las más populares el CRAN, Bioconductor y GitHub. [**CRAN**](https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages) es el repositorio oficial de R para paquetes creados por usuarios. [**Bioconductor**](https://www.bioconductor.org/) proporciona software de código abierto orientado a la bioinformática. [**GitHub**](https://github.com/) es un sitio que hospeda repositorios git para todo tipo de software y proyectos (no solo R). Aquí es donde se alojan las versiones de desarrollo más recientes de los paquetes de R.
+
+Los paquetes necesarios para ejecutar análisis en R dependen del objetivo del trabajo a realizar, pero algunos paquetes son básicos y esenciales para la mayoría de los análisis, como: Tidyverse, dplyr, readxl, ggplot2, etc. En las próximas clases, profundizaremos un poco más sobre estos paquetes.
+
+## Instalación y carga de paquetes
+
+La instalación y carga de **paquetes** se puede hacer desde el menú o con un comando en la consola. El flujo básico puede ser consultado [en este enlace](https://r4ds.hadley.nz/workflow-basics.html). La instalación se realiza a través del menú: tools \> install packages, yendo a packages \> install y escribiendo el nombre del paquete para descargar o usando la función `install.packages(nombre_del_paquete)` en la consola. Para cargar los paquetes, la función utilizada es `library(nombre_del_paquete)`. El cargado puede hacerse tanto usando `library`, anotando entre paréntesis el nombre del paquete, como separando los programas por comas dentro del mismo paréntesis. Muchas veces, durante la carga de paquetes, usamos las etiquetas `#` seguidas por `warning: false` y `message: false` para desactivar la visualización de advertencias (warnings) y mensajes durante la ejecución del código, ya que muchos paquetes muestran mensajes y advertencias extensas después de la carga que llenan el archivo innecesariamente.
+
+```{r}
+#| warning: false
+#| message: false
+library(tidyverse)  # Conjunto de paquetes para manipulación de datos y gráficos
+library(metafor)    # Paquete para meta-análisis
+library(gsheet)     # Paquete para leer datos desde Google Sheets
+library(remotes)    # Paquete para instalar paquetes desde GitHub y otras fuentes
+```
+
+## Funciones de los paquetes
+
+Las funciones de los paquetes son variadas y se presentarán de forma más detallada en la próxima clase (Dataframe). Mientras tanto, veremos rápidamente cómo invocar una función de un paquete, específicamente la función `arrange` del paquete `dplyr`. Utilizaremos el conjunto de datos `mtcars`, un conjunto de datos incorporado en R. `arrange()` es una función del paquete `dplyr` que permite ordenar los datos en función de una o más variables. En este caso, la función `arrange()` se aplica al conjunto de datos `mtcars`, y la variable `cyl` se especifica como la variable de ordenación. Esto significa que los datos se reorganizarán de forma ascendente en función de la variable `cyl`. En las líneas siguientes, los comandos utilizados se refieren a la búsqueda de una hoja de cálculo específica en Google Sheets y la instalación de un paquete `r4pde` directamente desde el repositorio GitHub del usuario Emerson Del Ponte. El signo igual se utiliza para la asignación, que puede ser sustituido por `<-`. La función `head()` devuelve las primeras líneas de un objeto de datos o de un conjunto de datos; en este caso, se utiliza para devolver las primeras líneas del conjunto `mtcars`.
+
+![](img/usopacks.png)
+
+```{r}
+mtcars
+arrange(mtcars, cyl)
+
+url <- gsheet2tbl('docs.google.com/spreadsheets/d/1I9mJsS5QnXF2TNNntTy-HrcdHmIF9wJ8ONYvEJTXSNo') 
+
+b <- url
+install_github("emdelponte/r4pde")
+head(mtcars)
+```
+
+**Paquete r4pde**: En términos generales, la variable `unit` se crea y se asigna con los valores del 1 al 12 a través de la función `c(1:12)`, luego se crea la variable `class`. Posteriormente, se crea un data frame `ratings` con estas variables y, a continuación, se aplica la función `DSI` del paquete `r4pde` a los datos. El bloque de comandos más abajo proporciona instrucciones para visualizar los valores, calcular la media (`mean`), el desvío estándar (`sd`) y obtener un resumen estadístico de la variable `class` del conjunto de datos `ratings` (función `summary`).
+
+```{r}
+library(r4pde)
+unit <- c(1:12)
+class <- c(2, 3, 1, 1, 3, 4, 5, 0, 2, 5, 2, 1)
+ratings <- data.frame(unit, class)
+DSI(unit = ratings$unit, class = ratings$class, max = 6)
+
+ratings$class
+mean(ratings$class)
+sd(ratings$class)
+summary(ratings$class)
+
+summary(class)
+```

@@ -1,0 +1,282 @@
+---
+title: "Data frames o Tablas en RStudio"
+---
+
+# **Importación de datos**
+
+La base de datos es representada por objetos llamados data frames. La principal característica de un data frame es poseer filas y columnas. Para la lectura de datos en R, debe guardarse el archivo en un formato adecuado.
+
+## Tipos de data frames y las funciones de paquetes
+
+Como se mencionó en la clase anterior (Paquetes y carga de paquetes), existen algunos paquetes que son esenciales para realizar análisis en R y, tratándose de data frames, algunos de ellos se destacan.
+
+Para cargar el data frame, se pueden usar paquetes de R, como el paquete dataset, que tiene en sus funciones el paquete cars.
+
+```{r}
+cars
+cars2 <- cars
+speed <- cars2$speed
+speed
+```
+
+Para crear un data frame de un paquete, basta con cargar el paquete y luego asignarlo. Como ya se mencionó, para asignar una función a otra, basta usar `<-`. Ej.: buscar en packages el paquete r4pde y cargarlo (usando la función `library`), dentro del cuadro de ayuda de este paquete, es posible encontrar los data frames incorporados, como RustSoybean. Para usar este cuadro de datos, basta usar la función de asignación.
+
+```{r}
+#| warning: false
+#| message: false
+library(r4pde)
+df <- RustSoybean
+df
+```
+
+La función para la lectura de datos en R es read.table. R posee un buen número de variantes de esta función, usadas para importar una variedad de formatos de archivos diferentes en R. Las variaciones de la función read.table más útiles son las funciones read.csv y read.csv2 y readxl.
+
+**Tidyverse**: es un paquete que consolida una serie de herramientas. Forman parte del tidyverse los paquetes [dplyr]{.underline}, [tidyr]{.underline}, [readr]{.underline}, [ggplot2]{.underline}, entre muchos otros.
+
+
+## Datos en formato Excel (paquete readxl)
+
+Para importar datos directamente de otros softwares, es necesario instalar paquetes, como readxl, usado para la importación de hojas de cálculo de Excel. El paquete readxl permite generar data frames de hojas de cálculo Excel y es la forma más sencilla de cargar un archivo en este formato. El paquete readxl no es del conjunto tidyverse, por lo que necesita ser cargado siempre antes de usarlo. La mayoría de las funciones de readxl permiten leer datos de hojas de cálculo Excel, como read_excel. El primer argumento para read_excel es la ruta del archivo que debe ser leído. La ruta del archivo y el nombre del archivo (incluyendo la extensión del archivo) deben ser colocados entre comillas dobles, ya que la función espera que sea una función de carácter.
+
+```{r}
+library(readxl)
+magnesio <- read_excel("dados-diversos.xlsx")
+escala1 <- read_excel("dados-diversos.xlsx", "escala")
+escala2 <- read_excel("dados-diversos.xlsx", 2)
+```
+
+En Excel, un archivo puede tener varias hojas. Por defecto, las funciones de lectura traerán solo la primera hoja del archivo. Para traer otra hoja específica, basta con utilizar el argumento `sheet` seguido del número de la hoja (línea 3 del comando anterior), o añadir el nombre de la hoja deseada entre comillas dobles, separada del nombre de la hoja general por una coma (línea 2 del comando anterior).
+
+### Datos en formato csv y txt (paquete readr)
+
+El paquete readr del tidyverse es utilizado para importar archivos de texto, como .txt o .csv, para R y su carga se hace, al igual que los demás, con la función library. Readr transforma archivos de texto en tibbles usando funciones como: read.csv() o read_csv() - usadas para importar archivos de valores separados por comas y con la primera línea de los datos con los nombres de las variables. read.csv2 o read_csv2() - usada para importar bases de archivos separados por punto y coma en R. En algunos países, como Brasil, las comas se utilizan para separar las casas decimales de los números, haciendo inviable el uso de archivos .csv. En estos casos, cuando la coma es el separador decimal, los archivos .csv pasan a ser separados por punto y coma, así, esta función asume que los datos son separados por ; y que una coma es usada en lugar de un punto decimal.
+
+**CSV**:
+
+```{r}
+library(tidyverse)
+
+
+# usando read_csv
+magnesio3 <- read_csv("dados-diversos.csv")
+magnesio3
+```
+
+**TXT**: Las funciones de readr se usan de forma similar a las de read.table, siendo que muchas veces usan los mismos argumentos. Archivos en formato txt pueden ser importados usando read.table.
+
+```{r}
+# usando read.table
+magnesio4 <-read.table("dados-diversos.txt", header = TRUE)
+magnesio4
+```
+
+*Nota:* El argumento `header = TRUE` especifica que la primera línea de los datos contiene el nombre de las variables (ej. magnesio, nitrogenio), si este no es el caso, solo usa el argumento `header = FALSE`.
+
+## Datos en hojas de cálculo de Google Sheets
+
+Para importar hojas de cálculo de Google, usa la función `gsheet2tbl` (read_sheet), presente en el paquete googlesheets4 o el paquete gsheet. Como estos paquetes tampoco son parte del conjunto tidyverse, necesitas cargarlos para usarlos. La función `gsheet2tbl` lee el archivo (hoja de cálculo de Google) a partir de una URL (copias y pegas el enlace de la hoja de cálculo deseada).
+
+```{r}
+# usando el paquete gsheet
+library(gsheet)
+
+survey <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1aID5Dh6PlBVCKzU1j7k-WA6zuWQWE2NhtWEgdJtt5iA/edit#gid=366054269")
+survey 
+
+```
+
+## Tablas interactivas
+
+### Paquete `DT` en R
+
+El paquete `DT` en R permite crear tablas interactivas a partir de data frames. Estas tablas son fáciles de explorar y personalizar, lo que facilita la visualización de datos en un formato tabular. `DT` se basa en la biblioteca JavaScript DataTables, que proporciona una variedad de funcionalidades como paginación, búsqueda, ordenación y mucho más.
+
+#### Instalación y carga del paquete `DT`
+
+Primero, necesitas instalar y cargar el paquete `DT`. Esto se puede hacer utilizando los siguientes comandos en R:
+
+```{r}
+# Instalación del paquete DT
+#install.packages("DT")
+
+# Carga del paquete DT
+library(DT)
+```
+
+#### Crear una tabla interactiva básica
+
+Para crear una tabla interactiva básica a partir de un data frame, puedes usar la función `datatable()`. Aquí hay un ejemplo utilizando el conjunto de datos `mtcars` que viene incorporado en R:
+
+```{r}
+# Crear una tabla interactiva con el conjunto de datos mtcars
+datatable(magnesio3)
+```
+
+#### Personalización de la tabla
+
+Puedes personalizar la tabla interactiva de muchas maneras. Aquí hay algunos ejemplos de opciones comunes:
+
+- **Paginación**: Controlar el número de filas que se muestran por página.
+- **Ordenación**: Habilitar o deshabilitar la ordenación de columnas.
+- **Búsqueda**: Añadir una barra de búsqueda para filtrar filas.
+
+```{r}
+# Tabla interactiva con opciones personalizadas
+datatable(magnesio3, 
+          options = list(
+            pageLength = 5,  # Número de filas por página
+            order = list(list(0, 'asc')),  # Ordenar por la primera columna en orden ascendente
+            searching = TRUE  # Habilitar la barra de búsqueda
+          ))
+```
+
+#### Ejemplo avanzado: Colorear celdas
+
+Puedes utilizar opciones más avanzadas para personalizar el formato de la tabla, como colorear celdas basadas en valores:
+
+```{r}
+# Tabla interactiva con celdas coloreadas
+datatable(magnesio3) %>%
+  formatStyle(
+    'severity',  # Columna a formatear
+    backgroundColor = styleInterval(.4, c('lightgreen', 'lightcoral'))  # Colores basados en intervalos de valores
+  )
+```
+
+#### Integración con Markdown
+
+El paquete `DT` se integra perfectamente con documentos R Markdown y Quarto, permitiendo incluir tablas interactivas en tus informes y presentaciones.
+
+```{r}
+library(DT)
+datatable(magnesio3)
+```
+
+#### Resumen
+
+El paquete `DT` en R es una herramienta poderosa para crear tablas interactivas que son fáciles de usar y altamente personalizables. Con `DT`, puedes transformar simples data frames en visualizaciones interactivas y atractivas, mejorando la presentación de tus datos en informes y dashboards.
+
+## Exportación de tablas interactivas en formato Excel y CSV
+
+Para exportar tablas interactivas en formato Excel y CSV utilizando el paquete `DT`, puedes usar la opción `buttons` en el parámetro `extensions` de la función `datatable()`. La librería `DT` permite añadir botones que facilitan la exportación de los datos en varios formatos, incluyendo Excel y CSV.
+
+### Instalación y carga de paquetes necesarios
+
+Primero, asegúrate de tener los paquetes necesarios instalados y cargados:
+
+```{r}
+# Instala el paquete DT si aún no lo has hecho
+#install.packages("DT")
+
+# Carga el paquete DT
+library(DT)
+```
+
+### Crear una tabla interactiva con botones de exportación
+
+Aquí tienes un ejemplo completo de cómo crear una tabla interactiva con opciones para exportar en Excel y CSV:
+
+```{r}
+# Crear una tabla interactiva con botones de exportación
+datatable(magnesio3, 
+          extensions = 'Buttons', 
+          options = list(
+            dom = 'Bfrtip',
+            buttons = c('csv', 'excel'),
+            pageLength = 5  # Número de filas por página
+          ))
+```
+
+### Explicación del código
+
+- `extensions = 'Buttons'`: Esta opción habilita la extensión de botones para DataTables.
+- `dom = 'Bfrtip'`: Controla la disposición de los elementos de la tabla. `B` es para los botones, `f` para la barra de búsqueda (filter), `r` para la información sobre el procesamiento (processing), `t` para la tabla (table), `i` para la información (information), y `p` para la paginación (pagination).
+- `buttons = c('csv', 'excel')`: Especifica que se deben incluir botones para exportar en formato CSV y Excel.
+- `pageLength = 5`: Opcional, establece el número de filas que se muestran por página.
+
+### Ejemplo completo
+
+Aquí tienes un ejemplo completo en un script que incluye la instalación, carga y creación de la tabla interactiva con los botones de exportación:
+
+```{r}
+# Instalar y cargar el paquete DT
+
+library(DT)
+
+# Crear una tabla interactiva con botones de exportación
+datatable(mtcars, 
+          extensions = 'Buttons', 
+          options = list(
+            dom = 'Bfrtip',
+            buttons = c('csv', 'excel'),
+            pageLength = 5  # Número de filas por página
+          ))
+```
+
+### Exportar datos en R Markdown o Quarto
+
+Si estás trabajando en un documento R Markdown o Quarto, puedes integrar la tabla interactiva de la siguiente manera:
+
+
+```{r}
+library(DT)
+
+# Crear una tabla interactiva con botones de exportación
+datatable(magnesio3, 
+          extensions = 'Buttons', 
+          options = list(
+            dom = 'Bfrtip',
+            buttons = c('csv', 'excel'),
+            pageLength = 5  # Número de filas por página
+          ))
+```
+
+### Notas adicionales
+
+- Asegúrate de tener acceso a internet cuando uses las extensiones de `DT`, ya que estas dependen de bibliotecas JavaScript externas.
+- Puedes agregar más botones de exportación, como PDF e impresión, añadiéndolos en la lista de `buttons`.
+
+```{r}
+# Crear una tabla interactiva con más opciones de exportación
+datatable(magnesio3, 
+          extensions = 'Buttons', 
+          options = list(
+            dom = 'Bfrtip',
+            buttons = c('csv', 'excel', 'pdf', 'print'),
+            pageLength = 5  # Número de filas por página
+          ))
+```
+
+## Extra: Generar dataframe usando tibble
+
+### Paso 1: Crear un tibble con datos de fitopatología en R
+
+Desde el plugging Addins busca `paste as tibble` y pega la base de datos que has copiado de un texto plano o de un documento .xls o .csv
+
+```{r}
+library(tibble)
+
+# Crear el tibble con datos  de fitopatología
+datos_fitopatologia <- tibble::tribble(
+  ~cultivar,    ~parcela, ~incidencia,
+  "Cultivar A",  1,       15,
+  "Cultivar A",  2,       18,
+  "Cultivar A",  3,       12,
+  "Cultivar B",  1,       20,
+  "Cultivar B",  2,       22,
+  "Cultivar B",  3,       16,
+  "Cultivar C",  1,       14,
+  "Cultivar C",  2,       19,
+  "Cultivar C",  3,       13
+)
+
+datos_fitopatologia
+```
+
+En este ejemplo, `datos_fitopatologia` es un tibble con tres columnas: `cultivar`, `parcela`, y `incidencia`. Cada fila representa la incidencia de una enfermedad en una parcela específica de un cultivar.
+
+
+# Aprendizaje del día
+
+- **Código R dentro de Bloques de Código**: Utilizamos ```{r} ... ``` para encapsular nuestro código R en el documento Quarto.
+- **Librerías Necesarias**: Asegúrate de cargar las librerías necesarias  al comienzo del bloque de código.
