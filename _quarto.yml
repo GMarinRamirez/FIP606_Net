@@ -71,7 +71,7 @@ website:
         menu: 
         - href: Paquetes_.qmd
           text: Paquetes utiles
-        - href: Paquetes_.qmd
+        - href: PAT104022.qmd
           text: Proyecto de Análisis de datos FIP606
   
     right: 
@@ -95,7 +95,7 @@ format:
     code-summary: "Codigo"
     code-fold: true
     code-tools: true
-    fontsize: 0.8em
+    fontsize: 0.9em
     theme:
       light: yeti
       dark: spacelab
