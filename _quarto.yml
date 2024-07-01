@@ -71,6 +71,8 @@ website:
         menu: 
         - href: Paquetes_.qmd
           text: Paquetes utiles
+        - href: Sitios.qmd
+          text: Repositorios y Sitios
         - href: PAT104022.qmd
           text: Proyecto de Análisis de datos FIP606
   

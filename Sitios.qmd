@@ -1,0 +1,23 @@
+# **Informaciones extras**
+
+Descubre otros sitios especializados en proporcionar recursos fundamentales para fitopatólogos interesados en el análisis de datos con R. Estos recursos son imprescindibles para entender y orientar en el análisis de datos, ofreciendo acceso a conjuntos de datos estructurados y actualizados. Esto no solo facilita la exploración de técnicas analíticas avanzadas, sino que también proporciona herramientas gráficas y bibliotecas de visualización que permiten comunicar de manera efectiva los hallazgos clave de tus investigaciones. Aprovecha estos enlaces para fortalecer tus habilidades analíticas y mejorar la precisión de tus estudios en fitopatología.
+
+
+
+### *Trabajar y desarrollar en Quarto*
+[**Welcome to Quarto®**](https://quarto.org/): Explora y comparte conocimiento de manera innovadora a través de datos, análisis y visualización.
+
+### *Libros para análisis en Fitopatología*
+[**R for Plant Disease Epidemiology**](https://r4pde.net/): Guía esencial para aplicar herramientas analíticas en el estudio epidemiológico de enfermedades en plantas.
+
+### *Repositorios para análisis en Fitopatología*
+
+- [**Emerson del Ponte**](https://github.com/emdelponte?tab=repositories) [_português_](https://github.com/emdelponte?tab=repositories){style="color:#3aafd0;"}: Accede a conjuntos de datos y análisis avanzados para fortalecer tus investigaciones en fitopatología.
+  
+- [**Lucas Versari**](https://github.com/LVersari) [_português_](https://github.com/LVersari){style="color:#3aafd0;"}: Descubre herramientas efectivas para el análisis y la visualización de datos fitopatológicos.
+  
+- [**Carlos Utiamada**](https://carlosutiamada.github.io/Projeto-Final/) [_português_](https://carlosutiamada.github.io/Projeto-Final/){style="color:#3aafd0;"}: Explora proyectos y recursos para optimizar tus estudios en fitopatología.
+
+
+
+¡Explora estos recursos y continúa fortaleciendo tus investigaciones con las herramientas más efectivas en análisis de datos para fitopatología!.

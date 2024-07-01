@@ -6,12 +6,10 @@ title: "R para Dummies en Fitopatología"
 
 **Editar el documento**:
 
-       
-- En el archivo `Untitled.qmd`, puedes comenzar a escribir contenido utilizando Markdown y agregar bloques (chunck) de código R para realizar análisis, generar gráficos y más.
+-   En el archivo `Untitled.qmd`, puedes comenzar a escribir contenido utilizando Markdown y agregar bloques (chunck) de código R para realizar análisis, generar gráficos y más.
 
-- Dentro de cada chunk o bloque de trabajo podemos escrbir cualquier comando y ejecutar con el simblo de `play` o `command + enter`  
--inmediatamente el resultado obtenido o la gráfica aparecerá abajo.
-
+-   Dentro de cada chunk o bloque de trabajo podemos escrbir cualquier comando y ejecutar con el simblo de `play` o `command + enter`\
+    -inmediatamente el resultado obtenido o la gráfica aparecerá abajo.
 
 ###### **Tener en cuenta:**
 

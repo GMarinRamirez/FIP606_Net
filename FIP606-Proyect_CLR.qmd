@@ -1,7 +1,14 @@
 ---
-title: "FIP606-Proyect_CLR"
+title: "**FIP606-Proyecto: Análisis de Datos**"
+
+
 description: |
-  Validación del fungicida, para el control de roya del cafeto en variedad susceptible.
+  
+  |El uso de análisis y visualización de datos en la validación de fungicidas para el control de la enfermedad roya del cafeto en variedades susceptibles es fundamental para evaluar la eficacia de los tratamientos. Mediante técnicas estadísticas y gráficas, se pueden comparar diferentes fungicidas y su impacto en la incidencia, severidad y defoliación causada por la roya, así como en la producción y calidad del café. Estos análisis permiten identificar las mejores opciones de control y proporcionar recomendaciones precisas a los caficultores.
+  
+  |O uso de análise e visualização de dados na validação de fungicidas para o controle da ferrugem do cafeeiro em variedades suscetíveis é fundamental para avaliar a eficácia dos tratamentos. Através de técnicas estatísticas e gráficas, é possível comparar diferentes fungicidas e seu impacto na incidência, severidade e desfolha causada pela ferrugem, bem como na produção e qualidade do café. Essas análises permitem identificar as melhores opções de controle e fornecer recomendações precisas aos cafeicultores.
+  
+  
 format: html
 editor: visual
 output: 
@@ -17,29 +24,47 @@ output:
 date: "`r Sys.Date()`"
 ---
 
-## **Validación del fungicida Benzovindiflupyr + Azoxystrobin (ELATUS), para el control de roya del cafeto en variedad Caturra**
+## **Validación del fungicida, para el control de roya del cafeto en variedad susceptible**
+[_Validação do fungicida para o controle da ferrugem do cafeeiro em variedade suscetível_]{style="color:#3aafd0;"}
 
 ### ***Resumen***
 
-La Roya del Cafeto (Hemileia vastatrix) es la enfermedad de mayor importancia económica para el cultivo del café en el mundo, que causa pérdidas en la producción en variedades susceptibles sin control entre el 23 al 50% en Colombia y hasta el 80% en otros países. De las casi 850.000 ha sembradas en café en Colombia, aún queda un 16% del área sembrada en variedades susceptibles a la roya, que requieren manejo, principalmente mediante la aplicación de fungicidas de síntesis química. Teniendo en cuenta que son pocas los productos fungicidas investigados y recomendados por Cenicafé para el control de la roya dentro de la oferta del mercado, y que por normatividad, regulación, sanidad, inocuidad o condiciones del mercado nacional e internacional muchos de los agroquímicos están siendo restringidos o limitados, entre ellos los recomendados o disponibles para el control de la roya, se requiere por parte de la industria modificar productos existentes y desarrollar nuevas alternativas para el control, que puedan evaluarse y validarse en Cenicafé para los caficultores colombianos. Por tanto, este experimento busca validar el producto Benzovindiflupyr + Azoxystrobin (ELATUS®, Syngenta) como nueva alternativa para control de la roya en Colombia, basado en resultados previos y recomendaciones del fabricante. Esta validación se realizará en la Estación Experimental La Catalina de Cenicafé (Pereira, Risaralda) a 1.321m.s.n.m., en un cultivo de variedad Caturra de segunda zoca, de 19 meses de edad, en el cual se realizarán 3 aplicaciones del fungicida en dosis de 0.4kg/ha a 60, 105 y 165 días después de floración principal. Se evaluará Incidencia, severidad y defoliación causada por la roya, y los efectos en la producción de café cereza, su conversión a café pergamino seco y café verde, y la calidad física obtenida. Se validará durante la cosecha de mitaca de primer semestre de 2022 y cosecha principal del segundo semestre de 2022, comparando respecto a un testigo relativo de fungicida ya recomendado con 3 aplicaciones, y a un testigo absoluto sin aplicación. Se espera generar resultados que soporten la recomendación de un nuevo fungicida para el control de roya del cafeto en Colombia por parte del Servicio de Extensión de la FNC y sea usado por los caficultores, y así evitar epidemias severas y pérdidas en la producción y calidad por esta enfermedad.
+La Roya del Cafeto es una enfermedad económicamente importante para el cultivo del café, causando pérdidas de producción entre el 23% y 50% en Colombia y hasta el 80% en otros países. En Colombia, el 16% de las áreas sembradas con café son susceptibles a esta enfermedad y requieren manejo con fungicidas. Debido a la restricción de muchos agroquímicos, es necesario desarrollar nuevas alternativas de control. Este experimento busca validar un nuevo fungicida como opción en la Estación Experimental La Catalina de Cenicafé, aplicando el producto en dosis específicas en momentos determinados del cultivo. Se evaluarán incidencia, severidad, defoliación y efectos en la producción y calidad del café, comparando con otros tratamientos y sin tratamiento. Los resultados buscarán soportar la recomendación del nuevo fungicida para evitar pérdidas por la roya en Colombia.
 
-### ***PLANTEAMIENTO DEL PROBLEMA***
 
-Se dispone de pocas alternativas de fungicidas para el control de roya del cafeto y otras enfermedades de importancia en Colombia, con soporte experimental y validadas.
+[_A Ferrugem do Cafeeiro é uma doença economicamente importante para o cultivo do café, causando perdas de produção entre 23% e 50% na Colômbia e até 80% em outros países. Na Colômbia, 16% das áreas plantadas com café são suscetíveis a essa doença e requerem manejo com fungicidas. Devido à restrição de muitos agroquímicos, é necessário desenvolver novas alternativas de controle. Este experimento busca validar um novo fungicida como opção na Estação Experimental La Catalina de Cenicafé, aplicando o produto em doses específicas em momentos determinados do cultivo. Serão avaliados incidência, severidade, desfolha e efeitos na produção e qualidade do café, comparando com outros tratamentos e sem tratamento. Os resultados buscarão suportar a recomendação do novo fungicida para evitar perdas pela ferrugem na Colômbia._]{style="color:#3aafd0;"}
 
-### ***OBJETIVOS***
 
-Validar el fungicida Benzovindiflupyr + Azoxystrobin (ELATUS®), para el control de roya del cafeto en variedad Caturra.
+### -   ***Planteamento del problema***
+
+No Se dispone de pocas alternativas de fungicidas para el control de roya del cafeto y otras enfermedades de importancia en Colombia, con soporte experimental y validadas.
+
+[_Não se dispõe de muitas alternativas de fungicidas para o controle da ferrugem do cafeeiro e outras doenças importantes na Colômbia, com suporte experimental e validadas._]{style="color:#3aafd0;"}
+
+### -   ***Objetivos***
+
+Validar un fungicida, para el control de roya del cafeto en variedad Caturra.
+
+[_Validar um fungicida para o controle da ferrugem do cafeeiro na variedade Caturra._]{style="color:#3aafd0;"}
+
+
+
+
+
+
+
+
+
+
 
 ## Essential packages
 
-```{r Packages, message=TRUE, warning=TRUE, include=FALSE}
+```{r}
 library(tidyverse)
 library(gsheet)
 library(cowplot)
 library(patchwork)
 library(ggthemes)
-theme_set(theme_half_open())
 library(viridis)
 library(epifitter)
 library(ggplot2)
@@ -84,7 +109,6 @@ library(sjmisc)
 library(ggh4x)
 library(gridExtra)
 library(stringr)
-theme_set(theme_minimal())
 library(epiR)
 library(ggridges)
 library(RColorBrewer)
