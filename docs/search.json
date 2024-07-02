@@ -53,7 +53,7 @@
     "href": "FIP606-Proyect_CLR.html#data",
     "title": "FIP606-Proyecto: Análisis de Datos",
     "section": "data",
-    "text": "data\n\n\nCodigo\ndat&lt;-read.csv2(\"/Users/user/Desktop/Desktop_GMarin/PAT104022/DB_PAT104022.csv\")\n\ndat %&gt;%\n  DT::datatable(\n    extensions = 'Buttons', \n    options = list(dom = 'Bfrtip', \n                   Buttons = c('excel', \"csv\")))%&gt;%\n                        formatRound(c('Inc_promedio','Def_calculada','Sev_total','Severidad','Sev_condicional'), 2)\n\n\n\n\n\n\n\nEvaluacion = (Mitaca_2021) Historico Sep/22\n\n0- 20-10-2021\n1- 18-11-2021 (Aplicación 23-11-2021)\n2- 20-01-2022\n3- 16-03-22\n4- 18-05-22\n5- 13-07-22\n6- 15-09-22\n\nEvaluacion = (Principal_2022) Feb/22\n\n0- 16-03-22\n1- 18-05-22\n2- 13-07-22\n3- 15-09-22\n\n4- 18-10-2022\n5- 18-11-2022\n\nEvaluacion = (Mitaca_2022) Floración Sep/22\n\n0- 18-10-2022\n1- 18-11-2022\n\nParcela =\n\n1-Testigo relativo (Amistar®)\n2-Validación (Elatus®)\n3-Testigo Absoluto (NTC)\n\n\nArbol= 1- 80 Rep = 1-3 Nudos = Número de nudos totales Htotal = Número de hojas totales presentes Htotal_t= Número de hojas totales teóricas (Nudos X 2) Inc_promedio = Porcentaje de hojas afectados por roya Def_calculada = Porcentaje de hojas faltantes en cada rama a partir de la marcación inicial y su conteo progresivo Sev_total = Sumatoria de valores de severidad de todas las hojas afectadas por la enfermedad Severidad = Proporcion de severidad total (sev_total) / Número de hojas totales presentes (Htotal) Sev_condicional = Proporcion de severidad total (sev_total) / Número de hojas afectadas por la enfermedad (Hroya) Tx_Def = (% de hojas que caen/día) = 0.0144 x incidencia"
+    "text": "data\n\n\nCodigo\ndat&lt;-read.csv2(\"/Users/user/Desktop/Desktop_GMarin/PAT104022/DB_PAT104022.csv\")\n\ndat %&gt;%\n  DT::datatable(\n    extensions = 'Buttons', \n    options = list(dom = 'Bfrtip', \n                   Buttons = c('excel', \"csv\")))%&gt;%\n                        formatRound(c('Inc_promedio','Def_calculada','Sev_total','Severidad','Sev_condicional'), 2)"
   },
   {
     "objectID": "FIP606-Proyect_CLR.html#standard-deviation",
@@ -796,5 +796,47 @@
     "title": "",
     "section": "Transformación de Datos: Paso a Paso",
     "text": "Transformación de Datos: Paso a Paso\n\n¿Por Qué Transformar Datos para Análisis Estadísticos?\nCuando trabajamos con datos en fitopatología, a veces necesitamos “ajustar” nuestros datos para que los análisis estadísticos funcionen mejor. Transformar datos es una manera de hacer esto. Aquí te explico por qué y cómo se hace de manera sencilla.\n\n\n¿Qué Significa Transformar Datos?\nTransformar datos significa cambiar la forma de nuestros datos utilizando una fórmula matemática. Esto se hace para que los datos se ajusten mejor a ciertos supuestos necesarios para los análisis estadísticos.\n\n\n¿Por Qué Necesitamos Transformar Datos?\n\nPara Hacer los Datos Más Normales:\n\nMuchos análisis estadísticos, como la ANOVA y la regresión, suponen que los datos siguen una distribución normal (una campana simétrica). Si tus datos están muy sesgados (es decir, no son simétricos), los resultados pueden no ser válidos.\n\nPara Igualar la Varianza:\n\nA veces, los datos de diferentes grupos tienen variabilidades (o varianzas) muy diferentes. Esto puede causar problemas en el análisis. Transformar los datos puede ayudar a igualar estas varianzas.\n\nPara Simplificar las Relaciones:\n\nEn fitopatología, puede que quieras estudiar cómo una variable afecta a otra. Si la relación entre tus variables no es lineal (una línea recta), una transformación puede hacerla más lineal y fácil de analizar.\n\nPara Reducir el Impacto de Valores Atípicos:\n\nLos valores atípicos son puntos de datos que están muy lejos del resto. Estos pueden distorsionar los resultados. Una transformación puede reducir su influencia.\n\n\n\n\nPasos para Transformar Datos\n\nExplora tus Datos:\n\nHaz gráficos (como histogramas y gráficos de dispersión) y calcula estadísticas básicas (media, mediana, etc.) para entender tus datos.\n\nEvalúa la Necesidad de Transformar:\n\nUsa pruebas estadísticas (como Shapiro-Wilk para normalidad) y gráficos de diagnóstico para ver si tus datos necesitan transformación.\n\nElige la Transformación Adecuada:\n\nBasándote en la forma de tus datos y los problemas identificados, selecciona la transformación que mejor los ajuste.\n\nAplica la Transformación:\n\nTransforma tus datos y vuelve a hacer el análisis exploratorio para ver si la transformación ha mejorado la situación.\n\nAnaliza de Nuevo:\n\nRealiza los análisis estadísticos con los datos transformados y compara los resultados con los obtenidos sin transformación.\n\nDocumenta el Proceso:\n\nEs importante registrar por qué y cómo transformaste los datos para que otros investigadores puedan entender y replicar tu trabajo."
+  },
+  {
+    "objectID": "FIP606-Proyect_CLR.html#cargar-paquetes-de-análisis",
+    "href": "FIP606-Proyect_CLR.html#cargar-paquetes-de-análisis",
+    "title": "FIP606-Proyecto: Análisis de Datos",
+    "section": "Cargar paquetes de análisis",
+    "text": "Cargar paquetes de análisis\n\n\nCodigo\nlibrary(tidyverse)\nlibrary(gsheet)\nlibrary(cowplot)\nlibrary(patchwork)\nlibrary(ggthemes)\nlibrary(viridis)\nlibrary(epifitter)\nlibrary(ggplot2)\nlibrary(\"writexl\")\nlibrary(nlme)\nlibrary(lme4)\nlibrary(DHARMa)\nlibrary(performance)\nlibrary(report)\nlibrary(emmeans)\nlibrary(multcompView)\nlibrary(multcomp)\nlibrary(corrplot)\nlibrary(see)\nlibrary(lubridate)\nlibrary(agridat)\nlibrary(cowplot)\nlibrary(agricolae)\nlibrary(sf)\nlibrary(lme4)\nlibrary(broom)\nlibrary(lattice)\nlibrary(car)\nlibrary(scales)\nlibrary(readxl)\nlibrary(dplyr)\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(easyanova)\nlibrary(tidyr)\nlibrary(PerformanceAnalytics)\nlibrary(magrittr)\nlibrary(car)\nlibrary(ggpubr)\nlibrary(rstatix)\nlibrary(reshape)\nlibrary(kableExtra)\nlibrary(formattable)\nlibrary(sjPlot)\nlibrary(sjlabelled)\nlibrary(sjmisc)\nlibrary(ggh4x)\nlibrary(gridExtra)\nlibrary(stringr)\nlibrary(epiR)\nlibrary(ggridges)\nlibrary(RColorBrewer)\nlibrary(DT)\n\n\n\nImput files\n\n\nCodigo\nCurrentDir &lt;- (\"/Users/user/Desktop/Desktop_GMarin/PAT104022\")\nif (!is.null(CurrentDir)) setwd(CurrentDir)\ngetwd()\n\n\n[1] \"/Users/user/Desktop/Desktop_GMarin/PAT104022\""
+  },
+  {
+    "objectID": "FIP606-Proyect_CLR.html#variables",
+    "href": "FIP606-Proyect_CLR.html#variables",
+    "title": "FIP606-Proyecto: Análisis de Datos",
+    "section": "Variables",
+    "text": "Variables\n\nArbol= 1- 80\nRep= 1-3\nNudos = Número de nudos totales\nHtotal = Número de hojas totales presentes\nHtotal_t= Número de hojas totales teóricas (Nudos X 2)\nInc_promedio = Porcentaje de hojas afectados por roya\nDef_calculada = Porcentaje de hojas faltantes en cada rama a partir de la marcación inicial y su conteo progresivo\nSev_total = Sumatoria de valores de severidad de todas las hojas afectadas por la enfermedad\nSeveridad = Proporcion de severidad total (sev_total) / Número de hojas totales presentes (Htotal)\nSev_condicional = Proporcion de severidad total (sev_total) / Número de hojas afectadas por la enfermedad (Hroya)\nTx_Def = (% de hojas que caen/día) = 0.0144 x incidencia"
+  },
+  {
+    "objectID": "FIP606-Proyect_CLR.html#evaluaciones",
+    "href": "FIP606-Proyect_CLR.html#evaluaciones",
+    "title": "FIP606-Proyecto: Análisis de Datos",
+    "section": "Evaluaciones",
+    "text": "Evaluaciones\n\nEvaluacion = (Mitaca_2021) Historico Sep/22\nEvaluacion = (Principal_2022) Feb/22\nEvaluacion = (Mitaca_2022) Floración Sep/22"
+  },
+  {
+    "objectID": "FIP606-Proyect_CLR.html#tratmientos",
+    "href": "FIP606-Proyect_CLR.html#tratmientos",
+    "title": "FIP606-Proyecto: Análisis de Datos",
+    "section": "Tratmientos",
+    "text": "Tratmientos\n\nParcela =\n\n1-Tto Fungicida\n2- Tto Nuevo\n3- Tto Testigo SA (Sin aplicación)"
+  },
+  {
+    "objectID": "FIP606-Proyect_CLR.html#generalidades",
+    "href": "FIP606-Proyect_CLR.html#generalidades",
+    "title": "FIP606-Proyecto: Análisis de Datos",
+    "section": "Generalidades",
+    "text": "Generalidades"
+  },
+  {
+    "objectID": "FIP606-Proyect_CLR.html#validación-de-un-fungicida-para-el-control-de-roya-del-cafeto-en-variedad-susceptible",
+    "href": "FIP606-Proyect_CLR.html#validación-de-un-fungicida-para-el-control-de-roya-del-cafeto-en-variedad-susceptible",
+    "title": "FIP606-Proyecto: Análisis de Datos",
+    "section": "",
+    "text": "Validação do fungicida para o controle da ferrugem do cafeeiro em variedade suscetível\n\n\nLa Roya del Cafeto es una enfermedad económicamente importante para el cultivo del café, causando pérdidas de producción entre el 23% y 50% en Colombia y hasta el 80% en otros países. En Colombia, el 16% de las áreas sembradas con café son susceptibles a esta enfermedad y requieren manejo con fungicidas. Debido a la restricción de muchos agroquímicos, es necesario desarrollar nuevas alternativas de control. Este experimento busca validar un nuevo fungicida como opción en la Estación Experimental La Catalina de Cenicafé, aplicando el producto en dosis específicas en momentos determinados del cultivo. Se evaluarán incidencia, severidad, defoliación y efectos en la producción y calidad del café, comparando con otros tratamientos y sin tratamiento. Los resultados buscarán soportar la recomendación del nuevo fungicida para evitar pérdidas por la roya en Colombia.\nA Ferrugem do Cafeeiro é uma doença economicamente importante para o cultivo do café, causando perdas de produção entre 23% e 50% na Colômbia e até 80% em outros países. Na Colômbia, 16% das áreas plantadas com café são suscetíveis a essa doença e requerem manejo com fungicidas. Devido à restrição de muitos agroquímicos, é necessário desenvolver novas alternativas de controle. Este experimento busca validar um novo fungicida como opção na Estação Experimental La Catalina de Cenicafé, aplicando o produto em doses específicas em momentos determinados do cultivo. Serão avaliados incidência, severidade, desfolha e efeitos na produção e qualidade do café, comparando com outros tratamentos e sem tratamento. Os resultados buscarão suportar a recomendação do novo fungicida para evitar perdas pela ferrugem na Colômbia.\n\n\n\nNo Se dispone de pocas alternativas de fungicidas para el control de roya del cafeto y otras enfermedades de importancia en Colombia, con soporte experimental y validadas.\nNão se dispõe de muitas alternativas de fungicidas para o controle da ferrugem do cafeeiro e outras doenças importantes na Colômbia, com suporte experimental e validadas.\n\n\n\nValidar un fungicida, para el control de roya del cafeto en variedad Caturra.\nValidar um fungicida para o controle da ferrugem do cafeeiro na variedade Caturra."
   }
 ]

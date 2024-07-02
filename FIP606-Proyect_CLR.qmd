@@ -24,7 +24,7 @@ output:
 date: "`r Sys.Date()`"
 ---
 
-## **Validación del fungicida, para el control de roya del cafeto en variedad susceptible**
+## **Validación de un fungicida, para el control de roya del cafeto en variedad susceptible**
 [_Validação do fungicida para o controle da ferrugem do cafeeiro em variedade suscetível_]{style="color:#3aafd0;"}
 
 ### ***Resumen***
@@ -49,6 +49,7 @@ Validar un fungicida, para el control de roya del cafeto en variedad Caturra.
 
 
 
+## **Generalidades**
 
 
 
@@ -57,7 +58,30 @@ Validar un fungicida, para el control de roya del cafeto en variedad Caturra.
 
 
 
-## Essential packages
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Cargar paquetes de análisis
+
 
 ```{r}
 library(tidyverse)
@@ -138,30 +162,31 @@ dat %>%
 
 ```
 
--   Evaluacion = (Mitaca_2021) Historico Sep/22
-    -   0- 20-10-2021
-    -   1- 18-11-2021 (Aplicación 23-11-2021)
-    -   2- 20-01-2022
-    -   3- 16-03-22
-    -   4- 18-05-22
-    -   5- 13-07-22
-    -   6- 15-09-22
--   Evaluacion = (Principal_2022) Feb/22
-    -   0- 16-03-22
-    -   1- 18-05-22
-    -   2- 13-07-22
-    -   3- 15-09-22\
-    -   4- 18-10-2022
-    -   5- 18-11-2022
--   Evaluacion = (Mitaca_2022) Floración Sep/22
-    -   0- 18-10-2022
-    -   1- 18-11-2022
--   Parcela =
-    -   1-Testigo relativo (Amistar®)
-    -   2-Validación (Elatus®)
-    -   3-Testigo Absoluto (NTC)
+## Evaluaciones 
+-   `Evaluacion = (Mitaca_2021) Historico Sep/22`
+-   `Evaluacion = (Principal_2022) Feb/22`
+-   `Evaluacion = (Mitaca_2022) Floración Sep/22`
 
-*Arbol= 1- 80* Rep = 1-3 *Nudos = Número de nudos totales* Htotal = Número de hojas totales presentes *Htotal_t= Número de hojas totales teóricas (Nudos X 2)* Inc_promedio = Porcentaje de hojas afectados por roya *Def_calculada* = Porcentaje de hojas faltantes en cada rama a partir de la marcación inicial y su conteo progresivo *Sev_total* = Sumatoria de valores de severidad de todas las hojas afectadas por la enfermedad *Severidad* = Proporcion de severidad total (sev_total) / Número de hojas totales presentes (Htotal) *Sev_condicional* = Proporcion de severidad total (sev_total) / Número de hojas afectadas por la enfermedad (Hroya) *Tx_Def* = (% de hojas que caen/día) = 0.0144 x incidencia
+    
+## Tratmientos    
+-   Parcela =
+    -   1-`Tto Fungicida` 
+    -   2- `Tto Nuevo`
+    -   3- `Tto Testigo SA (Sin aplicación)`
+    
+    
+## Variables 
+-  `Arbol`= 1- 80 
+-  `Rep`= 1-3 
+-  `Nudos` = Número de nudos totales 
+-  `Htotal` = Número de hojas totales presentes 
+-  `Htotal_t`= Número de hojas totales teóricas (Nudos X 2) 
+-  `Inc_promedio` = Porcentaje de hojas afectados por roya 
+-  `Def_calculada` = Porcentaje de hojas faltantes en cada rama a partir de la marcación inicial y su conteo progresivo 
+-  `Sev_total` = Sumatoria de valores de severidad de todas las hojas afectadas por la enfermedad 
+-  `Severidad` = Proporcion de severidad total (sev_total) / Número de hojas totales presentes (Htotal) 
+-  `Sev_condicional` = Proporcion de severidad total (sev_total) / Número de hojas afectadas por la enfermedad (Hroya) 
+-  `Tx_Def` = (% de hojas que caen/día) = 0.0144 x incidencia
 
 ## standard deviation
 
