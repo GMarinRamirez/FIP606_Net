@@ -1,4 +1,5 @@
-# Análisis de Regressión No Lineal 
+# Análisis de Regressión No Lineal
+
 ## Introducción
 
 El análisis de regresión no lineal es esencial cuando los datos no siguen un patrón lineal y es necesario utilizar técnicas que capturen la relación entre las variables de manera más precisa. Este tipo de análisis es crucial en estudios donde las relaciones entre variables no pueden ser adecuadamente modeladas mediante funciones lineales.
@@ -8,7 +9,6 @@ A continuación, se presenta una guía práctica para realizar un análisis de r
 ## ¿Por qué Realizar un Análisis de Regressión No Lineal?
 
 En muchos estudios, las relaciones entre las variables pueden ser complejas y no seguir un patrón lineal simple. La regresión no lineal permite capturar estas relaciones complejas y proporciona una mejor comprensión de los datos. Es especialmente útil en casos donde la respuesta varía de manera no constante con la dosis o tratamiento, como en estudios de toxicidad, farmacología, biología, y muchas otras áreas científicas y de ingeniería.
-
 
 ## Paso 1: Instalación y Carga de Paquetes
 
@@ -25,7 +25,6 @@ library(ec50estimator)
 library(ggthemes)
 library(DT)
 ```
-
 
 ## Paso 2: Importación de Datos
 
@@ -147,17 +146,14 @@ df_ec50 |>
 
 ```
 
-
 ### Contenido de `df_ec50`
 
 El dataframe `df_ec50` generalmente incluye las siguientes columnas:
 
-1. **ID**: El identificador o código del grupo o muestra para el cual se ha calculado la EC50.
-2. **Estimate**: La estimación de la EC50.
-3. **Lower**: El límite inferior del intervalo de confianza para la EC50.
-4. **Upper**: El límite superior del intervalo de confianza para la EC50.
-
-
+1.  **ID**: El identificador o código del grupo o muestra para el cual se ha calculado la EC50.
+2.  **Estimate**: La estimación de la EC50.
+3.  **Lower**: El límite inferior del intervalo de confianza para la EC50.
+4.  **Upper**: El límite superior del intervalo de confianza para la EC50.
 
 ```{r}
 # Crear gráfico de estimaciones de EC50
@@ -172,18 +168,18 @@ df_ec50 |>
 
 ## Interpretación de Resultados
 
-1. **Modelo Log-Logístico de Tres Parámetros (LL.3)**: Este modelo es útil para describir relaciones en forma de S entre dosis y respuesta.
-2. **Modelo Weibull de Tres Parámetros (W1.3)**: Proporciona mayor flexibilidad y puede ajustarse mejor a datos asimétricos.
-3. **EC50**: La dosis efectiva al 50% es una medida importante en estudios de toxicidad y sensibilidad. Comparar EC50 entre diferentes grupos puede revelar diferencias significativas en la respuesta.
+1.  **Modelo Log-Logístico de Tres Parámetros (LL.3)**: Este modelo es útil para describir relaciones en forma de S entre dosis y respuesta.
+2.  **Modelo Weibull de Tres Parámetros (W1.3)**: Proporciona mayor flexibilidad y puede ajustarse mejor a datos asimétricos.
+3.  **EC50**: La dosis efectiva al 50% es una medida importante en estudios de toxicidad y sensibilidad. Comparar EC50 entre diferentes grupos puede revelar diferencias significativas en la respuesta.
 
 ### Interpretación del Gráfico
 
 En el gráfico resultante:
 
-- Cada punto representa la estimación de EC50 para un código específico.
-- Las barras de error muestran los intervalos de confianza del 95% para cada estimación.
-- La posición horizontal de los puntos permite comparar visualmente las estimaciones de EC50 entre diferentes Aislamientos.
-- Un intervalo de confianza más estrecho indica una estimación más precisa, mientras que un intervalo más amplio sugiere mayor incertidumbre.
+-   Cada punto representa la estimación de EC50 para un código específico.
+-   Las barras de error muestran los intervalos de confianza del 95% para cada estimación.
+-   La posición horizontal de los puntos permite comparar visualmente las estimaciones de EC50 entre diferentes Aislamientos.
+-   Un intervalo de confianza más estrecho indica una estimación más precisa, mientras que un intervalo más amplio sugiere mayor incertidumbre.
 
 ## Aprendizaje del día
 

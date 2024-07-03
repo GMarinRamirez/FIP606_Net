@@ -30,9 +30,9 @@ website:
       - text: Gráficos en R
         menu: 
         - href: Aula4.qmd
-          text: Visualização de dados parte 1
+          text: Visualización de datos parte 1
         - href: Aula6.qmd
-          text: Visualização de dados parte 2
+          text: Visualización de datos parte 2
         - href: Aula5.qmd
           text: Ejemplo de Visuzalización 
       - text: Análisis Estadisticos en R
@@ -73,8 +73,16 @@ website:
           text: Paquetes utiles
         - href: Sitios.qmd
           text: Repositorios y Sitios
-        - href: PAT104022.qmd
-          text: Proyecto de Análisis de datos FIP606
+      - text: Proyecto Análisis de datos FIP606
+        menu:   
+        - href: FIP606-Proyect_CLR.qmd
+          text: Generalidades
+        - href: FIP606-Proyect_CLR2.qmd
+          text: Análisis Exploratorios
+        - href: FIP606-Proyect_CLR3.qmd
+          text: Análisis Estadisticos
+        - href: FIP606-Proyect_CLR4.qmd
+          text: Interpretación de Resultados
   
     right: 
      - icon: github

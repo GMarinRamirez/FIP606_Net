@@ -179,11 +179,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="dropdown-menu" aria-labelledby="nav-menu-gráficos-en-r">    
         <li>
     <a class="dropdown-item" href="./Aula4.html">
- <span class="dropdown-text">Visualização de dados parte 1</span></a>
+ <span class="dropdown-text">Visualización de datos parte 1</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./Aula6.html">
- <span class="dropdown-text">Visualização de dados parte 2</span></a>
+ <span class="dropdown-text">Visualización de datos parte 2</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./Aula5.html">
@@ -274,9 +274,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./Sitios.html">
  <span class="dropdown-text">Repositorios y Sitios</span></a>
   </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-proyecto-análisis-de-datos-fip606" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Proyecto Análisis de datos FIP606</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-proyecto-análisis-de-datos-fip606">    
         <li>
-    <a class="dropdown-item" href="./PAT104022.qmd">
- <span class="dropdown-text">Proyecto de Análisis de datos FIP606</span></a>
+    <a class="dropdown-item" href="./FIP606-Proyect_CLR.html">
+ <span class="dropdown-text">Generalidades</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./FIP606-Proyect_CLR2.html">
+ <span class="dropdown-text">Análisis Exploratorios</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./FIP606-Proyect_CLR3.html">
+ <span class="dropdown-text">Análisis Estadisticos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./FIP606-Proyect_CLR4.html">
+ <span class="dropdown-text">Interpretación de Resultados</span></a>
   </li>  
     </ul>
   </li>
@@ -602,25 +621,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <summary>Codigo</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># usando el paquete gsheet</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gsheet)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1aID5Dh6PlBVCKzU1j7k-WA6zuWQWE2NhtWEgdJtt5iA/edit#gid=366054269"</span>)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>survey </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit?gid=1118819738#gid=1118819738"</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>survey </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 450 × 5
-    year residue   inc inc_class species
-   &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;  
- 1  2011 soybean     1 low       Fgra   
- 2  2011 soybean     1 low       Fgra   
- 3  2011 soybean     1 low       Fgra   
- 4  2011 soybean     1 low       Fgra   
- 5  2011 soybean     1 low       Fgra   
- 6  2011 soybean     1 low       Fgra   
- 7  2011 corn        1 low       Fgra   
- 8  2010 soybean     2 low       Fspp   
- 9  2010 corn        2 low       Fgra   
-10  2011 soybean     2 low       Fgra   
-# ℹ 440 more rows</code></pre>
+<pre><code># A tibble: 666 × 6
+    year state residue   inc inc_class species
+   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;  
+ 1  2011 RS    soybean     1 low       Fgra   
+ 2  2011 RS    soybean     1 low       Fgra   
+ 3  2011 RS    soybean     1 low       Fgra   
+ 4  2011 RS    soybean     1 low       Fgra   
+ 5  2011 RS    soybean     1 low       Fgra   
+ 6  2011 RS    soybean     1 low       Fgra   
+ 7  2011 RS    corn        1 low       Fgra   
+ 8  2010 RS    soybean     2 low       Fspp   
+ 9  2010 RS    corn        2 low       Fgra   
+10  2011 RS    soybean     2 low       Fgra   
+# ℹ 656 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -891,7 +912,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="aprendizaje-del-día" class="level1">
 <h1>Aprendizaje del día</h1>
 <ul>
-<li><strong>Código R dentro de Bloques de Código</strong>: Utilizamos <code>{r} ...</code> para encapsular nuestro código R en el documento Quarto.</li>
+<li><strong>Código R dentro de Bloques de Código</strong>: Utilizamos <code>{r}</code> para encapsular nuestro código R en el documento Quarto.</li>
 <li><strong>Librerías Necesarias</strong>: Asegúrate de cargar las librerías necesarias al comienzo del bloque de código.</li>
 </ul>
 
@@ -1540,190 +1561,190 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb26-37"><a href="#cb26-37" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-38"><a href="#cb26-38" aria-hidden="true" tabindex="-1"></a>**Tidyverse**: es un paquete que consolida una serie de herramientas. Forman parte del tidyverse los paquetes <span class="co">[</span><span class="ot">dplyr</span><span class="co">]</span>{.underline}, <span class="co">[</span><span class="ot">tidyr</span><span class="co">]</span>{.underline}, <span class="co">[</span><span class="ot">readr</span><span class="co">]</span>{.underline}, <span class="co">[</span><span class="ot">ggplot2</span><span class="co">]</span>{.underline}, entre muchos otros.</span>
 <span id="cb26-39"><a href="#cb26-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-40"><a href="#cb26-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-41"><a href="#cb26-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Datos en formato Excel (paquete readxl)</span></span>
-<span id="cb26-42"><a href="#cb26-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-43"><a href="#cb26-43" aria-hidden="true" tabindex="-1"></a>Para importar datos directamente de otros softwares, es necesario instalar paquetes, como readxl, usado para la importación de hojas de cálculo de Excel. El paquete readxl permite generar data frames de hojas de cálculo Excel y es la forma más sencilla de cargar un archivo en este formato. El paquete readxl no es del conjunto tidyverse, por lo que necesita ser cargado siempre antes de usarlo. La mayoría de las funciones de readxl permiten leer datos de hojas de cálculo Excel, como read_excel. El primer argumento para read_excel es la ruta del archivo que debe ser leído. La ruta del archivo y el nombre del archivo (incluyendo la extensión del archivo) deben ser colocados entre comillas dobles, ya que la función espera que sea una función de carácter.</span>
-<span id="cb26-44"><a href="#cb26-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-47"><a href="#cb26-47" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-48"><a href="#cb26-48" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb26-49"><a href="#cb26-49" aria-hidden="true" tabindex="-1"></a>magnesio <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"dados-diversos.xlsx"</span>)</span>
-<span id="cb26-50"><a href="#cb26-50" aria-hidden="true" tabindex="-1"></a>escala1 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"dados-diversos.xlsx"</span>, <span class="st">"escala"</span>)</span>
-<span id="cb26-51"><a href="#cb26-51" aria-hidden="true" tabindex="-1"></a>escala2 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"dados-diversos.xlsx"</span>, <span class="dv">2</span>)</span>
-<span id="cb26-52"><a href="#cb26-52" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-53"><a href="#cb26-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-54"><a href="#cb26-54" aria-hidden="true" tabindex="-1"></a>En Excel, un archivo puede tener varias hojas. Por defecto, las funciones de lectura traerán solo la primera hoja del archivo. Para traer otra hoja específica, basta con utilizar el argumento <span class="in">`sheet`</span> seguido del número de la hoja (línea 3 del comando anterior), o añadir el nombre de la hoja deseada entre comillas dobles, separada del nombre de la hoja general por una coma (línea 2 del comando anterior).</span>
-<span id="cb26-55"><a href="#cb26-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-56"><a href="#cb26-56" aria-hidden="true" tabindex="-1"></a><span class="fu">### Datos en formato csv y txt (paquete readr)</span></span>
-<span id="cb26-57"><a href="#cb26-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-58"><a href="#cb26-58" aria-hidden="true" tabindex="-1"></a>El paquete readr del tidyverse es utilizado para importar archivos de texto, como .txt o .csv, para R y su carga se hace, al igual que los demás, con la función library. Readr transforma archivos de texto en tibbles usando funciones como: read.csv() o read_csv() - usadas para importar archivos de valores separados por comas y con la primera línea de los datos con los nombres de las variables. read.csv2 o read_csv2() - usada para importar bases de archivos separados por punto y coma en R. En algunos países, como Brasil, las comas se utilizan para separar las casas decimales de los números, haciendo inviable el uso de archivos .csv. En estos casos, cuando la coma es el separador decimal, los archivos .csv pasan a ser separados por punto y coma, así, esta función asume que los datos son separados por ; y que una coma es usada en lugar de un punto decimal.</span>
-<span id="cb26-59"><a href="#cb26-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-60"><a href="#cb26-60" aria-hidden="true" tabindex="-1"></a>**CSV**:</span>
-<span id="cb26-61"><a href="#cb26-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-64"><a href="#cb26-64" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-65"><a href="#cb26-65" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb26-40"><a href="#cb26-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Datos en formato Excel (paquete readxl)</span></span>
+<span id="cb26-41"><a href="#cb26-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-42"><a href="#cb26-42" aria-hidden="true" tabindex="-1"></a>Para importar datos directamente de otros softwares, es necesario instalar paquetes, como readxl, usado para la importación de hojas de cálculo de Excel. El paquete readxl permite generar data frames de hojas de cálculo Excel y es la forma más sencilla de cargar un archivo en este formato. El paquete readxl no es del conjunto tidyverse, por lo que necesita ser cargado siempre antes de usarlo. La mayoría de las funciones de readxl permiten leer datos de hojas de cálculo Excel, como read_excel. El primer argumento para read_excel es la ruta del archivo que debe ser leído. La ruta del archivo y el nombre del archivo (incluyendo la extensión del archivo) deben ser colocados entre comillas dobles, ya que la función espera que sea una función de carácter.</span>
+<span id="cb26-43"><a href="#cb26-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-46"><a href="#cb26-46" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb26-47"><a href="#cb26-47" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb26-48"><a href="#cb26-48" aria-hidden="true" tabindex="-1"></a>magnesio <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"dados-diversos.xlsx"</span>)</span>
+<span id="cb26-49"><a href="#cb26-49" aria-hidden="true" tabindex="-1"></a>escala1 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"dados-diversos.xlsx"</span>, <span class="st">"escala"</span>)</span>
+<span id="cb26-50"><a href="#cb26-50" aria-hidden="true" tabindex="-1"></a>escala2 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"dados-diversos.xlsx"</span>, <span class="dv">2</span>)</span>
+<span id="cb26-51"><a href="#cb26-51" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-52"><a href="#cb26-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-53"><a href="#cb26-53" aria-hidden="true" tabindex="-1"></a>En Excel, un archivo puede tener varias hojas. Por defecto, las funciones de lectura traerán solo la primera hoja del archivo. Para traer otra hoja específica, basta con utilizar el argumento <span class="in">`sheet`</span> seguido del número de la hoja (línea 3 del comando anterior), o añadir el nombre de la hoja deseada entre comillas dobles, separada del nombre de la hoja general por una coma (línea 2 del comando anterior).</span>
+<span id="cb26-54"><a href="#cb26-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-55"><a href="#cb26-55" aria-hidden="true" tabindex="-1"></a><span class="fu">### Datos en formato csv y txt (paquete readr)</span></span>
+<span id="cb26-56"><a href="#cb26-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-57"><a href="#cb26-57" aria-hidden="true" tabindex="-1"></a>El paquete readr del tidyverse es utilizado para importar archivos de texto, como .txt o .csv, para R y su carga se hace, al igual que los demás, con la función library. Readr transforma archivos de texto en tibbles usando funciones como: read.csv() o read_csv() - usadas para importar archivos de valores separados por comas y con la primera línea de los datos con los nombres de las variables. read.csv2 o read_csv2() - usada para importar bases de archivos separados por punto y coma en R. En algunos países, como Brasil, las comas se utilizan para separar las casas decimales de los números, haciendo inviable el uso de archivos .csv. En estos casos, cuando la coma es el separador decimal, los archivos .csv pasan a ser separados por punto y coma, así, esta función asume que los datos son separados por ; y que una coma es usada en lugar de un punto decimal.</span>
+<span id="cb26-58"><a href="#cb26-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-59"><a href="#cb26-59" aria-hidden="true" tabindex="-1"></a>**CSV**:</span>
+<span id="cb26-60"><a href="#cb26-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-63"><a href="#cb26-63" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb26-64"><a href="#cb26-64" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb26-65"><a href="#cb26-65" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-66"><a href="#cb26-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-67"><a href="#cb26-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-68"><a href="#cb26-68" aria-hidden="true" tabindex="-1"></a><span class="co"># usando read_csv</span></span>
-<span id="cb26-69"><a href="#cb26-69" aria-hidden="true" tabindex="-1"></a>magnesio3 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"dados-diversos.csv"</span>)</span>
-<span id="cb26-70"><a href="#cb26-70" aria-hidden="true" tabindex="-1"></a>magnesio3</span>
-<span id="cb26-71"><a href="#cb26-71" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-72"><a href="#cb26-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-73"><a href="#cb26-73" aria-hidden="true" tabindex="-1"></a>**TXT**: Las funciones de readr se usan de forma similar a las de read.table, siendo que muchas veces usan los mismos argumentos. Archivos en formato txt pueden ser importados usando read.table.</span>
-<span id="cb26-74"><a href="#cb26-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-77"><a href="#cb26-77" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-78"><a href="#cb26-78" aria-hidden="true" tabindex="-1"></a><span class="co"># usando read.table</span></span>
-<span id="cb26-79"><a href="#cb26-79" aria-hidden="true" tabindex="-1"></a>magnesio4 <span class="ot">&lt;-</span><span class="fu">read.table</span>(<span class="st">"dados-diversos.txt"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb26-80"><a href="#cb26-80" aria-hidden="true" tabindex="-1"></a>magnesio4</span>
-<span id="cb26-81"><a href="#cb26-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-82"><a href="#cb26-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-83"><a href="#cb26-83" aria-hidden="true" tabindex="-1"></a>*Nota:* El argumento <span class="in">`header = TRUE`</span> especifica que la primera línea de los datos contiene el nombre de las variables (ej. magnesio, nitrogenio), si este no es el caso, solo usa el argumento <span class="in">`header = FALSE`</span>.</span>
-<span id="cb26-84"><a href="#cb26-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-85"><a href="#cb26-85" aria-hidden="true" tabindex="-1"></a><span class="fu">## Datos en hojas de cálculo de Google Sheets</span></span>
-<span id="cb26-86"><a href="#cb26-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-87"><a href="#cb26-87" aria-hidden="true" tabindex="-1"></a>Para importar hojas de cálculo de Google, usa la función <span class="in">`gsheet2tbl`</span> (read_sheet), presente en el paquete googlesheets4 o el paquete gsheet. Como estos paquetes tampoco son parte del conjunto tidyverse, necesitas cargarlos para usarlos. La función <span class="in">`gsheet2tbl`</span> lee el archivo (hoja de cálculo de Google) a partir de una URL (copias y pegas el enlace de la hoja de cálculo deseada).</span>
-<span id="cb26-88"><a href="#cb26-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-91"><a href="#cb26-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-92"><a href="#cb26-92" aria-hidden="true" tabindex="-1"></a><span class="co"># usando el paquete gsheet</span></span>
-<span id="cb26-93"><a href="#cb26-93" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gsheet)</span>
-<span id="cb26-94"><a href="#cb26-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-95"><a href="#cb26-95" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1aID5Dh6PlBVCKzU1j7k-WA6zuWQWE2NhtWEgdJtt5iA/edit#gid=366054269"</span>)</span>
-<span id="cb26-96"><a href="#cb26-96" aria-hidden="true" tabindex="-1"></a>survey </span>
-<span id="cb26-97"><a href="#cb26-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-98"><a href="#cb26-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-99"><a href="#cb26-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-100"><a href="#cb26-100" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tablas interactivas</span></span>
-<span id="cb26-101"><a href="#cb26-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-102"><a href="#cb26-102" aria-hidden="true" tabindex="-1"></a><span class="fu">### Paquete `DT` en R</span></span>
-<span id="cb26-103"><a href="#cb26-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-104"><a href="#cb26-104" aria-hidden="true" tabindex="-1"></a>El paquete <span class="in">`DT`</span> en R permite crear tablas interactivas a partir de data frames. Estas tablas son fáciles de explorar y personalizar, lo que facilita la visualización de datos en un formato tabular. <span class="in">`DT`</span> se basa en la biblioteca JavaScript DataTables, que proporciona una variedad de funcionalidades como paginación, búsqueda, ordenación y mucho más.</span>
-<span id="cb26-105"><a href="#cb26-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-106"><a href="#cb26-106" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Instalación y carga del paquete `DT`</span></span>
-<span id="cb26-107"><a href="#cb26-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-108"><a href="#cb26-108" aria-hidden="true" tabindex="-1"></a>Primero, necesitas instalar y cargar el paquete <span class="in">`DT`</span>. Esto se puede hacer utilizando los siguientes comandos en R:</span>
-<span id="cb26-109"><a href="#cb26-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-112"><a href="#cb26-112" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-113"><a href="#cb26-113" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalación del paquete DT</span></span>
-<span id="cb26-114"><a href="#cb26-114" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("DT")</span></span>
-<span id="cb26-115"><a href="#cb26-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-116"><a href="#cb26-116" aria-hidden="true" tabindex="-1"></a><span class="co"># Carga del paquete DT</span></span>
-<span id="cb26-117"><a href="#cb26-117" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
-<span id="cb26-118"><a href="#cb26-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-119"><a href="#cb26-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-120"><a href="#cb26-120" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Crear una tabla interactiva básica</span></span>
-<span id="cb26-121"><a href="#cb26-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-122"><a href="#cb26-122" aria-hidden="true" tabindex="-1"></a>Para crear una tabla interactiva básica a partir de un data frame, puedes usar la función <span class="in">`datatable()`</span>. Aquí hay un ejemplo utilizando el conjunto de datos <span class="in">`mtcars`</span> que viene incorporado en R:</span>
-<span id="cb26-123"><a href="#cb26-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-126"><a href="#cb26-126" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-127"><a href="#cb26-127" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una tabla interactiva con el conjunto de datos mtcars</span></span>
-<span id="cb26-128"><a href="#cb26-128" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(magnesio3)</span>
-<span id="cb26-129"><a href="#cb26-129" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-130"><a href="#cb26-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-131"><a href="#cb26-131" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Personalización de la tabla</span></span>
-<span id="cb26-132"><a href="#cb26-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-133"><a href="#cb26-133" aria-hidden="true" tabindex="-1"></a>Puedes personalizar la tabla interactiva de muchas maneras. Aquí hay algunos ejemplos de opciones comunes:</span>
-<span id="cb26-134"><a href="#cb26-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-135"><a href="#cb26-135" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Paginación**: Controlar el número de filas que se muestran por página.</span>
-<span id="cb26-136"><a href="#cb26-136" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Ordenación**: Habilitar o deshabilitar la ordenación de columnas.</span>
-<span id="cb26-137"><a href="#cb26-137" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Búsqueda**: Añadir una barra de búsqueda para filtrar filas.</span>
-<span id="cb26-138"><a href="#cb26-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-141"><a href="#cb26-141" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-142"><a href="#cb26-142" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla interactiva con opciones personalizadas</span></span>
-<span id="cb26-143"><a href="#cb26-143" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(magnesio3, </span>
-<span id="cb26-144"><a href="#cb26-144" aria-hidden="true" tabindex="-1"></a>          <span class="at">options =</span> <span class="fu">list</span>(</span>
-<span id="cb26-145"><a href="#cb26-145" aria-hidden="true" tabindex="-1"></a>            <span class="at">pageLength =</span> <span class="dv">5</span>,  <span class="co"># Número de filas por página</span></span>
-<span id="cb26-146"><a href="#cb26-146" aria-hidden="true" tabindex="-1"></a>            <span class="at">order =</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="dv">0</span>, <span class="st">'asc'</span>)),  <span class="co"># Ordenar por la primera columna en orden ascendente</span></span>
-<span id="cb26-147"><a href="#cb26-147" aria-hidden="true" tabindex="-1"></a>            <span class="at">searching =</span> <span class="cn">TRUE</span>  <span class="co"># Habilitar la barra de búsqueda</span></span>
-<span id="cb26-148"><a href="#cb26-148" aria-hidden="true" tabindex="-1"></a>          ))</span>
-<span id="cb26-149"><a href="#cb26-149" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-150"><a href="#cb26-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-151"><a href="#cb26-151" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Ejemplo avanzado: Colorear celdas</span></span>
-<span id="cb26-152"><a href="#cb26-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-153"><a href="#cb26-153" aria-hidden="true" tabindex="-1"></a>Puedes utilizar opciones más avanzadas para personalizar el formato de la tabla, como colorear celdas basadas en valores:</span>
-<span id="cb26-154"><a href="#cb26-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-157"><a href="#cb26-157" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-158"><a href="#cb26-158" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla interactiva con celdas coloreadas</span></span>
-<span id="cb26-159"><a href="#cb26-159" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(magnesio3) <span class="sc">%&gt;%</span></span>
-<span id="cb26-160"><a href="#cb26-160" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatStyle</span>(</span>
-<span id="cb26-161"><a href="#cb26-161" aria-hidden="true" tabindex="-1"></a>    <span class="st">'severity'</span>,  <span class="co"># Columna a formatear</span></span>
-<span id="cb26-162"><a href="#cb26-162" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundColor =</span> <span class="fu">styleInterval</span>(.<span class="dv">4</span>, <span class="fu">c</span>(<span class="st">'lightgreen'</span>, <span class="st">'lightcoral'</span>))  <span class="co"># Colores basados en intervalos de valores</span></span>
-<span id="cb26-163"><a href="#cb26-163" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb26-164"><a href="#cb26-164" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-165"><a href="#cb26-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-166"><a href="#cb26-166" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Integración con Markdown</span></span>
-<span id="cb26-167"><a href="#cb26-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-168"><a href="#cb26-168" aria-hidden="true" tabindex="-1"></a>El paquete <span class="in">`DT`</span> se integra perfectamente con documentos R Markdown y Quarto, permitiendo incluir tablas interactivas en tus informes y presentaciones.</span>
-<span id="cb26-169"><a href="#cb26-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-172"><a href="#cb26-172" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-173"><a href="#cb26-173" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
-<span id="cb26-174"><a href="#cb26-174" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(magnesio3)</span>
-<span id="cb26-175"><a href="#cb26-175" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-176"><a href="#cb26-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-177"><a href="#cb26-177" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Resumen</span></span>
-<span id="cb26-178"><a href="#cb26-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-179"><a href="#cb26-179" aria-hidden="true" tabindex="-1"></a>El paquete <span class="in">`DT`</span> en R es una herramienta poderosa para crear tablas interactivas que son fáciles de usar y altamente personalizables. Con <span class="in">`DT`</span>, puedes transformar simples data frames en visualizaciones interactivas y atractivas, mejorando la presentación de tus datos en informes y dashboards.</span>
-<span id="cb26-180"><a href="#cb26-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-181"><a href="#cb26-181" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exportación de tablas interactivas en formato Excel y CSV</span></span>
-<span id="cb26-182"><a href="#cb26-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-183"><a href="#cb26-183" aria-hidden="true" tabindex="-1"></a>Para exportar tablas interactivas en formato Excel y CSV utilizando el paquete <span class="in">`DT`</span>, puedes usar la opción <span class="in">`buttons`</span> en el parámetro <span class="in">`extensions`</span> de la función <span class="in">`datatable()`</span>. La librería <span class="in">`DT`</span> permite añadir botones que facilitan la exportación de los datos en varios formatos, incluyendo Excel y CSV.</span>
-<span id="cb26-184"><a href="#cb26-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-185"><a href="#cb26-185" aria-hidden="true" tabindex="-1"></a><span class="fu">### Instalación y carga de paquetes necesarios</span></span>
-<span id="cb26-186"><a href="#cb26-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-187"><a href="#cb26-187" aria-hidden="true" tabindex="-1"></a>Primero, asegúrate de tener los paquetes necesarios instalados y cargados:</span>
-<span id="cb26-188"><a href="#cb26-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-191"><a href="#cb26-191" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-192"><a href="#cb26-192" aria-hidden="true" tabindex="-1"></a><span class="co"># Instala el paquete DT si aún no lo has hecho</span></span>
-<span id="cb26-193"><a href="#cb26-193" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("DT")</span></span>
-<span id="cb26-194"><a href="#cb26-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-195"><a href="#cb26-195" aria-hidden="true" tabindex="-1"></a><span class="co"># Carga el paquete DT</span></span>
-<span id="cb26-196"><a href="#cb26-196" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
-<span id="cb26-197"><a href="#cb26-197" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-198"><a href="#cb26-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-199"><a href="#cb26-199" aria-hidden="true" tabindex="-1"></a><span class="fu">### Crear una tabla interactiva con botones de exportación</span></span>
-<span id="cb26-200"><a href="#cb26-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-201"><a href="#cb26-201" aria-hidden="true" tabindex="-1"></a>Aquí tienes un ejemplo completo de cómo crear una tabla interactiva con opciones para exportar en Excel y CSV:</span>
-<span id="cb26-202"><a href="#cb26-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-205"><a href="#cb26-205" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-206"><a href="#cb26-206" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una tabla interactiva con botones de exportación</span></span>
-<span id="cb26-207"><a href="#cb26-207" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(magnesio3, </span>
-<span id="cb26-208"><a href="#cb26-208" aria-hidden="true" tabindex="-1"></a>          <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
-<span id="cb26-209"><a href="#cb26-209" aria-hidden="true" tabindex="-1"></a>          <span class="at">options =</span> <span class="fu">list</span>(</span>
-<span id="cb26-210"><a href="#cb26-210" aria-hidden="true" tabindex="-1"></a>            <span class="at">dom =</span> <span class="st">'Bfrtip'</span>,</span>
-<span id="cb26-211"><a href="#cb26-211" aria-hidden="true" tabindex="-1"></a>            <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'csv'</span>, <span class="st">'excel'</span>),</span>
-<span id="cb26-212"><a href="#cb26-212" aria-hidden="true" tabindex="-1"></a>            <span class="at">pageLength =</span> <span class="dv">5</span>  <span class="co"># Número de filas por página</span></span>
-<span id="cb26-213"><a href="#cb26-213" aria-hidden="true" tabindex="-1"></a>          ))</span>
-<span id="cb26-214"><a href="#cb26-214" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-215"><a href="#cb26-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-216"><a href="#cb26-216" aria-hidden="true" tabindex="-1"></a><span class="fu">### Explicación del código</span></span>
-<span id="cb26-217"><a href="#cb26-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-218"><a href="#cb26-218" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`extensions = 'Buttons'`</span>: Esta opción habilita la extensión de botones para DataTables.</span>
-<span id="cb26-219"><a href="#cb26-219" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`dom = 'Bfrtip'`</span>: Controla la disposición de los elementos de la tabla. <span class="in">`B`</span> es para los botones, <span class="in">`f`</span> para la barra de búsqueda (filter), <span class="in">`r`</span> para la información sobre el procesamiento (processing), <span class="in">`t`</span> para la tabla (table), <span class="in">`i`</span> para la información (information), y <span class="in">`p`</span> para la paginación (pagination).</span>
-<span id="cb26-220"><a href="#cb26-220" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`buttons = c('csv', 'excel')`</span>: Especifica que se deben incluir botones para exportar en formato CSV y Excel.</span>
-<span id="cb26-221"><a href="#cb26-221" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`pageLength = 5`</span>: Opcional, establece el número de filas que se muestran por página.</span>
-<span id="cb26-222"><a href="#cb26-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-223"><a href="#cb26-223" aria-hidden="true" tabindex="-1"></a><span class="fu">### Ejemplo completo</span></span>
-<span id="cb26-224"><a href="#cb26-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-225"><a href="#cb26-225" aria-hidden="true" tabindex="-1"></a>Aquí tienes un ejemplo completo en un script que incluye la instalación, carga y creación de la tabla interactiva con los botones de exportación:</span>
-<span id="cb26-226"><a href="#cb26-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-229"><a href="#cb26-229" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-230"><a href="#cb26-230" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar y cargar el paquete DT</span></span>
-<span id="cb26-231"><a href="#cb26-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-232"><a href="#cb26-232" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
-<span id="cb26-233"><a href="#cb26-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-234"><a href="#cb26-234" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una tabla interactiva con botones de exportación</span></span>
-<span id="cb26-235"><a href="#cb26-235" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(mtcars, </span>
-<span id="cb26-236"><a href="#cb26-236" aria-hidden="true" tabindex="-1"></a>          <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
-<span id="cb26-237"><a href="#cb26-237" aria-hidden="true" tabindex="-1"></a>          <span class="at">options =</span> <span class="fu">list</span>(</span>
-<span id="cb26-238"><a href="#cb26-238" aria-hidden="true" tabindex="-1"></a>            <span class="at">dom =</span> <span class="st">'Bfrtip'</span>,</span>
-<span id="cb26-239"><a href="#cb26-239" aria-hidden="true" tabindex="-1"></a>            <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'csv'</span>, <span class="st">'excel'</span>),</span>
-<span id="cb26-240"><a href="#cb26-240" aria-hidden="true" tabindex="-1"></a>            <span class="at">pageLength =</span> <span class="dv">5</span>  <span class="co"># Número de filas por página</span></span>
-<span id="cb26-241"><a href="#cb26-241" aria-hidden="true" tabindex="-1"></a>          ))</span>
-<span id="cb26-242"><a href="#cb26-242" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-243"><a href="#cb26-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-244"><a href="#cb26-244" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exportar datos en R Markdown o Quarto</span></span>
-<span id="cb26-245"><a href="#cb26-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-246"><a href="#cb26-246" aria-hidden="true" tabindex="-1"></a>Si estás trabajando en un documento R Markdown o Quarto, puedes integrar la tabla interactiva de la siguiente manera:</span>
-<span id="cb26-247"><a href="#cb26-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-67"><a href="#cb26-67" aria-hidden="true" tabindex="-1"></a><span class="co"># usando read_csv</span></span>
+<span id="cb26-68"><a href="#cb26-68" aria-hidden="true" tabindex="-1"></a>magnesio3 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"dados-diversos.csv"</span>)</span>
+<span id="cb26-69"><a href="#cb26-69" aria-hidden="true" tabindex="-1"></a>magnesio3</span>
+<span id="cb26-70"><a href="#cb26-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-71"><a href="#cb26-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-72"><a href="#cb26-72" aria-hidden="true" tabindex="-1"></a>**TXT**: Las funciones de readr se usan de forma similar a las de read.table, siendo que muchas veces usan los mismos argumentos. Archivos en formato txt pueden ser importados usando read.table.</span>
+<span id="cb26-73"><a href="#cb26-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-76"><a href="#cb26-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb26-77"><a href="#cb26-77" aria-hidden="true" tabindex="-1"></a><span class="co"># usando read.table</span></span>
+<span id="cb26-78"><a href="#cb26-78" aria-hidden="true" tabindex="-1"></a>magnesio4 <span class="ot">&lt;-</span><span class="fu">read.table</span>(<span class="st">"dados-diversos.txt"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb26-79"><a href="#cb26-79" aria-hidden="true" tabindex="-1"></a>magnesio4</span>
+<span id="cb26-80"><a href="#cb26-80" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-81"><a href="#cb26-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-82"><a href="#cb26-82" aria-hidden="true" tabindex="-1"></a>*Nota:* El argumento <span class="in">`header = TRUE`</span> especifica que la primera línea de los datos contiene el nombre de las variables (ej. magnesio, nitrogenio), si este no es el caso, solo usa el argumento <span class="in">`header = FALSE`</span>.</span>
+<span id="cb26-83"><a href="#cb26-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-84"><a href="#cb26-84" aria-hidden="true" tabindex="-1"></a><span class="fu">## Datos en hojas de cálculo de Google Sheets</span></span>
+<span id="cb26-85"><a href="#cb26-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-86"><a href="#cb26-86" aria-hidden="true" tabindex="-1"></a>Para importar hojas de cálculo de Google, usa la función <span class="in">`gsheet2tbl`</span> (read_sheet), presente en el paquete googlesheets4 o el paquete gsheet. Como estos paquetes tampoco son parte del conjunto tidyverse, necesitas cargarlos para usarlos. La función <span class="in">`gsheet2tbl`</span> lee el archivo (hoja de cálculo de Google) a partir de una URL (copias y pegas el enlace de la hoja de cálculo deseada).</span>
+<span id="cb26-87"><a href="#cb26-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-90"><a href="#cb26-90" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb26-91"><a href="#cb26-91" aria-hidden="true" tabindex="-1"></a><span class="co"># usando el paquete gsheet</span></span>
+<span id="cb26-92"><a href="#cb26-92" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gsheet)</span>
+<span id="cb26-93"><a href="#cb26-93" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb26-94"><a href="#cb26-94" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb26-95"><a href="#cb26-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-96"><a href="#cb26-96" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit?gid=1118819738#gid=1118819738"</span>)</span>
+<span id="cb26-97"><a href="#cb26-97" aria-hidden="true" tabindex="-1"></a>survey </span>
+<span id="cb26-98"><a href="#cb26-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-99"><a href="#cb26-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-100"><a href="#cb26-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-101"><a href="#cb26-101" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tablas interactivas</span></span>
+<span id="cb26-102"><a href="#cb26-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-103"><a href="#cb26-103" aria-hidden="true" tabindex="-1"></a><span class="fu">### Paquete `DT` en R</span></span>
+<span id="cb26-104"><a href="#cb26-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-105"><a href="#cb26-105" aria-hidden="true" tabindex="-1"></a>El paquete <span class="in">`DT`</span> en R permite crear tablas interactivas a partir de data frames. Estas tablas son fáciles de explorar y personalizar, lo que facilita la visualización de datos en un formato tabular. <span class="in">`DT`</span> se basa en la biblioteca JavaScript DataTables, que proporciona una variedad de funcionalidades como paginación, búsqueda, ordenación y mucho más.</span>
+<span id="cb26-106"><a href="#cb26-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-107"><a href="#cb26-107" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Instalación y carga del paquete `DT`</span></span>
+<span id="cb26-108"><a href="#cb26-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-109"><a href="#cb26-109" aria-hidden="true" tabindex="-1"></a>Primero, necesitas instalar y cargar el paquete <span class="in">`DT`</span>. Esto se puede hacer utilizando los siguientes comandos en R:</span>
+<span id="cb26-110"><a href="#cb26-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-113"><a href="#cb26-113" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb26-114"><a href="#cb26-114" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalación del paquete DT</span></span>
+<span id="cb26-115"><a href="#cb26-115" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("DT")</span></span>
+<span id="cb26-116"><a href="#cb26-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-117"><a href="#cb26-117" aria-hidden="true" tabindex="-1"></a><span class="co"># Carga del paquete DT</span></span>
+<span id="cb26-118"><a href="#cb26-118" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb26-119"><a href="#cb26-119" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-120"><a href="#cb26-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-121"><a href="#cb26-121" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Crear una tabla interactiva básica</span></span>
+<span id="cb26-122"><a href="#cb26-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-123"><a href="#cb26-123" aria-hidden="true" tabindex="-1"></a>Para crear una tabla interactiva básica a partir de un data frame, puedes usar la función <span class="in">`datatable()`</span>. Aquí hay un ejemplo utilizando el conjunto de datos <span class="in">`mtcars`</span> que viene incorporado en R:</span>
+<span id="cb26-124"><a href="#cb26-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-127"><a href="#cb26-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb26-128"><a href="#cb26-128" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una tabla interactiva con el conjunto de datos mtcars</span></span>
+<span id="cb26-129"><a href="#cb26-129" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(magnesio3)</span>
+<span id="cb26-130"><a href="#cb26-130" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-131"><a href="#cb26-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-132"><a href="#cb26-132" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Personalización de la tabla</span></span>
+<span id="cb26-133"><a href="#cb26-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-134"><a href="#cb26-134" aria-hidden="true" tabindex="-1"></a>Puedes personalizar la tabla interactiva de muchas maneras. Aquí hay algunos ejemplos de opciones comunes:</span>
+<span id="cb26-135"><a href="#cb26-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-136"><a href="#cb26-136" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Paginación**: Controlar el número de filas que se muestran por página.</span>
+<span id="cb26-137"><a href="#cb26-137" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Ordenación**: Habilitar o deshabilitar la ordenación de columnas.</span>
+<span id="cb26-138"><a href="#cb26-138" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Búsqueda**: Añadir una barra de búsqueda para filtrar filas.</span>
+<span id="cb26-139"><a href="#cb26-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-142"><a href="#cb26-142" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb26-143"><a href="#cb26-143" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla interactiva con opciones personalizadas</span></span>
+<span id="cb26-144"><a href="#cb26-144" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(magnesio3, </span>
+<span id="cb26-145"><a href="#cb26-145" aria-hidden="true" tabindex="-1"></a>          <span class="at">options =</span> <span class="fu">list</span>(</span>
+<span id="cb26-146"><a href="#cb26-146" aria-hidden="true" tabindex="-1"></a>            <span class="at">pageLength =</span> <span class="dv">5</span>,  <span class="co"># Número de filas por página</span></span>
+<span id="cb26-147"><a href="#cb26-147" aria-hidden="true" tabindex="-1"></a>            <span class="at">order =</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="dv">0</span>, <span class="st">'asc'</span>)),  <span class="co"># Ordenar por la primera columna en orden ascendente</span></span>
+<span id="cb26-148"><a href="#cb26-148" aria-hidden="true" tabindex="-1"></a>            <span class="at">searching =</span> <span class="cn">TRUE</span>  <span class="co"># Habilitar la barra de búsqueda</span></span>
+<span id="cb26-149"><a href="#cb26-149" aria-hidden="true" tabindex="-1"></a>          ))</span>
+<span id="cb26-150"><a href="#cb26-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-151"><a href="#cb26-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-152"><a href="#cb26-152" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Ejemplo avanzado: Colorear celdas</span></span>
+<span id="cb26-153"><a href="#cb26-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-154"><a href="#cb26-154" aria-hidden="true" tabindex="-1"></a>Puedes utilizar opciones más avanzadas para personalizar el formato de la tabla, como colorear celdas basadas en valores:</span>
+<span id="cb26-155"><a href="#cb26-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-158"><a href="#cb26-158" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb26-159"><a href="#cb26-159" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla interactiva con celdas coloreadas</span></span>
+<span id="cb26-160"><a href="#cb26-160" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(magnesio3) <span class="sc">%&gt;%</span></span>
+<span id="cb26-161"><a href="#cb26-161" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatStyle</span>(</span>
+<span id="cb26-162"><a href="#cb26-162" aria-hidden="true" tabindex="-1"></a>    <span class="st">'severity'</span>,  <span class="co"># Columna a formatear</span></span>
+<span id="cb26-163"><a href="#cb26-163" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundColor =</span> <span class="fu">styleInterval</span>(.<span class="dv">4</span>, <span class="fu">c</span>(<span class="st">'lightgreen'</span>, <span class="st">'lightcoral'</span>))  <span class="co"># Colores basados en intervalos de valores</span></span>
+<span id="cb26-164"><a href="#cb26-164" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb26-165"><a href="#cb26-165" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-166"><a href="#cb26-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-167"><a href="#cb26-167" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Integración con Markdown</span></span>
+<span id="cb26-168"><a href="#cb26-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-169"><a href="#cb26-169" aria-hidden="true" tabindex="-1"></a>El paquete <span class="in">`DT`</span> se integra perfectamente con documentos R Markdown y Quarto, permitiendo incluir tablas interactivas en tus informes y presentaciones.</span>
+<span id="cb26-170"><a href="#cb26-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-173"><a href="#cb26-173" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb26-174"><a href="#cb26-174" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb26-175"><a href="#cb26-175" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(magnesio3)</span>
+<span id="cb26-176"><a href="#cb26-176" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-177"><a href="#cb26-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-178"><a href="#cb26-178" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Resumen</span></span>
+<span id="cb26-179"><a href="#cb26-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-180"><a href="#cb26-180" aria-hidden="true" tabindex="-1"></a>El paquete <span class="in">`DT`</span> en R es una herramienta poderosa para crear tablas interactivas que son fáciles de usar y altamente personalizables. Con <span class="in">`DT`</span>, puedes transformar simples data frames en visualizaciones interactivas y atractivas, mejorando la presentación de tus datos en informes y dashboards.</span>
+<span id="cb26-181"><a href="#cb26-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-182"><a href="#cb26-182" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exportación de tablas interactivas en formato Excel y CSV</span></span>
+<span id="cb26-183"><a href="#cb26-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-184"><a href="#cb26-184" aria-hidden="true" tabindex="-1"></a>Para exportar tablas interactivas en formato Excel y CSV utilizando el paquete <span class="in">`DT`</span>, puedes usar la opción <span class="in">`buttons`</span> en el parámetro <span class="in">`extensions`</span> de la función <span class="in">`datatable()`</span>. La librería <span class="in">`DT`</span> permite añadir botones que facilitan la exportación de los datos en varios formatos, incluyendo Excel y CSV.</span>
+<span id="cb26-185"><a href="#cb26-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-186"><a href="#cb26-186" aria-hidden="true" tabindex="-1"></a><span class="fu">### Instalación y carga de paquetes necesarios</span></span>
+<span id="cb26-187"><a href="#cb26-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-188"><a href="#cb26-188" aria-hidden="true" tabindex="-1"></a>Primero, asegúrate de tener los paquetes necesarios instalados y cargados:</span>
+<span id="cb26-189"><a href="#cb26-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-192"><a href="#cb26-192" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb26-193"><a href="#cb26-193" aria-hidden="true" tabindex="-1"></a><span class="co"># Instala el paquete DT si aún no lo has hecho</span></span>
+<span id="cb26-194"><a href="#cb26-194" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("DT")</span></span>
+<span id="cb26-195"><a href="#cb26-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-196"><a href="#cb26-196" aria-hidden="true" tabindex="-1"></a><span class="co"># Carga el paquete DT</span></span>
+<span id="cb26-197"><a href="#cb26-197" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb26-198"><a href="#cb26-198" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-199"><a href="#cb26-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-200"><a href="#cb26-200" aria-hidden="true" tabindex="-1"></a><span class="fu">### Crear una tabla interactiva con botones de exportación</span></span>
+<span id="cb26-201"><a href="#cb26-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-202"><a href="#cb26-202" aria-hidden="true" tabindex="-1"></a>Aquí tienes un ejemplo completo de cómo crear una tabla interactiva con opciones para exportar en Excel y CSV:</span>
+<span id="cb26-203"><a href="#cb26-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-206"><a href="#cb26-206" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb26-207"><a href="#cb26-207" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una tabla interactiva con botones de exportación</span></span>
+<span id="cb26-208"><a href="#cb26-208" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(magnesio3, </span>
+<span id="cb26-209"><a href="#cb26-209" aria-hidden="true" tabindex="-1"></a>          <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
+<span id="cb26-210"><a href="#cb26-210" aria-hidden="true" tabindex="-1"></a>          <span class="at">options =</span> <span class="fu">list</span>(</span>
+<span id="cb26-211"><a href="#cb26-211" aria-hidden="true" tabindex="-1"></a>            <span class="at">dom =</span> <span class="st">'Bfrtip'</span>,</span>
+<span id="cb26-212"><a href="#cb26-212" aria-hidden="true" tabindex="-1"></a>            <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'csv'</span>, <span class="st">'excel'</span>),</span>
+<span id="cb26-213"><a href="#cb26-213" aria-hidden="true" tabindex="-1"></a>            <span class="at">pageLength =</span> <span class="dv">5</span>  <span class="co"># Número de filas por página</span></span>
+<span id="cb26-214"><a href="#cb26-214" aria-hidden="true" tabindex="-1"></a>          ))</span>
+<span id="cb26-215"><a href="#cb26-215" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-216"><a href="#cb26-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-217"><a href="#cb26-217" aria-hidden="true" tabindex="-1"></a><span class="fu">### Explicación del código</span></span>
+<span id="cb26-218"><a href="#cb26-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-219"><a href="#cb26-219" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`extensions = 'Buttons'`</span>: Esta opción habilita la extensión de botones para DataTables.</span>
+<span id="cb26-220"><a href="#cb26-220" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`dom = 'Bfrtip'`</span>: Controla la disposición de los elementos de la tabla. <span class="in">`B`</span> es para los botones, <span class="in">`f`</span> para la barra de búsqueda (filter), <span class="in">`r`</span> para la información sobre el procesamiento (processing), <span class="in">`t`</span> para la tabla (table), <span class="in">`i`</span> para la información (information), y <span class="in">`p`</span> para la paginación (pagination).</span>
+<span id="cb26-221"><a href="#cb26-221" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`buttons = c('csv', 'excel')`</span>: Especifica que se deben incluir botones para exportar en formato CSV y Excel.</span>
+<span id="cb26-222"><a href="#cb26-222" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`pageLength = 5`</span>: Opcional, establece el número de filas que se muestran por página.</span>
+<span id="cb26-223"><a href="#cb26-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-224"><a href="#cb26-224" aria-hidden="true" tabindex="-1"></a><span class="fu">### Ejemplo completo</span></span>
+<span id="cb26-225"><a href="#cb26-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-226"><a href="#cb26-226" aria-hidden="true" tabindex="-1"></a>Aquí tienes un ejemplo completo en un script que incluye la instalación, carga y creación de la tabla interactiva con los botones de exportación:</span>
+<span id="cb26-227"><a href="#cb26-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-230"><a href="#cb26-230" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb26-231"><a href="#cb26-231" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar y cargar el paquete DT</span></span>
+<span id="cb26-232"><a href="#cb26-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-233"><a href="#cb26-233" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb26-234"><a href="#cb26-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-235"><a href="#cb26-235" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una tabla interactiva con botones de exportación</span></span>
+<span id="cb26-236"><a href="#cb26-236" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(mtcars, </span>
+<span id="cb26-237"><a href="#cb26-237" aria-hidden="true" tabindex="-1"></a>          <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
+<span id="cb26-238"><a href="#cb26-238" aria-hidden="true" tabindex="-1"></a>          <span class="at">options =</span> <span class="fu">list</span>(</span>
+<span id="cb26-239"><a href="#cb26-239" aria-hidden="true" tabindex="-1"></a>            <span class="at">dom =</span> <span class="st">'Bfrtip'</span>,</span>
+<span id="cb26-240"><a href="#cb26-240" aria-hidden="true" tabindex="-1"></a>            <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'csv'</span>, <span class="st">'excel'</span>),</span>
+<span id="cb26-241"><a href="#cb26-241" aria-hidden="true" tabindex="-1"></a>            <span class="at">pageLength =</span> <span class="dv">5</span>  <span class="co"># Número de filas por página</span></span>
+<span id="cb26-242"><a href="#cb26-242" aria-hidden="true" tabindex="-1"></a>          ))</span>
+<span id="cb26-243"><a href="#cb26-243" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-244"><a href="#cb26-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-245"><a href="#cb26-245" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exportar datos en R Markdown o Quarto</span></span>
+<span id="cb26-246"><a href="#cb26-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-247"><a href="#cb26-247" aria-hidden="true" tabindex="-1"></a>Si estás trabajando en un documento R Markdown o Quarto, puedes integrar la tabla interactiva de la siguiente manera:</span>
 <span id="cb26-248"><a href="#cb26-248" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-251"><a href="#cb26-251" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb26-252"><a href="#cb26-252" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
@@ -1740,8 +1761,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb26-263"><a href="#cb26-263" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-264"><a href="#cb26-264" aria-hidden="true" tabindex="-1"></a><span class="fu">### Notas adicionales</span></span>
 <span id="cb26-265"><a href="#cb26-265" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-266"><a href="#cb26-266" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Asegúrate de tener acceso a internet cuando uses las extensiones de <span class="in">`DT`</span>, ya que estas dependen de bibliotecas JavaScript externas.</span>
-<span id="cb26-267"><a href="#cb26-267" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Puedes agregar más botones de exportación, como PDF e impresión, añadiéndolos en la lista de <span class="in">`buttons`</span>.</span>
+<span id="cb26-266"><a href="#cb26-266" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Asegúrate de tener acceso a internet cuando uses las extensiones de <span class="in">`DT`</span>, ya que estas dependen de bibliotecas JavaScript externas.</span>
+<span id="cb26-267"><a href="#cb26-267" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Puedes agregar más botones de exportación, como PDF e impresión, añadiéndolos en la lista de <span class="in">`buttons`</span>.</span>
 <span id="cb26-268"><a href="#cb26-268" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-271"><a href="#cb26-271" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb26-272"><a href="#cb26-272" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una tabla interactiva con más opciones de exportación</span></span>
@@ -1778,15 +1799,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb26-305"><a href="#cb26-305" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb26-306"><a href="#cb26-306" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-307"><a href="#cb26-307" aria-hidden="true" tabindex="-1"></a>datos_fitopatologia</span>
-<span id="cb26-308"><a href="#cb26-308" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-309"><a href="#cb26-309" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-310"><a href="#cb26-310" aria-hidden="true" tabindex="-1"></a>En este ejemplo, <span class="in">`datos_fitopatologia`</span> es un tibble con tres columnas: <span class="in">`cultivar`</span>, <span class="in">`parcela`</span>, y <span class="in">`incidencia`</span>. Cada fila representa la incidencia de una enfermedad en una parcela específica de un cultivar.</span>
+<span id="cb26-308"><a href="#cb26-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-309"><a href="#cb26-309" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-310"><a href="#cb26-310" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-311"><a href="#cb26-311" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-312"><a href="#cb26-312" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-313"><a href="#cb26-313" aria-hidden="true" tabindex="-1"></a><span class="fu"># Aprendizaje del día</span></span>
-<span id="cb26-314"><a href="#cb26-314" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-315"><a href="#cb26-315" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Código R dentro de Bloques de Código**: Utilizamos ```{r} ... ``` para encapsular nuestro código R en el documento Quarto.</span>
-<span id="cb26-316"><a href="#cb26-316" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Librerías Necesarias**: Asegúrate de cargar las librerías necesarias  al comienzo del bloque de código.</span>
+<span id="cb26-312"><a href="#cb26-312" aria-hidden="true" tabindex="-1"></a>En este ejemplo, <span class="in">`datos_fitopatologia`</span> es un tibble con tres columnas: <span class="in">`cultivar`</span>, <span class="in">`parcela`</span>, y <span class="in">`incidencia`</span>. Cada fila representa la incidencia de una enfermedad en una parcela específica de un cultivar.</span>
+<span id="cb26-313"><a href="#cb26-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-314"><a href="#cb26-314" aria-hidden="true" tabindex="-1"></a><span class="fu"># Aprendizaje del día</span></span>
+<span id="cb26-315"><a href="#cb26-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-316"><a href="#cb26-316" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Código R dentro de Bloques de Código**: Utilizamos <span class="in">`{r}`</span> para encapsular nuestro código R en el documento Quarto.</span>
+<span id="cb26-317"><a href="#cb26-317" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Librerías Necesarias**: Asegúrate de cargar las librerías necesarias al comienzo del bloque de código.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -2,7 +2,9 @@
 
 La transformación de variable tipo Box-Cox es una técnica utilizada en análisis estadístico para mejorar la adecuación de los datos a los supuestos de normalidad y homogeneidad de varianza. Esta transformación es especialmente útil para variables continuas positivas que presentan asimetría o heterogeneidad de varianza. La transformación de Box-Cox se define mediante la siguiente ecuación:
 
-                        y ( λ ) = (x^(λ) - 1) / λ 
+```         
+                    y ( λ ) = (x^(λ) - 1) / λ 
+```
 
 Donde:
 
@@ -11,14 +13,11 @@ Donde:
 -   **`y(λ)`** es la variable transformada para un valor determinado de λ.
 -   **`λ`** es el parámetro de transformación que puede variar desde -∞ hasta +∞.
 
-
 El valor de `λ` determina el tipo de transformación aplicada:
-
 
 -   Si **`λ = 0`** , la transformación de Box-Cox es equivalente al logaritmo natural (ln).
 -   Si **`λ = 1`** , la transformación de Box-Cox es equivalente a una transformación lineal (sin transformación).
 -   Si **`λ < 0`** , se aplica una transformación inversa.
-
 
 ### Preparo Pre-análisis
 
@@ -59,7 +58,6 @@ lambda <- b$x[which.max(b$y)]
 lambda
 ```
 
-
 ```{r}
 # Crear DataFrame a partir de los resultados de boxcox
 boxcox_df <- data.frame(
@@ -85,7 +83,6 @@ ggplot(boxcox_df, aes(x = lambda, y = log_likelihood)) +
   )
 ```
 
-
 ### 4. **Transformar la variable `count`**:
 
 Utilizando el valor óptimo de `λ`, se transforma la variable `count` y se almacena en una nueva variable `count2`.
@@ -103,7 +100,6 @@ par(mfrow = c(1, 2))  # Dividir la ventana gráfica en 2 columnas
 hist(insects$count, main = "'Count' Original", xlab = "count")
 hist(insects$count2, main = " 'Count' Transformado", xlab = "count2")
 ```
-
 
 ### Aprendizaje del día
 

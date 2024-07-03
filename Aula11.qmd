@@ -1,10 +1,10 @@
-#  Análisis de Varianza (ANOVA) 
+# Análisis de Varianza (ANOVA)
 
 En esta guía, aprenderás cómo realizar análisis de varianza (ANOVA) en RStudio paso a paso, utilizando diferentes diseños experimentales y comprobando las premisas estadísticas necesarias.
 
 # ANOVA con Múltiples Factores
 
-Esta guía proporciona una explicación paso a paso sobre cómo realizar análisis de varianza (ANOVA) con dos o más factores en RStudio, incluyendo la preparación de datos, la ejecución del modelo ANOVA y la interpretación de los resultados. 
+Esta guía proporciona una explicación paso a paso sobre cómo realizar análisis de varianza (ANOVA) con dos o más factores en RStudio, incluyendo la preparación de datos, la ejecución del modelo ANOVA y la interpretación de los resultados.
 
 ## Preparación Pre-Análisis
 
@@ -49,7 +49,6 @@ dat2|>
      buttons = c('excel', "csv")))|> 
                 formatRound('inc', 2)
 ```
-
 
 ```{r}
 # Visualización inicial de los datos
@@ -117,8 +116,6 @@ means_m1|>
                             formatRound(c('response','SE','lower.CL','upper.CL'), 2)
 ```
 
-
-
 ### Coeficiente de Variación
 
 Calculamos el coeficiente de variación usando el paquete `agricolae`.
@@ -177,7 +174,6 @@ fung2 |>
        buttons = c('excel', "csv")))
 ```
 
-
 ```{r}
 # Generar modelo ANOVA con datos de rango
 m3 <- aov(rank_inc ~ treat * dose, data = fung2)
@@ -211,8 +207,8 @@ El resumen del modelo ANOVA nos proporciona los valores F y los p-valores para l
 
 ### Premisas del Modelo
 
-- **Normalidad**: Se comprueba con pruebas de normalidad de los residuos. Si los residuos no son normales, se puede considerar transformar los datos.
-- **Homocedasticidad**: Se comprueba si las variancias de los residuos son constantes. Si no se cumple, se puede considerar usar métodos robustos o transformaciones de datos.
+-   **Normalidad**: Se comprueba con pruebas de normalidad de los residuos. Si los residuos no son normales, se puede considerar transformar los datos.
+-   **Homocedasticidad**: Se comprueba si las variancias de los residuos son constantes. Si no se cumple, se puede considerar usar métodos robustos o transformaciones de datos.
 
 ### Transformación de Datos
 

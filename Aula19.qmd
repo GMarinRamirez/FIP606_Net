@@ -10,28 +10,22 @@ El AUDPC se calcula a partir de observaciones repetidas de la severidad de la en
 
 `AUDPC = sum_{i=1}^{n-1} ({y_{i+1} + y_i}{2}) (t_{i+1} - t_i)`
 
-Donde:
-- `y_i` es la severidad de la enfermedad en el momento `t_i`.
-- `t_i` es el tiempo de la `i`-ésima observación.
-- `n` es el número total de observaciones.
+Donde: - `y_i` es la severidad de la enfermedad en el momento `t_i`. - `t_i` es el tiempo de la `i`-ésima observación. - `n` es el número total de observaciones.
 
 ### Importancia del AUDPC
 
-1. **Comparación de Tratamientos**:
-   - Permite comparar la eficacia de diferentes tratamientos en el control de enfermedades.
-   - Ayuda a identificar qué tratamiento ofrece la mejor protección contra una enfermedad específica.
-
-2. **Evaluación de Variedades de Plantas**:
-   - Utilizado para evaluar la resistencia de diferentes variedades de plantas a una enfermedad.
-   - Ayuda a los fitomejoradores a seleccionar variedades más resistentes para programas de mejoramiento.
-
-3. **Monitoreo del Progreso de la Enfermedad**:
-   - Proporciona una visión general del progreso de la enfermedad a lo largo del tiempo.
-   - Permite a los investigadores y agricultores tomar decisiones informadas sobre el manejo de la enfermedad.
-
-4. **Investigación y Desarrollo**:
-   - Fundamental en estudios de epidemiología vegetal y en la investigación sobre la dinámica de las enfermedades.
-   - Ayuda a entender cómo diferentes factores (ambientales, genéticos, etc.) afectan el desarrollo de la enfermedad.
+1.  **Comparación de Tratamientos**:
+    -   Permite comparar la eficacia de diferentes tratamientos en el control de enfermedades.
+    -   Ayuda a identificar qué tratamiento ofrece la mejor protección contra una enfermedad específica.
+2.  **Evaluación de Variedades de Plantas**:
+    -   Utilizado para evaluar la resistencia de diferentes variedades de plantas a una enfermedad.
+    -   Ayuda a los fitomejoradores a seleccionar variedades más resistentes para programas de mejoramiento.
+3.  **Monitoreo del Progreso de la Enfermedad**:
+    -   Proporciona una visión general del progreso de la enfermedad a lo largo del tiempo.
+    -   Permite a los investigadores y agricultores tomar decisiones informadas sobre el manejo de la enfermedad.
+4.  **Investigación y Desarrollo**:
+    -   Fundamental en estudios de epidemiología vegetal y en la investigación sobre la dinámica de las enfermedades.
+    -   Ayuda a entender cómo diferentes factores (ambientales, genéticos, etc.) afectan el desarrollo de la enfermedad.
 
 ### Ejemplo Práctico en R
 
@@ -114,6 +108,7 @@ curve|>
         options = list(dom = 'Bfrtip', 
                        buttons = c('excel', "csv")))
 ```
+
 Vamos a cargar un archivo Excel que contiene los datos de severidad de la enfermedad y luego los agrupamos por tratamientos y días.
 
 ```{r}
@@ -169,32 +164,24 @@ curve3|>
                             formatRound(c('Drip','Furrow'), 2)
 ```
 
-
 ```{r}
 t.test(curve3$Drip, curve3$Furrow)
 ```
 
 ### Interpretación de Resultados
 
-- **Visualización Gráfica**:
-  - El gráfico muestra la severidad media de la enfermedad a lo largo del tiempo para diferentes tratamientos de irrigación.
-  - Las barras de error indican la variabilidad de las observaciones.
-
-- **Prueba t**:
-  - La prueba t compara las medias de AUDPC entre dos tratamientos de irrigación (por ejemplo, riego por goteo y riego por surco).
-  - Un resultado significativo indicaría una diferencia estadísticamente significativa en el progreso de la enfermedad entre los dos tratamientos.
-  
-  
-  
-  
+-   **Visualización Gráfica**:
+    -   El gráfico muestra la severidad media de la enfermedad a lo largo del tiempo para diferentes tratamientos de irrigación.
+    -   Las barras de error indican la variabilidad de las observaciones.
+-   **Prueba t**:
+    -   La prueba t compara las medias de AUDPC entre dos tratamientos de irrigación (por ejemplo, riego por goteo y riego por surco).
+    -   Un resultado significativo indicaría una diferencia estadísticamente significativa en el progreso de la enfermedad entre los dos tratamientos.
 
 ### Ejercicio Práctico: irrigación
 
-
-- **Cálculo del AUDPC**:
-  - La función `AUDPC` calcula el área bajo la curva de progreso de la enfermedad para cada combinación de tratamiento y repetición.
-  - Valores más altos de AUDPC indican un mayor progreso de la enfermedad, mientras que valores más bajos indican un menor progreso.
-
+-   **Cálculo del AUDPC**:
+    -   La función `AUDPC` calcula el área bajo la curva de progreso de la enfermedad para cada combinación de tratamiento y repetición.
+    -   Valores más altos de AUDPC indican un mayor progreso de la enfermedad, mientras que valores más bajos indican un menor progreso.
 
 ```{r}
 
@@ -253,6 +240,7 @@ curve |>
      geom_text(x = 50, y = .45, aes(label = label), data = f_labels)
 
 ```
+
 ```{r}
 anova_curve<- lm(audpc~ Irrigation + factor(rep), data = dat1_audpc )
 
@@ -263,13 +251,6 @@ anova(anova_curve)
 ```{r}
 cv.model(anova_curve)
 ```
-
-
-
-
-
-
-
 
 ### Ejercicio Práctico: Lesion Size
 
@@ -286,7 +267,6 @@ lesion_size|>
                             formatRound("lesion_size", 2)
 
 ```
-
 
 ```{r}
 lesion2 <- lesion_size |>
@@ -341,7 +321,6 @@ lesion3|>
 
 ```
 
-
 ```{r}
 lesion3 |>
   ggplot(aes(cult, audpc, fill = silicio)) +
@@ -367,7 +346,6 @@ summary(aov1)
 check_normality(aov1)
 ```
 
-
 ```{r}
 check_heteroscedasticity(aov1)
 ```
@@ -379,16 +357,13 @@ aov1 <- aov(sqrt(audpc) ~ cult * silicio, data = lesion3)
 summary(aov1)
 ```
 
-
 ```{r}
 check_normality(aov1)
 ```
 
-
 ```{r}
 check_heteroscedasticity(aov1)
 ```
-
 
 ```{r}
 
@@ -408,19 +383,3 @@ m1 |>
 Esta guía te ha mostrado cómo visualizar los resultados y cómo llevar a cabo análisis adicionales como AUDPC y ANOVA. Utilizando estas herramientas, puedes analizar y entender mejor tus datos categóricos y sus relaciones.
 
 Si tienes alguna pregunta adicional o necesitas más ayuda con tu análisis, no dudes en preguntar.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

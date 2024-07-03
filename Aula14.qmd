@@ -58,8 +58,6 @@ estande |>
 
 ```
 
-
-
 ## Ajustando Modelo Lineal Simple y Cuadrático
 
 ### Ajuste del Modelo Lineal Simple

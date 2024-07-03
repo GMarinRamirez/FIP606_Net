@@ -33,7 +33,6 @@ La función para la lectura de datos en R es read.table. R posee un buen número
 
 **Tidyverse**: es un paquete que consolida una serie de herramientas. Forman parte del tidyverse los paquetes [dplyr]{.underline}, [tidyr]{.underline}, [readr]{.underline}, [ggplot2]{.underline}, entre muchos otros.
 
-
 ## Datos en formato Excel (paquete readxl)
 
 Para importar datos directamente de otros softwares, es necesario instalar paquetes, como readxl, usado para la importación de hojas de cálculo de Excel. El paquete readxl permite generar data frames de hojas de cálculo Excel y es la forma más sencilla de cargar un archivo en este formato. El paquete readxl no es del conjunto tidyverse, por lo que necesita ser cargado siempre antes de usarlo. La mayoría de las funciones de readxl permiten leer datos de hojas de cálculo Excel, como read_excel. El primer argumento para read_excel es la ruta del archivo que debe ser leído. La ruta del archivo y el nombre del archivo (incluyendo la extensión del archivo) deben ser colocados entre comillas dobles, ya que la función espera que sea una función de carácter.
@@ -79,8 +78,10 @@ Para importar hojas de cálculo de Google, usa la función `gsheet2tbl` (read_sh
 ```{r}
 # usando el paquete gsheet
 library(gsheet)
+library(car)
+library(dplyr)
 
-survey <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1aID5Dh6PlBVCKzU1j7k-WA6zuWQWE2NhtWEgdJtt5iA/edit#gid=366054269")
+survey <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit?gid=1118819738#gid=1118819738")
 survey 
 
 ```
@@ -116,9 +117,9 @@ datatable(magnesio3)
 
 Puedes personalizar la tabla interactiva de muchas maneras. Aquí hay algunos ejemplos de opciones comunes:
 
-- **Paginación**: Controlar el número de filas que se muestran por página.
-- **Ordenación**: Habilitar o deshabilitar la ordenación de columnas.
-- **Búsqueda**: Añadir una barra de búsqueda para filtrar filas.
+-   **Paginación**: Controlar el número de filas que se muestran por página.
+-   **Ordenación**: Habilitar o deshabilitar la ordenación de columnas.
+-   **Búsqueda**: Añadir una barra de búsqueda para filtrar filas.
 
 ```{r}
 # Tabla interactiva con opciones personalizadas
@@ -189,10 +190,10 @@ datatable(magnesio3,
 
 ### Explicación del código
 
-- `extensions = 'Buttons'`: Esta opción habilita la extensión de botones para DataTables.
-- `dom = 'Bfrtip'`: Controla la disposición de los elementos de la tabla. `B` es para los botones, `f` para la barra de búsqueda (filter), `r` para la información sobre el procesamiento (processing), `t` para la tabla (table), `i` para la información (information), y `p` para la paginación (pagination).
-- `buttons = c('csv', 'excel')`: Especifica que se deben incluir botones para exportar en formato CSV y Excel.
-- `pageLength = 5`: Opcional, establece el número de filas que se muestran por página.
+-   `extensions = 'Buttons'`: Esta opción habilita la extensión de botones para DataTables.
+-   `dom = 'Bfrtip'`: Controla la disposición de los elementos de la tabla. `B` es para los botones, `f` para la barra de búsqueda (filter), `r` para la información sobre el procesamiento (processing), `t` para la tabla (table), `i` para la información (information), y `p` para la paginación (pagination).
+-   `buttons = c('csv', 'excel')`: Especifica que se deben incluir botones para exportar en formato CSV y Excel.
+-   `pageLength = 5`: Opcional, establece el número de filas que se muestran por página.
 
 ### Ejemplo completo
 
@@ -217,7 +218,6 @@ datatable(mtcars,
 
 Si estás trabajando en un documento R Markdown o Quarto, puedes integrar la tabla interactiva de la siguiente manera:
 
-
 ```{r}
 library(DT)
 
@@ -233,8 +233,8 @@ datatable(magnesio3,
 
 ### Notas adicionales
 
-- Asegúrate de tener acceso a internet cuando uses las extensiones de `DT`, ya que estas dependen de bibliotecas JavaScript externas.
-- Puedes agregar más botones de exportación, como PDF e impresión, añadiéndolos en la lista de `buttons`.
+-   Asegúrate de tener acceso a internet cuando uses las extensiones de `DT`, ya que estas dependen de bibliotecas JavaScript externas.
+-   Puedes agregar más botones de exportación, como PDF e impresión, añadiéndolos en la lista de `buttons`.
 
 ```{r}
 # Crear una tabla interactiva con más opciones de exportación
@@ -271,12 +271,13 @@ datos_fitopatologia <- tibble::tribble(
 )
 
 datos_fitopatologia
+
 ```
+
 
 En este ejemplo, `datos_fitopatologia` es un tibble con tres columnas: `cultivar`, `parcela`, y `incidencia`. Cada fila representa la incidencia de una enfermedad en una parcela específica de un cultivar.
 
-
 # Aprendizaje del día
 
-- **Código R dentro de Bloques de Código**: Utilizamos ```{r} ... ``` para encapsular nuestro código R en el documento Quarto.
-- **Librerías Necesarias**: Asegúrate de cargar las librerías necesarias  al comienzo del bloque de código.
+-   **Código R dentro de Bloques de Código**: Utilizamos `{r}` para encapsular nuestro código R en el documento Quarto.
+-   **Librerías Necesarias**: Asegúrate de cargar las librerías necesarias al comienzo del bloque de código.

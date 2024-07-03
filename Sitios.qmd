@@ -12,11 +12,13 @@ Descubre otros sitios especializados en proporcionar recursos fundamentales para
 
 ### *Repositorios para análisis en Fitopatología*
 
-- [**Emerson del Ponte**](https://github.com/emdelponte?tab=repositories) [_português_](https://github.com/emdelponte?tab=repositories){style="color:#3aafd0;"}: Accede a conjuntos de datos y análisis avanzados para fortalecer tus investigaciones en fitopatología.
+- [**Emerson del Ponte**](https://github.com/emdelponte?tab=repositories) [_português_]{style="color:#3aafd0;"}: Accede a conjuntos de datos y análisis avanzados para fortalecer tus investigaciones en fitopatología.
   
-- [**Lucas Versari**](https://github.com/LVersari) [_português_](https://github.com/LVersari){style="color:#3aafd0;"}: Descubre herramientas efectivas para el análisis y la visualización de datos fitopatológicos.
+- [**Lucas Versari**](https://github.com/LVersari) [_português_]{style="color:#3aafd0;"}: Descubre herramientas efectivas para el análisis y la visualización de datos fitopatológicos.
   
-- [**Carlos Utiamada**](https://carlosutiamada.github.io/Projeto-Final/) [_português_](https://carlosutiamada.github.io/Projeto-Final/){style="color:#3aafd0;"}: Explora proyectos y recursos para optimizar tus estudios en fitopatología.
+- [**Carlos Utiamada**](https://carlosutiamada.github.io/Projeto-Final/) [_português_]{style="color:#3aafd0;"}: Explora proyectos y recursos para optimizar tus estudios en fitopatología.
+
+- [**Richard Paredes**](https://richardpares.github.io/Ferrugem-Cafeeiro/docs/) [_português_]{style="color:#3aafd0;"}: Explora proyectos y recursos para optimizar tus estudios en fitopatología.
 
 
 

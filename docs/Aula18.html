@@ -161,11 +161,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="dropdown-menu" aria-labelledby="nav-menu-gráficos-en-r">    
         <li>
     <a class="dropdown-item" href="./Aula4.html">
- <span class="dropdown-text">Visualização de dados parte 1</span></a>
+ <span class="dropdown-text">Visualización de datos parte 1</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./Aula6.html">
- <span class="dropdown-text">Visualização de dados parte 2</span></a>
+ <span class="dropdown-text">Visualización de datos parte 2</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./Aula5.html">
@@ -256,9 +256,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./Sitios.html">
  <span class="dropdown-text">Repositorios y Sitios</span></a>
   </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-proyecto-análisis-de-datos-fip606" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Proyecto Análisis de datos FIP606</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-proyecto-análisis-de-datos-fip606">    
         <li>
-    <a class="dropdown-item" href="./PAT104022.qmd">
- <span class="dropdown-text">Proyecto de Análisis de datos FIP606</span></a>
+    <a class="dropdown-item" href="./FIP606-Proyect_CLR.html">
+ <span class="dropdown-text">Generalidades</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./FIP606-Proyect_CLR2.html">
+ <span class="dropdown-text">Análisis Exploratorios</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./FIP606-Proyect_CLR3.html">
+ <span class="dropdown-text">Análisis Estadisticos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./FIP606-Proyect_CLR4.html">
+ <span class="dropdown-text">Interpretación de Resultados</span></a>
   </li>  
     </ul>
   </li>
@@ -1074,112 +1093,108 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>La transformación de variable tipo Box-Cox es una técnica utilizada en análisis estadístico para mejorar la adecuación de los datos a los supuestos de normalidad y homogeneidad de varianza. Esta transformación es especialmente útil para variables continuas positivas que presentan asimetría o heterogeneidad de varianza. La transformación de Box-Cox se define mediante la siguiente ecuación:</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="in">                        y ( λ ) = (x^(λ) - 1) / λ </span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>Donde:</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="in">```         </span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="in">                    y ( λ ) = (x^(λ) - 1) / λ </span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`λ`** es lambda.</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`x`** es la variable original.</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`y(λ)`** es la variable transformada para un valor determinado de λ.</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`λ`** es el parámetro de transformación que puede variar desde -∞ hasta +∞.</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>El valor de <span class="in">`λ`</span> determina el tipo de transformación aplicada:</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>Donde:</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`λ`** es lambda.</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`x`** es la variable original.</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`y(λ)`** es la variable transformada para un valor determinado de λ.</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`λ`** es el parámetro de transformación que puede variar desde -∞ hasta +∞.</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>El valor de <span class="in">`λ`</span> determina el tipo de transformación aplicada:</span>
 <span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Si **`λ = 0`** , la transformación de Box-Cox es equivalente al logaritmo natural (ln).</span>
 <span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Si **`λ = 1`** , la transformación de Box-Cox es equivalente a una transformación lineal (sin transformación).</span>
 <span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Si **`λ &lt; 0`** , se aplica una transformación inversa.</span>
 <span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="fu">### Preparo Pre-análisis</span></span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>Para realizar este tipo de transformación, se utiliza el paquete <span class="in">`MASS`</span> en R.</span>
-<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
-<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
-<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a><span class="fu">### Ejemplo con Datos: InsectSprays</span></span>
-<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>Utilizaremos el conjunto de datos <span class="in">`InsectSprays`</span> disponible en R para ilustrar la transformación de Box-Cox. La función <span class="in">`boxcox()`</span> se utiliza para calcular la transformación de Box-Cox y encontrar el valor óptimo de <span class="in">`λ`</span> para una variable específica. Esta función devuelve una lista de resultados, incluyendo el valor óptimo de <span class="in">`λ`</span> y gráficos de diagnóstico.</span>
-<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. **Cargar los datos de InsectSprays**:</span></span>
-<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>insects <span class="ot">&lt;-</span> InsectSprays</span>
-<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. **Aplicar la transformación de Box-Cox**:</span></span>
-<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a>Primero, se ajusta un modelo lineal simple para la variable <span class="in">`count`</span> con un ajuste adicional de 0.1 para evitar valores cero.</span>
-<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">boxcox</span>(<span class="fu">lm</span>(insects<span class="sc">$</span>count <span class="sc">+</span> <span class="fl">0.1</span> <span class="sc">~</span> <span class="dv">1</span>))</span>
-<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. **Encontrar el valor óptimo de λ**:</span></span>
-<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a>El valor óptimo de <span class="in">`λ`</span> se encuentra seleccionando el valor de <span class="in">`λ`</span> que maximiza la log-verosimilitud devuelta por <span class="in">`boxcox()`</span>.</span>
-<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> b<span class="sc">$</span>x[<span class="fu">which.max</span>(b<span class="sc">$</span>y)]</span>
-<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a>lambda</span>
-<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear DataFrame a partir de los resultados de boxcox</span></span>
-<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a>boxcox_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a>  <span class="at">lambda =</span> b<span class="sc">$</span>x,</span>
-<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a>  <span class="at">log_likelihood =</span> b<span class="sc">$</span>y</span>
-<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a><span class="co"># Graficar con ggplot2</span></span>
-<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(boxcox_df, <span class="fu">aes</span>(<span class="at">x =</span> lambda, <span class="at">y =</span> log_likelihood)) <span class="sc">+</span></span>
-<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> lambda, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> lambda, <span class="at">y =</span> <span class="fu">max</span>(log_likelihood)), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> lambda <span class="sc">+</span> <span class="fl">0.2</span>, <span class="at">y =</span> <span class="sc">-</span><span class="dv">130</span>,</span>
-<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">paste</span>(<span class="st">"Lambda ="</span>, <span class="fu">round</span>(lambda, <span class="dv">3</span>)),<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Transformación de Box-Cox"</span>,</span>
-<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"λ Lambda"</span>,</span>
-<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Log-Verosimilitud"</span>) <span class="sc">+</span></span>
-<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_few</span>()<span class="sc">+</span></span>
-<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">14</span>),</span>
-<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">12</span>),</span>
-<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>)</span>
-<span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### Preparo Pre-análisis</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>Para realizar este tipo de transformación, se utiliza el paquete <span class="in">`MASS`</span> en R.</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a><span class="fu">### Ejemplo con Datos: InsectSprays</span></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>Utilizaremos el conjunto de datos <span class="in">`InsectSprays`</span> disponible en R para ilustrar la transformación de Box-Cox. La función <span class="in">`boxcox()`</span> se utiliza para calcular la transformación de Box-Cox y encontrar el valor óptimo de <span class="in">`λ`</span> para una variable específica. Esta función devuelve una lista de resultados, incluyendo el valor óptimo de <span class="in">`λ`</span> y gráficos de diagnóstico.</span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. **Cargar los datos de InsectSprays**:</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>insects <span class="ot">&lt;-</span> InsectSprays</span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. **Aplicar la transformación de Box-Cox**:</span></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>Primero, se ajusta un modelo lineal simple para la variable <span class="in">`count`</span> con un ajuste adicional de 0.1 para evitar valores cero.</span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">boxcox</span>(<span class="fu">lm</span>(insects<span class="sc">$</span>count <span class="sc">+</span> <span class="fl">0.1</span> <span class="sc">~</span> <span class="dv">1</span>))</span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. **Encontrar el valor óptimo de λ**:</span></span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a>El valor óptimo de <span class="in">`λ`</span> se encuentra seleccionando el valor de <span class="in">`λ`</span> que maximiza la log-verosimilitud devuelta por <span class="in">`boxcox()`</span>.</span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> b<span class="sc">$</span>x[<span class="fu">which.max</span>(b<span class="sc">$</span>y)]</span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a>lambda</span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear DataFrame a partir de los resultados de boxcox</span></span>
+<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a>boxcox_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a>  <span class="at">lambda =</span> b<span class="sc">$</span>x,</span>
+<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a>  <span class="at">log_likelihood =</span> b<span class="sc">$</span>y</span>
+<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a><span class="co"># Graficar con ggplot2</span></span>
+<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(boxcox_df, <span class="fu">aes</span>(<span class="at">x =</span> lambda, <span class="at">y =</span> log_likelihood)) <span class="sc">+</span></span>
+<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> lambda, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> lambda, <span class="at">y =</span> <span class="fu">max</span>(log_likelihood)), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> lambda <span class="sc">+</span> <span class="fl">0.2</span>, <span class="at">y =</span> <span class="sc">-</span><span class="dv">130</span>,</span>
+<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">paste</span>(<span class="st">"Lambda ="</span>, <span class="fu">round</span>(lambda, <span class="dv">3</span>)),<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Transformación de Box-Cox"</span>,</span>
+<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"λ Lambda"</span>,</span>
+<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Log-Verosimilitud"</span>) <span class="sc">+</span></span>
+<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_few</span>()<span class="sc">+</span></span>
+<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>)</span>
+<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### 4. **Transformar la variable `count`**:</span></span>
 <span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a><span class="fu">### 4. **Transformar la variable `count`**:</span></span>
-<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a>Utilizando el valor óptimo de <span class="in">`λ`</span>, se transforma la variable <span class="in">`count`</span> y se almacena en una nueva variable <span class="in">`count2`</span>.</span>
-<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a>insects<span class="sc">$</span>count2 <span class="ot">&lt;-</span> (insects<span class="sc">$</span>count <span class="sc">^</span> lambda <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> lambda</span>
-<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a><span class="fu">### 5. **Visualizar la distribución antes y después de la transformación**:</span></span>
-<span id="cb10-110"><a href="#cb10-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-111"><a href="#cb10-111" aria-hidden="true" tabindex="-1"></a>Se crean histogramas para comparar la distribución de la variable original y la transformada.</span>
-<span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-115"><a href="#cb10-115" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-116"><a href="#cb10-116" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))  <span class="co"># Dividir la ventana gráfica en 2 columnas</span></span>
-<span id="cb10-117"><a href="#cb10-117" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(insects<span class="sc">$</span>count, <span class="at">main =</span> <span class="st">"'Count' Original"</span>, <span class="at">xlab =</span> <span class="st">"count"</span>)</span>
-<span id="cb10-118"><a href="#cb10-118" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(insects<span class="sc">$</span>count2, <span class="at">main =</span> <span class="st">" 'Count' Transformado"</span>, <span class="at">xlab =</span> <span class="st">"count2"</span>)</span>
-<span id="cb10-119"><a href="#cb10-119" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-120"><a href="#cb10-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-121"><a href="#cb10-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-122"><a href="#cb10-122" aria-hidden="true" tabindex="-1"></a><span class="fu">### Aprendizaje del día</span></span>
-<span id="cb10-123"><a href="#cb10-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-124"><a href="#cb10-124" aria-hidden="true" tabindex="-1"></a>La transformación de Box-Cox es una herramienta útil para transformar datos y cumplir con los supuestos de normalidad y homogeneidad de varianza necesarios en muchos métodos estadísticos. Mediante el ajuste del parámetro <span class="in">`λ`</span>, se pueden lograr distribuciones de datos más simétricas y con varianza constante, facilitando análisis más precisos y válidos.</span>
+<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a>Utilizando el valor óptimo de <span class="in">`λ`</span>, se transforma la variable <span class="in">`count`</span> y se almacena en una nueva variable <span class="in">`count2`</span>.</span>
+<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-103"><a href="#cb10-103" aria-hidden="true" tabindex="-1"></a>insects<span class="sc">$</span>count2 <span class="ot">&lt;-</span> (insects<span class="sc">$</span>count <span class="sc">^</span> lambda <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> lambda</span>
+<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a><span class="fu">### 5. **Visualizar la distribución antes y después de la transformación**:</span></span>
+<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a>Se crean histogramas para comparar la distribución de la variable original y la transformada.</span>
+<span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-113"><a href="#cb10-113" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))  <span class="co"># Dividir la ventana gráfica en 2 columnas</span></span>
+<span id="cb10-114"><a href="#cb10-114" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(insects<span class="sc">$</span>count, <span class="at">main =</span> <span class="st">"'Count' Original"</span>, <span class="at">xlab =</span> <span class="st">"count"</span>)</span>
+<span id="cb10-115"><a href="#cb10-115" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(insects<span class="sc">$</span>count2, <span class="at">main =</span> <span class="st">" 'Count' Transformado"</span>, <span class="at">xlab =</span> <span class="st">"count2"</span>)</span>
+<span id="cb10-116"><a href="#cb10-116" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-117"><a href="#cb10-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-118"><a href="#cb10-118" aria-hidden="true" tabindex="-1"></a><span class="fu">### Aprendizaje del día</span></span>
+<span id="cb10-119"><a href="#cb10-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-120"><a href="#cb10-120" aria-hidden="true" tabindex="-1"></a>La transformación de Box-Cox es una herramienta útil para transformar datos y cumplir con los supuestos de normalidad y homogeneidad de varianza necesarios en muchos métodos estadísticos. Mediante el ajuste del parámetro <span class="in">`λ`</span>, se pueden lograr distribuciones de datos más simétricas y con varianza constante, facilitando análisis más precisos y válidos.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -177,11 +177,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="dropdown-menu" aria-labelledby="nav-menu-gráficos-en-r">    
         <li>
     <a class="dropdown-item" href="./Aula4.html">
- <span class="dropdown-text">Visualização de dados parte 1</span></a>
+ <span class="dropdown-text">Visualización de datos parte 1</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./Aula6.html">
- <span class="dropdown-text">Visualização de dados parte 2</span></a>
+ <span class="dropdown-text">Visualización de datos parte 2</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./Aula5.html">
@@ -272,9 +272,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./Sitios.html">
  <span class="dropdown-text">Repositorios y Sitios</span></a>
   </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-proyecto-análisis-de-datos-fip606" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Proyecto Análisis de datos FIP606</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-proyecto-análisis-de-datos-fip606">    
         <li>
-    <a class="dropdown-item" href="./PAT104022.qmd">
- <span class="dropdown-text">Proyecto de Análisis de datos FIP606</span></a>
+    <a class="dropdown-item" href="./FIP606-Proyect_CLR.html">
+ <span class="dropdown-text">Generalidades</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./FIP606-Proyect_CLR2.html">
+ <span class="dropdown-text">Análisis Exploratorios</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./FIP606-Proyect_CLR3.html">
+ <span class="dropdown-text">Análisis Estadisticos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./FIP606-Proyect_CLR4.html">
+ <span class="dropdown-text">Interpretación de Resultados</span></a>
   </li>  
     </ul>
   </li>
@@ -1287,17 +1306,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb22" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Análisis de Regressión No Lineal </span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introducción</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>El análisis de regresión no lineal es esencial cuando los datos no siguen un patrón lineal y es necesario utilizar técnicas que capturen la relación entre las variables de manera más precisa. Este tipo de análisis es crucial en estudios donde las relaciones entre variables no pueden ser adecuadamente modeladas mediante funciones lineales.</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>A continuación, se presenta una guía práctica para realizar un análisis de regresión no lineal en RStudio utilizando diversos paquetes y funciones.</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## ¿Por qué Realizar un Análisis de Regressión No Lineal?</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>En muchos estudios, las relaciones entre las variables pueden ser complejas y no seguir un patrón lineal simple. La regresión no lineal permite capturar estas relaciones complejas y proporciona una mejor comprensión de los datos. Es especialmente útil en casos donde la respuesta varía de manera no constante con la dosis o tratamiento, como en estudios de toxicidad, farmacología, biología, y muchas otras áreas científicas y de ingeniería.</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
+<div class="sourceCode" id="cb22" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Análisis de Regressión No Lineal</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introducción</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>El análisis de regresión no lineal es esencial cuando los datos no siguen un patrón lineal y es necesario utilizar técnicas que capturen la relación entre las variables de manera más precisa. Este tipo de análisis es crucial en estudios donde las relaciones entre variables no pueden ser adecuadamente modeladas mediante funciones lineales.</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>A continuación, se presenta una guía práctica para realizar un análisis de regresión no lineal en RStudio utilizando diversos paquetes y funciones.</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## ¿Por qué Realizar un Análisis de Regressión No Lineal?</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>En muchos estudios, las relaciones entre las variables pueden ser complejas y no seguir un patrón lineal simple. La regresión no lineal permite capturar estas relaciones complejas y proporciona una mejor comprensión de los datos. Es especialmente útil en casos donde la respuesta varía de manera no constante con la dosis o tratamiento, como en estudios de toxicidad, farmacología, biología, y muchas otras áreas científicas y de ingeniería.</span>
 <span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Paso 1: Instalación y Carga de Paquetes</span></span>
 <span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
@@ -1315,168 +1334,164 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
 <span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Paso 2: Importación de Datos</span></span>
-<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>Importamos los datos desde una hoja de cálculo de Google Sheets que contiene datos sobre la sensibilidad a fungicidas.</span>
-<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Importar datos desde Google Sheets</span></span>
-<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/15pCj0zljvd-TGECe67OMt6sa21xO8BqUgv4d-kU8qi8/edit#gid=0"</span>)</span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Paso 2: Importación de Datos</span></span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>Importamos los datos desde una hoja de cálculo de Google Sheets que contiene datos sobre la sensibilidad a fungicidas.</span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Importar datos desde Google Sheets</span></span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/15pCj0zljvd-TGECe67OMt6sa21xO8BqUgv4d-kU8qi8/edit#gid=0"</span>)</span>
+<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">|&gt;</span> </span>
-<span id="cb22-44"><a href="#cb22-44" aria-hidden="true" tabindex="-1"></a>    DT<span class="sc">::</span><span class="fu">datatable</span>(</span>
-<span id="cb22-45"><a href="#cb22-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
-<span id="cb22-46"><a href="#cb22-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">list</span>(<span class="at">dom =</span> <span class="st">'Bfrtip'</span>, </span>
-<span id="cb22-47"><a href="#cb22-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'excel'</span>, <span class="st">"csv"</span>)))</span>
-<span id="cb22-48"><a href="#cb22-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb22-49"><a href="#cb22-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-50"><a href="#cb22-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Paso 3: Preparación de Datos</span></span>
-<span id="cb22-51"><a href="#cb22-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-52"><a href="#cb22-52" aria-hidden="true" tabindex="-1"></a>Preparamos los datos para el análisis, agrupándolos y calculando la media de <span class="in">`GC`</span>.</span>
-<span id="cb22-53"><a href="#cb22-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-56"><a href="#cb22-56" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb22-57"><a href="#cb22-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Evitar notación científica</span></span>
-<span id="cb22-58"><a href="#cb22-58" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>)</span>
-<span id="cb22-59"><a href="#cb22-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-60"><a href="#cb22-60" aria-hidden="true" tabindex="-1"></a><span class="co"># Procesar datos</span></span>
-<span id="cb22-61"><a href="#cb22-61" aria-hidden="true" tabindex="-1"></a>dat2 <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span> </span>
-<span id="cb22-62"><a href="#cb22-62" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>Isolate, <span class="sc">-</span>Population) <span class="sc">|&gt;</span> </span>
-<span id="cb22-63"><a href="#cb22-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Code, Year, Dose) <span class="sc">|&gt;</span> </span>
-<span id="cb22-64"><a href="#cb22-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">GC_mean =</span> <span class="fu">mean</span>(GC))</span>
-<span id="cb22-65"><a href="#cb22-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-66"><a href="#cb22-66" aria-hidden="true" tabindex="-1"></a>dat2 <span class="sc">|&gt;</span> </span>
-<span id="cb22-67"><a href="#cb22-67" aria-hidden="true" tabindex="-1"></a>    DT<span class="sc">::</span><span class="fu">datatable</span>(</span>
-<span id="cb22-68"><a href="#cb22-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
-<span id="cb22-69"><a href="#cb22-69" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">list</span>(<span class="at">dom =</span> <span class="st">'Bfrtip'</span>, </span>
-<span id="cb22-70"><a href="#cb22-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'excel'</span>, <span class="st">"csv"</span>)))</span>
-<span id="cb22-71"><a href="#cb22-71" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb22-72"><a href="#cb22-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-73"><a href="#cb22-73" aria-hidden="true" tabindex="-1"></a><span class="fu">## Paso 4: Visualización de Datos</span></span>
-<span id="cb22-74"><a href="#cb22-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-75"><a href="#cb22-75" aria-hidden="true" tabindex="-1"></a>Creamos un gráfico para visualizar los datos de uno de los códigos específicos (por ejemplo, "FGT152") utilizando <span class="in">`ggplot2`</span>.</span>
-<span id="cb22-76"><a href="#cb22-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-79"><a href="#cb22-79" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb22-80"><a href="#cb22-80" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrar datos para un código específico</span></span>
-<span id="cb22-81"><a href="#cb22-81" aria-hidden="true" tabindex="-1"></a>FGT152 <span class="ot">&lt;-</span> dat2 <span class="sc">|&gt;</span> <span class="fu">filter</span>(Code <span class="sc">==</span> <span class="st">"FGT152"</span>)</span>
-<span id="cb22-82"><a href="#cb22-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-83"><a href="#cb22-83" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear gráfico</span></span>
-<span id="cb22-84"><a href="#cb22-84" aria-hidden="true" tabindex="-1"></a>FGT152 <span class="sc">|&gt;</span> </span>
-<span id="cb22-85"><a href="#cb22-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">factor</span>(Dose), GC_mean)) <span class="sc">+</span></span>
-<span id="cb22-86"><a href="#cb22-86" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb22-87"><a href="#cb22-87" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb22-88"><a href="#cb22-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Code) <span class="sc">+</span></span>
-<span id="cb22-89"><a href="#cb22-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_few</span>()<span class="sc">+</span></span>
-<span id="cb22-90"><a href="#cb22-90" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Curva Dosis-Respuesta para FGT152"</span>, <span class="at">x =</span> <span class="st">"Dosis"</span>, <span class="at">y =</span> <span class="st">"GC Media"</span>)</span>
-<span id="cb22-91"><a href="#cb22-91" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb22-92"><a href="#cb22-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-93"><a href="#cb22-93" aria-hidden="true" tabindex="-1"></a><span class="fu">## Paso 5: Ajuste del Modelo de Regressión No Lineal</span></span>
-<span id="cb22-94"><a href="#cb22-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-95"><a href="#cb22-95" aria-hidden="true" tabindex="-1"></a>Utilizamos el paquete <span class="in">`drc`</span> para ajustar un modelo de regresión no lineal y calcular el EC50.</span>
-<span id="cb22-96"><a href="#cb22-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-97"><a href="#cb22-97" aria-hidden="true" tabindex="-1"></a><span class="fu">### Modelo Log-Logístico de Tres Parámetros (LL.3)</span></span>
-<span id="cb22-98"><a href="#cb22-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-99"><a href="#cb22-99" aria-hidden="true" tabindex="-1"></a>Este modelo se ajusta utilizando los siguientes comandos:</span>
-<span id="cb22-100"><a href="#cb22-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-103"><a href="#cb22-103" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb22-104"><a href="#cb22-104" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajustar modelo log-logístico de tres parámetros</span></span>
-<span id="cb22-105"><a href="#cb22-105" aria-hidden="true" tabindex="-1"></a>drc1 <span class="ot">&lt;-</span> <span class="fu">drm</span>(GC_mean <span class="sc">~</span> Dose, <span class="at">data =</span> FGT152, <span class="at">fct =</span> <span class="fu">LL.3</span>())</span>
-<span id="cb22-106"><a href="#cb22-106" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(drc1)</span>
-<span id="cb22-107"><a href="#cb22-107" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(drc1)</span>
-<span id="cb22-108"><a href="#cb22-108" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(drc1)</span>
-<span id="cb22-109"><a href="#cb22-109" aria-hidden="true" tabindex="-1"></a><span class="fu">ED</span>(drc1, <span class="dv">50</span>)</span>
-<span id="cb22-110"><a href="#cb22-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb22-111"><a href="#cb22-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-112"><a href="#cb22-112" aria-hidden="true" tabindex="-1"></a><span class="fu">### Modelo Weibull de Tres Parámetros (W1.3)</span></span>
-<span id="cb22-113"><a href="#cb22-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-114"><a href="#cb22-114" aria-hidden="true" tabindex="-1"></a>Este modelo puede proporcionar un mejor ajuste basado en el AIC:</span>
-<span id="cb22-115"><a href="#cb22-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-118"><a href="#cb22-118" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb22-119"><a href="#cb22-119" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajustar modelo Weibull de tres parámetros</span></span>
-<span id="cb22-120"><a href="#cb22-120" aria-hidden="true" tabindex="-1"></a>drc1 <span class="ot">&lt;-</span> <span class="fu">drm</span>(GC_mean <span class="sc">~</span> Dose, <span class="at">data =</span> FGT152, <span class="at">fct =</span> <span class="fu">W1.3</span>())</span>
-<span id="cb22-121"><a href="#cb22-121" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(drc1)</span>
-<span id="cb22-122"><a href="#cb22-122" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(drc1)</span>
-<span id="cb22-123"><a href="#cb22-123" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(drc1)</span>
-<span id="cb22-124"><a href="#cb22-124" aria-hidden="true" tabindex="-1"></a><span class="fu">ED</span>(drc1, <span class="dv">50</span>)</span>
-<span id="cb22-125"><a href="#cb22-125" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb22-126"><a href="#cb22-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-127"><a href="#cb22-127" aria-hidden="true" tabindex="-1"></a><span class="fu">## Paso 6: Visualización del Modelo Ajustado</span></span>
-<span id="cb22-128"><a href="#cb22-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-129"><a href="#cb22-129" aria-hidden="true" tabindex="-1"></a>Visualizamos los resultados del modelo ajustado utilizando <span class="in">`ggplot2`</span>.</span>
-<span id="cb22-130"><a href="#cb22-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-133"><a href="#cb22-133" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb22-134"><a href="#cb22-134" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtener predicciones del modelo</span></span>
-<span id="cb22-135"><a href="#cb22-135" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Dose =</span> <span class="fu">seq</span>(<span class="fu">min</span>(FGT152<span class="sc">$</span>Dose), <span class="fu">max</span>(FGT152<span class="sc">$</span>Dose), <span class="at">length.out =</span> <span class="dv">100</span>))</span>
-<span id="cb22-136"><a href="#cb22-136" aria-hidden="true" tabindex="-1"></a>predictions<span class="sc">$</span>GC_mean <span class="ot">&lt;-</span> <span class="fu">predict</span>(drc1, <span class="at">newdata =</span> predictions)</span>
-<span id="cb22-137"><a href="#cb22-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-138"><a href="#cb22-138" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear gráfico con predicciones</span></span>
-<span id="cb22-139"><a href="#cb22-139" aria-hidden="true" tabindex="-1"></a>FGT152 <span class="sc">|&gt;</span> </span>
-<span id="cb22-140"><a href="#cb22-140" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Dose, GC_mean)) <span class="sc">+</span></span>
-<span id="cb22-141"><a href="#cb22-141" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb22-142"><a href="#cb22-142" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> predictions, <span class="fu">aes</span>(Dose, GC_mean), <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb22-143"><a href="#cb22-143" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Modelo Weibull de Tres Parámetros"</span>, <span class="at">x =</span> <span class="st">"Dosis"</span>, <span class="at">y =</span> <span class="st">"GC Media"</span>) <span class="sc">+</span></span>
-<span id="cb22-144"><a href="#cb22-144" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_few</span>()</span>
-<span id="cb22-145"><a href="#cb22-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb22-146"><a href="#cb22-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-147"><a href="#cb22-147" aria-hidden="true" tabindex="-1"></a><span class="fu">## Paso 7: Estimación de EC50 con el Paquete `ec50estimator`</span></span>
-<span id="cb22-148"><a href="#cb22-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-149"><a href="#cb22-149" aria-hidden="true" tabindex="-1"></a>Estimamos los valores de EC50 para diferentes identificadores (ID).</span>
-<span id="cb22-150"><a href="#cb22-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-153"><a href="#cb22-153" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb22-154"><a href="#cb22-154" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimar EC50</span></span>
-<span id="cb22-155"><a href="#cb22-155" aria-hidden="true" tabindex="-1"></a>df_ec50 <span class="ot">&lt;-</span> <span class="fu">estimate_EC50</span>(GC_mean <span class="sc">~</span> Dose, <span class="at">data =</span> dat2, <span class="at">isolate_col =</span> <span class="st">"Code"</span>, <span class="at">interval =</span> <span class="st">"delta"</span>, <span class="at">fct =</span> drc<span class="sc">::</span><span class="fu">LL.3</span>())</span>
-<span id="cb22-156"><a href="#cb22-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-157"><a href="#cb22-157" aria-hidden="true" tabindex="-1"></a>df_ec50 <span class="sc">|&gt;</span> </span>
-<span id="cb22-158"><a href="#cb22-158" aria-hidden="true" tabindex="-1"></a>    DT<span class="sc">::</span><span class="fu">datatable</span>(</span>
-<span id="cb22-159"><a href="#cb22-159" aria-hidden="true" tabindex="-1"></a>    <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
-<span id="cb22-160"><a href="#cb22-160" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">list</span>(<span class="at">dom =</span> <span class="st">'Bfrtip'</span>, </span>
-<span id="cb22-161"><a href="#cb22-161" aria-hidden="true" tabindex="-1"></a>    <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'excel'</span>, <span class="st">"csv"</span>)))<span class="sc">|&gt;</span> </span>
-<span id="cb22-162"><a href="#cb22-162" aria-hidden="true" tabindex="-1"></a>            <span class="fu">formatRound</span>(<span class="fu">c</span>(<span class="st">'Estimate'</span>,<span class="st">'Std..Error'</span>,<span class="st">'Lower'</span>,<span class="st">'Upper'</span>), <span class="dv">2</span>)</span>
-<span id="cb22-163"><a href="#cb22-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-164"><a href="#cb22-164" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb22-165"><a href="#cb22-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">|&gt;</span> </span>
+<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a>    DT<span class="sc">::</span><span class="fu">datatable</span>(</span>
+<span id="cb22-44"><a href="#cb22-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
+<span id="cb22-45"><a href="#cb22-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">list</span>(<span class="at">dom =</span> <span class="st">'Bfrtip'</span>, </span>
+<span id="cb22-46"><a href="#cb22-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'excel'</span>, <span class="st">"csv"</span>)))</span>
+<span id="cb22-47"><a href="#cb22-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-48"><a href="#cb22-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-49"><a href="#cb22-49" aria-hidden="true" tabindex="-1"></a><span class="fu">## Paso 3: Preparación de Datos</span></span>
+<span id="cb22-50"><a href="#cb22-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-51"><a href="#cb22-51" aria-hidden="true" tabindex="-1"></a>Preparamos los datos para el análisis, agrupándolos y calculando la media de <span class="in">`GC`</span>.</span>
+<span id="cb22-52"><a href="#cb22-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-55"><a href="#cb22-55" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb22-56"><a href="#cb22-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Evitar notación científica</span></span>
+<span id="cb22-57"><a href="#cb22-57" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>)</span>
+<span id="cb22-58"><a href="#cb22-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-59"><a href="#cb22-59" aria-hidden="true" tabindex="-1"></a><span class="co"># Procesar datos</span></span>
+<span id="cb22-60"><a href="#cb22-60" aria-hidden="true" tabindex="-1"></a>dat2 <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span> </span>
+<span id="cb22-61"><a href="#cb22-61" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>Isolate, <span class="sc">-</span>Population) <span class="sc">|&gt;</span> </span>
+<span id="cb22-62"><a href="#cb22-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Code, Year, Dose) <span class="sc">|&gt;</span> </span>
+<span id="cb22-63"><a href="#cb22-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">GC_mean =</span> <span class="fu">mean</span>(GC))</span>
+<span id="cb22-64"><a href="#cb22-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-65"><a href="#cb22-65" aria-hidden="true" tabindex="-1"></a>dat2 <span class="sc">|&gt;</span> </span>
+<span id="cb22-66"><a href="#cb22-66" aria-hidden="true" tabindex="-1"></a>    DT<span class="sc">::</span><span class="fu">datatable</span>(</span>
+<span id="cb22-67"><a href="#cb22-67" aria-hidden="true" tabindex="-1"></a>    <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
+<span id="cb22-68"><a href="#cb22-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">list</span>(<span class="at">dom =</span> <span class="st">'Bfrtip'</span>, </span>
+<span id="cb22-69"><a href="#cb22-69" aria-hidden="true" tabindex="-1"></a>    <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'excel'</span>, <span class="st">"csv"</span>)))</span>
+<span id="cb22-70"><a href="#cb22-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-71"><a href="#cb22-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-72"><a href="#cb22-72" aria-hidden="true" tabindex="-1"></a><span class="fu">## Paso 4: Visualización de Datos</span></span>
+<span id="cb22-73"><a href="#cb22-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-74"><a href="#cb22-74" aria-hidden="true" tabindex="-1"></a>Creamos un gráfico para visualizar los datos de uno de los códigos específicos (por ejemplo, "FGT152") utilizando <span class="in">`ggplot2`</span>.</span>
+<span id="cb22-75"><a href="#cb22-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-78"><a href="#cb22-78" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb22-79"><a href="#cb22-79" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrar datos para un código específico</span></span>
+<span id="cb22-80"><a href="#cb22-80" aria-hidden="true" tabindex="-1"></a>FGT152 <span class="ot">&lt;-</span> dat2 <span class="sc">|&gt;</span> <span class="fu">filter</span>(Code <span class="sc">==</span> <span class="st">"FGT152"</span>)</span>
+<span id="cb22-81"><a href="#cb22-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-82"><a href="#cb22-82" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear gráfico</span></span>
+<span id="cb22-83"><a href="#cb22-83" aria-hidden="true" tabindex="-1"></a>FGT152 <span class="sc">|&gt;</span> </span>
+<span id="cb22-84"><a href="#cb22-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">factor</span>(Dose), GC_mean)) <span class="sc">+</span></span>
+<span id="cb22-85"><a href="#cb22-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb22-86"><a href="#cb22-86" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb22-87"><a href="#cb22-87" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Code) <span class="sc">+</span></span>
+<span id="cb22-88"><a href="#cb22-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_few</span>()<span class="sc">+</span></span>
+<span id="cb22-89"><a href="#cb22-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Curva Dosis-Respuesta para FGT152"</span>, <span class="at">x =</span> <span class="st">"Dosis"</span>, <span class="at">y =</span> <span class="st">"GC Media"</span>)</span>
+<span id="cb22-90"><a href="#cb22-90" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-91"><a href="#cb22-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-92"><a href="#cb22-92" aria-hidden="true" tabindex="-1"></a><span class="fu">## Paso 5: Ajuste del Modelo de Regressión No Lineal</span></span>
+<span id="cb22-93"><a href="#cb22-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-94"><a href="#cb22-94" aria-hidden="true" tabindex="-1"></a>Utilizamos el paquete <span class="in">`drc`</span> para ajustar un modelo de regresión no lineal y calcular el EC50.</span>
+<span id="cb22-95"><a href="#cb22-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-96"><a href="#cb22-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### Modelo Log-Logístico de Tres Parámetros (LL.3)</span></span>
+<span id="cb22-97"><a href="#cb22-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-98"><a href="#cb22-98" aria-hidden="true" tabindex="-1"></a>Este modelo se ajusta utilizando los siguientes comandos:</span>
+<span id="cb22-99"><a href="#cb22-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-102"><a href="#cb22-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb22-103"><a href="#cb22-103" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajustar modelo log-logístico de tres parámetros</span></span>
+<span id="cb22-104"><a href="#cb22-104" aria-hidden="true" tabindex="-1"></a>drc1 <span class="ot">&lt;-</span> <span class="fu">drm</span>(GC_mean <span class="sc">~</span> Dose, <span class="at">data =</span> FGT152, <span class="at">fct =</span> <span class="fu">LL.3</span>())</span>
+<span id="cb22-105"><a href="#cb22-105" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(drc1)</span>
+<span id="cb22-106"><a href="#cb22-106" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(drc1)</span>
+<span id="cb22-107"><a href="#cb22-107" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(drc1)</span>
+<span id="cb22-108"><a href="#cb22-108" aria-hidden="true" tabindex="-1"></a><span class="fu">ED</span>(drc1, <span class="dv">50</span>)</span>
+<span id="cb22-109"><a href="#cb22-109" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-110"><a href="#cb22-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-111"><a href="#cb22-111" aria-hidden="true" tabindex="-1"></a><span class="fu">### Modelo Weibull de Tres Parámetros (W1.3)</span></span>
+<span id="cb22-112"><a href="#cb22-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-113"><a href="#cb22-113" aria-hidden="true" tabindex="-1"></a>Este modelo puede proporcionar un mejor ajuste basado en el AIC:</span>
+<span id="cb22-114"><a href="#cb22-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-117"><a href="#cb22-117" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb22-118"><a href="#cb22-118" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajustar modelo Weibull de tres parámetros</span></span>
+<span id="cb22-119"><a href="#cb22-119" aria-hidden="true" tabindex="-1"></a>drc1 <span class="ot">&lt;-</span> <span class="fu">drm</span>(GC_mean <span class="sc">~</span> Dose, <span class="at">data =</span> FGT152, <span class="at">fct =</span> <span class="fu">W1.3</span>())</span>
+<span id="cb22-120"><a href="#cb22-120" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(drc1)</span>
+<span id="cb22-121"><a href="#cb22-121" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(drc1)</span>
+<span id="cb22-122"><a href="#cb22-122" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(drc1)</span>
+<span id="cb22-123"><a href="#cb22-123" aria-hidden="true" tabindex="-1"></a><span class="fu">ED</span>(drc1, <span class="dv">50</span>)</span>
+<span id="cb22-124"><a href="#cb22-124" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-125"><a href="#cb22-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-126"><a href="#cb22-126" aria-hidden="true" tabindex="-1"></a><span class="fu">## Paso 6: Visualización del Modelo Ajustado</span></span>
+<span id="cb22-127"><a href="#cb22-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-128"><a href="#cb22-128" aria-hidden="true" tabindex="-1"></a>Visualizamos los resultados del modelo ajustado utilizando <span class="in">`ggplot2`</span>.</span>
+<span id="cb22-129"><a href="#cb22-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-132"><a href="#cb22-132" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb22-133"><a href="#cb22-133" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtener predicciones del modelo</span></span>
+<span id="cb22-134"><a href="#cb22-134" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Dose =</span> <span class="fu">seq</span>(<span class="fu">min</span>(FGT152<span class="sc">$</span>Dose), <span class="fu">max</span>(FGT152<span class="sc">$</span>Dose), <span class="at">length.out =</span> <span class="dv">100</span>))</span>
+<span id="cb22-135"><a href="#cb22-135" aria-hidden="true" tabindex="-1"></a>predictions<span class="sc">$</span>GC_mean <span class="ot">&lt;-</span> <span class="fu">predict</span>(drc1, <span class="at">newdata =</span> predictions)</span>
+<span id="cb22-136"><a href="#cb22-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-137"><a href="#cb22-137" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear gráfico con predicciones</span></span>
+<span id="cb22-138"><a href="#cb22-138" aria-hidden="true" tabindex="-1"></a>FGT152 <span class="sc">|&gt;</span> </span>
+<span id="cb22-139"><a href="#cb22-139" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Dose, GC_mean)) <span class="sc">+</span></span>
+<span id="cb22-140"><a href="#cb22-140" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb22-141"><a href="#cb22-141" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> predictions, <span class="fu">aes</span>(Dose, GC_mean), <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb22-142"><a href="#cb22-142" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Modelo Weibull de Tres Parámetros"</span>, <span class="at">x =</span> <span class="st">"Dosis"</span>, <span class="at">y =</span> <span class="st">"GC Media"</span>) <span class="sc">+</span></span>
+<span id="cb22-143"><a href="#cb22-143" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_few</span>()</span>
+<span id="cb22-144"><a href="#cb22-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-145"><a href="#cb22-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-146"><a href="#cb22-146" aria-hidden="true" tabindex="-1"></a><span class="fu">## Paso 7: Estimación de EC50 con el Paquete `ec50estimator`</span></span>
+<span id="cb22-147"><a href="#cb22-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-148"><a href="#cb22-148" aria-hidden="true" tabindex="-1"></a>Estimamos los valores de EC50 para diferentes identificadores (ID).</span>
+<span id="cb22-149"><a href="#cb22-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-152"><a href="#cb22-152" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb22-153"><a href="#cb22-153" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimar EC50</span></span>
+<span id="cb22-154"><a href="#cb22-154" aria-hidden="true" tabindex="-1"></a>df_ec50 <span class="ot">&lt;-</span> <span class="fu">estimate_EC50</span>(GC_mean <span class="sc">~</span> Dose, <span class="at">data =</span> dat2, <span class="at">isolate_col =</span> <span class="st">"Code"</span>, <span class="at">interval =</span> <span class="st">"delta"</span>, <span class="at">fct =</span> drc<span class="sc">::</span><span class="fu">LL.3</span>())</span>
+<span id="cb22-155"><a href="#cb22-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-156"><a href="#cb22-156" aria-hidden="true" tabindex="-1"></a>df_ec50 <span class="sc">|&gt;</span> </span>
+<span id="cb22-157"><a href="#cb22-157" aria-hidden="true" tabindex="-1"></a>    DT<span class="sc">::</span><span class="fu">datatable</span>(</span>
+<span id="cb22-158"><a href="#cb22-158" aria-hidden="true" tabindex="-1"></a>    <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
+<span id="cb22-159"><a href="#cb22-159" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">list</span>(<span class="at">dom =</span> <span class="st">'Bfrtip'</span>, </span>
+<span id="cb22-160"><a href="#cb22-160" aria-hidden="true" tabindex="-1"></a>    <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'excel'</span>, <span class="st">"csv"</span>)))<span class="sc">|&gt;</span> </span>
+<span id="cb22-161"><a href="#cb22-161" aria-hidden="true" tabindex="-1"></a>            <span class="fu">formatRound</span>(<span class="fu">c</span>(<span class="st">'Estimate'</span>,<span class="st">'Std..Error'</span>,<span class="st">'Lower'</span>,<span class="st">'Upper'</span>), <span class="dv">2</span>)</span>
+<span id="cb22-162"><a href="#cb22-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-163"><a href="#cb22-163" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-164"><a href="#cb22-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-165"><a href="#cb22-165" aria-hidden="true" tabindex="-1"></a><span class="fu">### Contenido de `df_ec50`</span></span>
 <span id="cb22-166"><a href="#cb22-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-167"><a href="#cb22-167" aria-hidden="true" tabindex="-1"></a><span class="fu">### Contenido de `df_ec50`</span></span>
+<span id="cb22-167"><a href="#cb22-167" aria-hidden="true" tabindex="-1"></a>El dataframe <span class="in">`df_ec50`</span> generalmente incluye las siguientes columnas:</span>
 <span id="cb22-168"><a href="#cb22-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-169"><a href="#cb22-169" aria-hidden="true" tabindex="-1"></a>El dataframe <span class="in">`df_ec50`</span> generalmente incluye las siguientes columnas:</span>
-<span id="cb22-170"><a href="#cb22-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-171"><a href="#cb22-171" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**ID**: El identificador o código del grupo o muestra para el cual se ha calculado la EC50.</span>
-<span id="cb22-172"><a href="#cb22-172" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Estimate**: La estimación de la EC50.</span>
-<span id="cb22-173"><a href="#cb22-173" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Lower**: El límite inferior del intervalo de confianza para la EC50.</span>
-<span id="cb22-174"><a href="#cb22-174" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Upper**: El límite superior del intervalo de confianza para la EC50.</span>
-<span id="cb22-175"><a href="#cb22-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-176"><a href="#cb22-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-177"><a href="#cb22-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-180"><a href="#cb22-180" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb22-181"><a href="#cb22-181" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear gráfico de estimaciones de EC50</span></span>
-<span id="cb22-182"><a href="#cb22-182" aria-hidden="true" tabindex="-1"></a>df_ec50 <span class="sc">|&gt;</span> </span>
-<span id="cb22-183"><a href="#cb22-183" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Estimate, <span class="fu">reorder</span>(ID, Estimate))) <span class="sc">+</span></span>
-<span id="cb22-184"><a href="#cb22-184" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb22-185"><a href="#cb22-185" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> Lower, <span class="at">xmax =</span> Upper), <span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
-<span id="cb22-186"><a href="#cb22-186" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="dv">30</span>, <span class="at">to =</span> <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">5</span>))<span class="sc">+</span></span>
-<span id="cb22-187"><a href="#cb22-187" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Estimaciones de EC50 por Código"</span>, <span class="at">x =</span> <span class="st">"EC50"</span>, <span class="at">y =</span> <span class="st">"Aislamiento"</span>) <span class="sc">+</span></span>
-<span id="cb22-188"><a href="#cb22-188" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_few</span>()</span>
-<span id="cb22-189"><a href="#cb22-189" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb22-190"><a href="#cb22-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-191"><a href="#cb22-191" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interpretación de Resultados</span></span>
+<span id="cb22-169"><a href="#cb22-169" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**ID**: El identificador o código del grupo o muestra para el cual se ha calculado la EC50.</span>
+<span id="cb22-170"><a href="#cb22-170" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Estimate**: La estimación de la EC50.</span>
+<span id="cb22-171"><a href="#cb22-171" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Lower**: El límite inferior del intervalo de confianza para la EC50.</span>
+<span id="cb22-172"><a href="#cb22-172" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Upper**: El límite superior del intervalo de confianza para la EC50.</span>
+<span id="cb22-173"><a href="#cb22-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-176"><a href="#cb22-176" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb22-177"><a href="#cb22-177" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear gráfico de estimaciones de EC50</span></span>
+<span id="cb22-178"><a href="#cb22-178" aria-hidden="true" tabindex="-1"></a>df_ec50 <span class="sc">|&gt;</span> </span>
+<span id="cb22-179"><a href="#cb22-179" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Estimate, <span class="fu">reorder</span>(ID, Estimate))) <span class="sc">+</span></span>
+<span id="cb22-180"><a href="#cb22-180" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb22-181"><a href="#cb22-181" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> Lower, <span class="at">xmax =</span> Upper), <span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb22-182"><a href="#cb22-182" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="dv">30</span>, <span class="at">to =</span> <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">5</span>))<span class="sc">+</span></span>
+<span id="cb22-183"><a href="#cb22-183" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Estimaciones de EC50 por Código"</span>, <span class="at">x =</span> <span class="st">"EC50"</span>, <span class="at">y =</span> <span class="st">"Aislamiento"</span>) <span class="sc">+</span></span>
+<span id="cb22-184"><a href="#cb22-184" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_few</span>()</span>
+<span id="cb22-185"><a href="#cb22-185" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-186"><a href="#cb22-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-187"><a href="#cb22-187" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interpretación de Resultados</span></span>
+<span id="cb22-188"><a href="#cb22-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-189"><a href="#cb22-189" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Modelo Log-Logístico de Tres Parámetros (LL.3)**: Este modelo es útil para describir relaciones en forma de S entre dosis y respuesta.</span>
+<span id="cb22-190"><a href="#cb22-190" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Modelo Weibull de Tres Parámetros (W1.3)**: Proporciona mayor flexibilidad y puede ajustarse mejor a datos asimétricos.</span>
+<span id="cb22-191"><a href="#cb22-191" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**EC50**: La dosis efectiva al 50% es una medida importante en estudios de toxicidad y sensibilidad. Comparar EC50 entre diferentes grupos puede revelar diferencias significativas en la respuesta.</span>
 <span id="cb22-192"><a href="#cb22-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-193"><a href="#cb22-193" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Modelo Log-Logístico de Tres Parámetros (LL.3)**: Este modelo es útil para describir relaciones en forma de S entre dosis y respuesta.</span>
-<span id="cb22-194"><a href="#cb22-194" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Modelo Weibull de Tres Parámetros (W1.3)**: Proporciona mayor flexibilidad y puede ajustarse mejor a datos asimétricos.</span>
-<span id="cb22-195"><a href="#cb22-195" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**EC50**: La dosis efectiva al 50% es una medida importante en estudios de toxicidad y sensibilidad. Comparar EC50 entre diferentes grupos puede revelar diferencias significativas en la respuesta.</span>
+<span id="cb22-193"><a href="#cb22-193" aria-hidden="true" tabindex="-1"></a><span class="fu">### Interpretación del Gráfico</span></span>
+<span id="cb22-194"><a href="#cb22-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-195"><a href="#cb22-195" aria-hidden="true" tabindex="-1"></a>En el gráfico resultante:</span>
 <span id="cb22-196"><a href="#cb22-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-197"><a href="#cb22-197" aria-hidden="true" tabindex="-1"></a><span class="fu">### Interpretación del Gráfico</span></span>
-<span id="cb22-198"><a href="#cb22-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-199"><a href="#cb22-199" aria-hidden="true" tabindex="-1"></a>En el gráfico resultante:</span>
-<span id="cb22-200"><a href="#cb22-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-201"><a href="#cb22-201" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cada punto representa la estimación de EC50 para un código específico.</span>
-<span id="cb22-202"><a href="#cb22-202" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Las barras de error muestran los intervalos de confianza del 95% para cada estimación.</span>
-<span id="cb22-203"><a href="#cb22-203" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>La posición horizontal de los puntos permite comparar visualmente las estimaciones de EC50 entre diferentes Aislamientos.</span>
-<span id="cb22-204"><a href="#cb22-204" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Un intervalo de confianza más estrecho indica una estimación más precisa, mientras que un intervalo más amplio sugiere mayor incertidumbre.</span>
-<span id="cb22-205"><a href="#cb22-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-206"><a href="#cb22-206" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aprendizaje del día</span></span>
-<span id="cb22-207"><a href="#cb22-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-208"><a href="#cb22-208" aria-hidden="true" tabindex="-1"></a>El análisis de regresión no lineal es una herramienta poderosa para modelar relaciones complejas entre variables. Con RStudio y los paquetes adecuados, podemos realizar análisis detallados y obtener estimaciones precisas que informen mejor nuestras decisiones basadas en datos. La utilización de <span class="in">`ggplot2`</span> para la visualización de los resultados permite una interpretación más clara y efectiva de los modelos ajustados.</span>
+<span id="cb22-197"><a href="#cb22-197" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Cada punto representa la estimación de EC50 para un código específico.</span>
+<span id="cb22-198"><a href="#cb22-198" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Las barras de error muestran los intervalos de confianza del 95% para cada estimación.</span>
+<span id="cb22-199"><a href="#cb22-199" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>La posición horizontal de los puntos permite comparar visualmente las estimaciones de EC50 entre diferentes Aislamientos.</span>
+<span id="cb22-200"><a href="#cb22-200" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Un intervalo de confianza más estrecho indica una estimación más precisa, mientras que un intervalo más amplio sugiere mayor incertidumbre.</span>
+<span id="cb22-201"><a href="#cb22-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-202"><a href="#cb22-202" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aprendizaje del día</span></span>
+<span id="cb22-203"><a href="#cb22-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-204"><a href="#cb22-204" aria-hidden="true" tabindex="-1"></a>El análisis de regresión no lineal es una herramienta poderosa para modelar relaciones complejas entre variables. Con RStudio y los paquetes adecuados, podemos realizar análisis detallados y obtener estimaciones precisas que informen mejor nuestras decisiones basadas en datos. La utilización de <span class="in">`ggplot2`</span> para la visualización de los resultados permite una interpretación más clara y efectiva de los modelos ajustados.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
