@@ -22,11 +22,13 @@ about:
 ::: {#about-block}
 :::
 
-**Olá!** Sou [**Gustavo Marín**](https://www.cenicafe.org/es/index.php/quienes_somos/nuestra_gente/quienes_somos_gustavo_adolfo_marin_ramirez), doutorando no [programa de pós-graduação em Fitopatologia da Universidade Federal de Viçosa](https://www.dfp.ufv.br/), Brasil. Sou Engenheiro Agrônomo pela [Universidade Nacional da Colômbia (Palmira)](https://www.palmira.unal.edu.co/) e obtive meu Mestrado em Fitopatologia em 2015 na [Universidade Federal de Viçosa](https://www.ufv.br/campus-vicosa/).
+**Olá!** Eu sou [**Gustavo Marín**](https://www.cenicafe.org/es/index.php/quienes_somos/nuestra_gente/quienes_somos_gustavo_adolfo_marin_ramirez), doutorando no [programa de pós-graduação em Fitopatologia da Universidade Federal de Viçosa](https://www.dfp.ufv.br/), Brasil. Sou Engenheiro Agrônomo pela [Universidade Nacional da Colômbia (Palmira)](https://www.palmira.unal.edu.co/) e obtive meu Mestrado em Fitopatologia em 2015 na [Universidade Federal de Viçosa](https://www.ufv.br/campus-vicosa/). Agora faço parte do grupo de trabalho no [Laboratório de Genômica e Genética de Interações Planta-Patógeno](https://bioagro.ufv.br/laboratorio-de-genomica-e-genetica-de-interacoes-planta-patogeno/) coordenado pelo professor [**Sérgio H. Brommonshenckel**](https://www.linkedin.com/in/sergio-brommonschenkel-6b908233/).
+
+
 
 ### Bem-vindos ao meu site
 
-Este site foi criado com muito entusiasmo utilizando Quarto Markdown para a disciplina **FIP606 - Análise e visualização de dados em Fitopatologia**, ministrada pelo professor [Emerson Del Ponte](https://emersondelponte.netlify.app/). Aqui você encontrará material das aulas, organizado de maneira temática e pensado especialmente para facilitar o aprendizado.
+Este site foi criado com muito entusiasmo utilizando Quarto Markdown para a disciplina **FIP606 - Análise e visualização de dados em Fitopatologia**, ministrada pelo professor [**Emerson Del Ponte**](https://emersondelponte.netlify.app/). Aqui você encontrará material das aulas, organizado de maneira temática e pensado especialmente para facilitar o aprendizado.
 
 ### O que você encontrará neste site?
 

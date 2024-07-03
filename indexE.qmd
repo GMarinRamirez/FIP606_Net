@@ -22,11 +22,14 @@ about:
 ::: {#about-block}
 :::
 
-**Hello!** I am [**Gustavo Marín**](https://www.cenicafe.org/es/index.php/quienes_somos/nuestra_gente/quienes_somos_gustavo_adolfo_marin_ramirez), a Ph.D. candidate in the [Plant Pathology graduate program at the Federal University of Viçosa](https://www.dfp.ufv.br/), Brazil. I am an Agronomist from the [National University of Colombia (Palmira)](https://www.palmira.unal.edu.co/) and obtained my Master's degree in Plant Pathology in 2015 from the [Federal University of Viçosa](https://www.ufv.br/campus-vicosa/).
+
+
+**Hello!** I am [**Gustavo Marín**](https://www.cenicafe.org/es/index.php/quienes_somos/nuestra_gente/quienes_somos_gustavo_adolfo_marin_ramirez), a doctoral student in the [PhD program in Plant Pathology at the Federal University of Viçosa](https://www.dfp.ufv.br/), Brazil. I am an Agricultural Engineer from the [National University of Colombia (Palmira)](https://www.palmira.unal.edu.co/) and obtained my Master's degree in Plant Pathology in 2015 from the [Federal University of Viçosa](https://www.ufv.br/campus-vicosa/). I am now part of the work group in the [Laboratory of Genomics and Genetics of Plant-Pathogen Interactions](https://bioagro.ufv.br/laboratorio-de-genomica-e-genetica-de-interacoes-planta-patogeno/) coordinated by Professor [**Sérgio H. Brommonshenckel**](https://www.linkedin.com/in/sergio-brommonschenkel-6b908233/).
+
 
 ### Welcome to my website
 
-This site was created with great enthusiasm using Quarto Markdown for the course **FIP606 - Data Analysis and Visualization in Plant Pathology**, taught by Professor [Emerson Del Ponte](https://emersondelponte.netlify.app/). Here you will find class materials, organized thematically and designed to facilitate learning.
+This site was created with great enthusiasm using Quarto Markdown for the course **FIP606 - Data Analysis and Visualization in Plant Pathology**, taught by Professor [**Emerson Del Ponte**](https://emersondelponte.netlify.app/). Here you will find class materials, organized thematically and designed to facilitate learning.
 
 ### What will you find on this site?
 
@@ -45,4 +48,3 @@ If you have any questions or need more information, feel free to contact me. I a
 ------------------------------------------------------------------------
 
 Explore, learn, and enjoy the fascinating world of phytopathological data analysis. Welcome aboard!
-
